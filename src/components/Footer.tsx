@@ -14,8 +14,8 @@ const Footer = () => (
           For research purposes only. Not intended for human or animal consumption. 
           All products are sold as research chemicals only.
         </p>
-        <a href="mailto:napapathpeptides@gmail.com" className="text-sm text-primary hover:underline">
-          napapathpeptides@gmail.com
+        <a href="mailto:napapathpeps@icloud.com" className="text-sm text-primary hover:underline">
+          napapathpeps@icloud.com
         </a>
       </div>
       <div className="mt-8 text-center text-xs text-muted-foreground">
