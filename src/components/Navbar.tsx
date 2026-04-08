@@ -10,8 +10,7 @@ const Navbar = () => (
         </span>
       </div>
       <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
-        <a href="#product" className="hover:text-foreground transition-colors">Product</a>
-        <a href="#about" className="hover:text-foreground transition-colors">About</a>
+        <a href="#product" className="hover:text-foreground transition-colors">Products</a>
         <a href="#quality" className="hover:text-foreground transition-colors">Quality</a>
         <a href="#contact" className="hover:text-foreground transition-colors">Contact</a>
       </div>

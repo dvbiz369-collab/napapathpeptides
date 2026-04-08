@@ -1,4 +1,4 @@
-import productImg from "@/assets/product-dark.png";
+import productImg from "@/assets/product-hero.jpg";
 
 const HeroSection = () => (
   <section className="relative overflow-hidden py-20 md:py-32">
@@ -17,14 +17,14 @@ const HeroSection = () => (
             Research Grade Peptides
           </div>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground">
-            BPC-157 / <span className="text-gradient">TB-500</span>
+            Premium <span className="text-gradient">Peptides</span> for Research
           </h1>
           <p className="text-lg text-muted-foreground max-w-md leading-relaxed">
-            Premium quality lyophilized peptide blend. 20mg per vial. Third-party tested for purity and potency.
+            High-purity lyophilized peptides. Third-party tested. Certificate of Analysis with every order.
           </p>
           <div className="flex flex-wrap gap-4 pt-2">
             <a href="#product" className="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground transition-all hover:brightness-110 glow-red-sm">
-              View Product
+              View Products
             </a>
             <a href="#quality" className="inline-flex items-center justify-center rounded-lg border border-border bg-secondary px-8 py-3 text-sm font-semibold text-secondary-foreground transition-colors hover:bg-muted">
               Lab Reports
@@ -36,8 +36,8 @@ const HeroSection = () => (
             <div className="absolute inset-0 bg-primary/10 blur-[80px] rounded-full animate-pulse-glow" />
             <img
               src={productImg}
-              alt="BPC-157 / TB-500 20mg Vial"
-              className="relative z-10 w-72 md:w-80 drop-shadow-2xl animate-float"
+              alt="NapaPathPeptides Premium Vial"
+              className="relative z-10 w-72 md:w-80 rounded-xl drop-shadow-2xl animate-float"
             />
           </div>
         </div>
