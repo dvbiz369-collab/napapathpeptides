@@ -1,4 +1,4 @@
-import productImg from "@/assets/product-hero.jpg";
+import productImg from "@/assets/product-hero-branded.jpg";
 
 const HeroSection = () => (
   <section className="relative overflow-hidden py-20 md:py-32">
