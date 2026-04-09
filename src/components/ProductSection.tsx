@@ -67,11 +67,15 @@ const ProductSection = () => (
                 <p className="text-[10px] sm:text-xs text-muted-foreground mt-0.5">{dose}{volume ? ` · ${volume}` : ""}</p>
               </div>
               <a
-                href={`mailto:napapathpeps@icloud.com?subject=Order Inquiry – ${name}`}
+                href={`mailto:napapathpeps@icloud.com?subject=Order Inquiry – ${name}&body=${encodeURIComponent(`Hi, I'm interested in ordering ${name}. Please let me know availability and next steps.`)}`}
                 className="inline-flex w-full items-center justify-center rounded-lg bg-primary px-3 py-2 sm:px-4 sm:py-2.5 text-[10px] sm:text-xs font-semibold text-primary-foreground transition-all hover:brightness-110 glow-red-sm"
               >
                 Inquire to Order
               </a>
+              <p className="text-[9px] sm:text-[10px] text-muted-foreground text-center mt-1.5">
+                Email or text us at{" "}
+                <a href="sms:+17078047057" className="underline hover:text-foreground transition-colors">(707) 804-7057</a>
+              </p>
             </div>
           </div>
         ))}
