@@ -13,7 +13,7 @@ import productGlutathione from "@/assets/product-glutathione.jpg";
 const products = [
   { name: "Klow", dose: "80mg", volume: "3ml", img: productKlow },
   { name: "Mots-C", dose: "40mg", volume: "5ml", img: productMotsc },
-  { name: "NAD+", dose: "400mg", volume: "20ml", img: productNad },
+  { name: "NAD+", dose: "4000mg", volume: "20ml", img: productNad },
   { name: "TB500 / BPC-157", dose: "20mg (10mg ea)", volume: "3ml", img: productTb500 },
   { name: "Reta", dose: "20mg", volume: "2ml", img: productReta },
   { name: "SS-31", dose: "50mg", volume: "3ml", img: productSs31 },
