@@ -9,6 +9,7 @@ import productTesamorelin from "@/assets/product-tesamorelin.jpg";
 import productGhkcu from "@/assets/product-ghkcu.jpg";
 import productSelank from "@/assets/product-selank.jpg";
 import productGlutathione from "@/assets/product-glutathione.jpg";
+import productEpithalon from "@/assets/product-epithalon.jpg";
 
 const products = [
   { name: "Klow", dose: "80mg", volume: "3ml", img: productKlow, price: 225 },
@@ -22,6 +23,7 @@ const products = [
   { name: "GHK-Cu", dose: "100mg", volume: "3ml", img: productGhkcu, price: 150 },
   { name: "Selank / Semax", dose: "10mg (5mg ea)", volume: "3ml", img: productSelank, price: 110 },
   { name: "Glutathione", dose: "200mg per/ml", volume: "", img: productGlutathione, price: 150 },
+  { name: "Epithalon", dose: "50mg", volume: "3ml", img: productEpithalon, price: 150 },
 ];
 
 const ProductSection = () => (
