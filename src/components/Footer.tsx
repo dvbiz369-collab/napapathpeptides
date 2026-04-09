@@ -10,10 +10,21 @@ const Footer = () => (
             NapaPath<span className="text-primary">Peptides</span>
           </span>
         </div>
-        <p className="text-xs text-muted-foreground text-center max-w-md">
-          For research purposes only. Not intended for human or animal consumption. 
-          All products are sold as research chemicals only.
-        </p>
+        <div className="text-center max-w-lg space-y-2">
+          <p className="text-xs text-muted-foreground">
+            For research purposes only. Not intended for human or animal consumption. 
+            All products are sold as research chemicals only.
+          </p>
+          <div className="inline-flex items-center gap-2 bg-destructive/10 border border-destructive/20 rounded-md px-3 py-1.5">
+            <span className="text-[11px] font-semibold uppercase tracking-wider text-destructive">
+              No Refund Policy
+            </span>
+          </div>
+          <p className="text-[11px] text-muted-foreground/70 leading-relaxed">
+            All sales are final. Due to the nature of research compounds, we do not offer refunds, 
+            returns, or exchanges. By completing your purchase, you acknowledge and agree to this policy.
+          </p>
+        </div>
         <a href="mailto:napapathpeps@icloud.com" className="text-sm text-primary hover:underline">
           napapathpeps@icloud.com
         </a>
