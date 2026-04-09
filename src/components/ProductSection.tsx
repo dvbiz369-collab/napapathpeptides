@@ -74,7 +74,7 @@ const ProductSection = () => (
               </a>
               <p className="text-[9px] sm:text-[10px] text-muted-foreground text-center mt-1.5">
                 Email or text us at{" "}
-                <a href="sms:+17078047057" className="underline hover:text-foreground transition-colors">(707) 804-7057</a>
+                <a href={`sms:+17078047057&body=${encodeURIComponent(`Hi, I'm interested in ordering ${name}. Please let me know availability and next steps.`)}`} className="underline hover:text-foreground transition-colors">(707) 804-7057</a>
               </p>
             </div>
           </div>
