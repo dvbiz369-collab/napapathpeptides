@@ -21,7 +21,7 @@ const products = [
   { name: "Tesamorelin", dose: "20mg", volume: "3ml", img: productTesamorelin },
   { name: "GHK-Cu", dose: "100mg", volume: "3ml", img: productGhkcu },
   { name: "Selank / Semax", dose: "10mg (5mg ea)", volume: "3ml", img: productSelank },
-  { name: "Glutathione", dose: "200mg per/ml", volume: "3ml", img: productGlutathione },
+  { name: "Glutathione", dose: "200mg per/ml", volume: "", img: productGlutathione },
 ];
 
 const ProductSection = () => (
