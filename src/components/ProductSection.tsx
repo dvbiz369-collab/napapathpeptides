@@ -21,7 +21,7 @@ const products = [
   { name: "Tesamorelin", dose: "20mg", volume: "3ml", img: productTesamorelin },
   { name: "GHK-Cu", dose: "100mg", volume: "3ml", img: productGhkcu },
   { name: "Selank / Semax", dose: "10mg (5mg ea)", volume: "3ml", img: productSelank },
-  { name: "Glutathione", dose: "200mg per/ml", volume: "3ml", img: productGlutathione },
+  { name: "Glutathione", dose: "200mg per/ml", volume: "", img: productGlutathione },
 ];
 
 const ProductSection = () => (
@@ -51,7 +51,7 @@ const ProductSection = () => (
             <div className="p-4 space-y-3">
               <div>
                 <h3 className="font-heading text-sm font-bold text-foreground">{name}</h3>
-                <p className="text-xs text-muted-foreground">{dose} · {volume}</p>
+                <p className="text-xs text-muted-foreground">{dose}{volume ? ` · ${volume}` : ""}</p>
               </div>
               <a
                 href={`mailto:napapathpeps@icloud.com?subject=Order Inquiry – ${name}`}
