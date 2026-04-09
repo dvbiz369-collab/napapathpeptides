@@ -51,7 +51,7 @@ const ProductSection = () => (
             <div className="p-4 space-y-3">
               <div>
                 <h3 className="font-heading text-sm font-bold text-foreground">{name}</h3>
-                <p className="text-xs text-muted-foreground">{dose} · {volume}</p>
+                <p className="text-xs text-muted-foreground">{dose}{volume ? ` · ${volume}` : ""}</p>
               </div>
               <a
                 href={`mailto:napapathpeps@icloud.com?subject=Order Inquiry – ${name}`}
