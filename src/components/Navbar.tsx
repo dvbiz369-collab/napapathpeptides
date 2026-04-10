@@ -1,4 +1,5 @@
 import logo from "@/assets/logo.jpg";
+import CartDrawer from "@/components/CartDrawer";
 
 const Navbar = () => (
   <nav className="border-b border-border bg-card/80 backdrop-blur-md sticky top-0 z-40">
@@ -9,10 +10,13 @@ const Navbar = () => (
           NapaPath<span className="text-primary">Peptides</span>
         </span>
       </div>
-      <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
-        <a href="#product" className="hover:text-foreground transition-colors">Products</a>
-        <a href="#quality" className="hover:text-foreground transition-colors">Quality</a>
-        <a href="#contact" className="hover:text-foreground transition-colors">Contact</a>
+      <div className="flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
+          <a href="#product" className="hover:text-foreground transition-colors">Products</a>
+          <a href="#quality" className="hover:text-foreground transition-colors">Quality</a>
+          <a href="#contact" className="hover:text-foreground transition-colors">Contact</a>
+        </div>
+        <CartDrawer />
       </div>
     </div>
   </nav>

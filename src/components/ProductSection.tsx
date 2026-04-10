@@ -26,7 +26,9 @@ const products = [
   { name: "Epithalon", dose: "50mg", volume: "3ml", img: productEpithalon, price: 150 },
 ];
 
-const ProductSection = () => (
+const ProductSection = () => {
+  const { addToCart } = useCart();
+  return (
   <section id="product" className="py-20 border-t border-border">
     <div className="container mx-auto px-4">
       <div className="text-center mb-16">
@@ -66,16 +68,13 @@ const ProductSection = () => (
                 <h3 className="font-heading text-xs sm:text-sm font-bold text-foreground leading-tight">{name}</h3>
                 <p className="text-[10px] sm:text-xs text-muted-foreground mt-0.5">{dose}{volume ? ` · ${volume}` : ""}</p>
               </div>
-              <a
-                href={`mailto:napapathpeps@icloud.com?subject=Order Inquiry – ${name}&body=${encodeURIComponent(`Hi, I'm interested in ordering ${name}. Please let me know availability and next steps.`)}`}
-                className="inline-flex w-full items-center justify-center rounded-lg bg-primary px-3 py-2 sm:px-4 sm:py-2.5 text-[10px] sm:text-xs font-semibold text-primary-foreground transition-all hover:brightness-110 glow-red-sm"
+              <button
+                onClick={() => addToCart(name, price)}
+                className="inline-flex w-full items-center justify-center gap-1.5 rounded-lg bg-primary px-3 py-2 sm:px-4 sm:py-2.5 text-[10px] sm:text-xs font-semibold text-primary-foreground transition-all hover:brightness-110 glow-red-sm"
               >
-                Inquire to Order
-              </a>
-              <p className="text-[9px] sm:text-[10px] text-muted-foreground text-center mt-1.5">
-                Email or text us at{" "}
-                <a href={`sms:+17078047057&body=${encodeURIComponent(`Hi, I'm interested in ordering ${name}. Please let me know availability and next steps.`)}`} className="underline hover:text-foreground transition-colors">(707) 804-7057</a>
-              </p>
+                <ShoppingCart className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
+                Add to Cart
+              </button>
             </div>
           </div>
         ))}
@@ -83,5 +82,8 @@ const ProductSection = () => (
     </div>
   </section>
 );
+
+  );
+};
 
 export default ProductSection;
