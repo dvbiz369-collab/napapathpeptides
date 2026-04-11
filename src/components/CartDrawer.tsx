@@ -38,17 +38,8 @@ const CartDrawer = () => {
     }
   };
 
-  const handleInquiry = async (type: "email" | "sms") => {
-    const summary = buildOrderSummary();
-
+  const handleInquiry = async () => {
     await sendConfirmationEmail();
-
-    if (type === "email") {
-      window.location.href = `mailto:napapathpeps@icloud.com?subject=${encodeURIComponent("Order Inquiry")}&body=${encodeURIComponent(summary)}`;
-    } else {
-      window.location.href = `sms:+17078047057&body=${encodeURIComponent(summary)}`;
-    }
-
     setConfirmed(true);
   };
 
