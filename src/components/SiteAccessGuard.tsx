@@ -5,6 +5,7 @@ import AuthGate from "./AuthGate";
 import WaiverModal from "./WaiverModal";
 import { Button } from "@/components/ui/button";
 import { Clock } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const SESSION_DURATION_MS = 60 * 60 * 1000; // 1 hour
 
@@ -17,6 +18,7 @@ interface SiteAccessGuardProps {
 const SiteAccessGuard = ({ children }: SiteAccessGuardProps) => {
   const [step, setStep] = useState<Step>("loading");
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const { t } = useLanguage();
 
   const startSessionTimer = useCallback(() => {
     if (timerRef.current) clearTimeout(timerRef.current);
@@ -30,9 +32,7 @@ const SiteAccessGuard = ({ children }: SiteAccessGuardProps) => {
   useEffect(() => {
     checkState();
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(() => {
-      // Re-check when auth state changes
-    });
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(() => {});
 
     return () => {
       subscription.unsubscribe();
@@ -41,21 +41,12 @@ const SiteAccessGuard = ({ children }: SiteAccessGuardProps) => {
   }, []);
 
   const checkState = async () => {
-    // Step 1: Access code
     const accessGranted = localStorage.getItem("npp_access_granted") === "true";
-    if (!accessGranted) {
-      setStep("access_code");
-      return;
-    }
+    if (!accessGranted) { setStep("access_code"); return; }
 
-    // Step 2: Auth
     const { data: { session } } = await supabase.auth.getSession();
-    if (!session) {
-      setStep("auth");
-      return;
-    }
+    if (!session) { setStep("auth"); return; }
 
-    // Check if existing session has expired (1 hour from start)
     const sessionStart = localStorage.getItem("npp_session_start");
     if (sessionStart) {
       const elapsed = Date.now() - parseInt(sessionStart, 10);
@@ -64,7 +55,6 @@ const SiteAccessGuard = ({ children }: SiteAccessGuardProps) => {
         setStep("expired");
         return;
       }
-      // Set timer for remaining time
       if (timerRef.current) clearTimeout(timerRef.current);
       timerRef.current = setTimeout(() => {
         supabase.auth.signOut();
@@ -74,18 +64,13 @@ const SiteAccessGuard = ({ children }: SiteAccessGuardProps) => {
       startSessionTimer();
     }
 
-    // Step 3: Waiver
     const { data: profile } = await supabase
       .from("profiles")
       .select("waiver_accepted")
       .eq("user_id", session.user.id)
       .single();
 
-    if (!profile?.waiver_accepted) {
-      setStep("waiver");
-      return;
-    }
-
+    if (!profile?.waiver_accepted) { setStep("waiver"); return; }
     setStep("done");
   };
 
@@ -102,24 +87,13 @@ const SiteAccessGuard = ({ children }: SiteAccessGuardProps) => {
     );
   }
 
-  if (step === "access_code") {
-    return <AccessCodeGate onSuccess={() => setStep("auth")} />;
-  }
+  if (step === "access_code") return <AccessCodeGate onSuccess={() => setStep("auth")} />;
 
   if (step === "auth") {
-    return (
-      <AuthGate
-        onSuccess={() => {
-          startSessionTimer();
-          checkState();
-        }}
-      />
-    );
+    return <AuthGate onSuccess={() => { startSessionTimer(); checkState(); }} />;
   }
 
-  if (step === "waiver") {
-    return <WaiverModal onAccepted={() => setStep("done")} />;
-  }
+  if (step === "waiver") return <WaiverModal onAccepted={() => setStep("done")} />;
 
   if (step === "expired") {
     return (
@@ -130,16 +104,10 @@ const SiteAccessGuard = ({ children }: SiteAccessGuardProps) => {
               <Clock className="h-6 w-6 text-primary" />
             </div>
             <div>
-              <h1 className="font-heading text-xl font-semibold text-foreground">
-                Session Expired
-              </h1>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Your session has expired after 1 hour of activity. Please sign in again to continue browsing.
-              </p>
+              <h1 className="font-heading text-xl font-semibold text-foreground">{t("session.expired")}</h1>
+              <p className="mt-2 text-sm text-muted-foreground">{t("session.expiredText")}</p>
             </div>
-            <Button onClick={handleSignInAgain} className="w-full">
-              Sign In Again
-            </Button>
+            <Button onClick={handleSignInAgain} className="w-full">{t("session.signInAgain")}</Button>
           </div>
         </div>
       </div>
