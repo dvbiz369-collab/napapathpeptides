@@ -6,8 +6,6 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type",
 };
 
-const RESEND_GATEWAY_URL = "https://connector-gateway.lovable.dev/resend";
-
 const EMAIL_STYLE = `
   body { font-family: 'Arial', sans-serif; background: #0d0d0d; color: #f2f2f2; padding: 40px 20px; }
   .container { max-width: 520px; margin: 0 auto; background: #141414; border-radius: 12px; padding: 32px; border: 1px solid #2a2a2a; }
@@ -60,10 +58,8 @@ Deno.serve(async (req) => {
     }
 
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
-    const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
-
-    if (!RESEND_API_KEY || !LOVABLE_API_KEY) {
-      console.error("Missing RESEND_API_KEY or LOVABLE_API_KEY");
+    if (!RESEND_API_KEY) {
+      console.error("Missing RESEND_API_KEY");
       return new Response(JSON.stringify({ error: "Email service not configured" }), {
         status: 500,
         headers: corsHeaders,
@@ -92,12 +88,11 @@ Deno.serve(async (req) => {
       </div>
     </body></html>`;
 
-    const resendRes = await fetch(`${RESEND_GATEWAY_URL}/emails`, {
+    const resendRes = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${LOVABLE_API_KEY}`,
-        "X-Connection-Api-Key": RESEND_API_KEY,
+        Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
         from: "Napapath Peptides <orders@mail.napapathpeptides.com>",
@@ -124,7 +119,7 @@ Deno.serve(async (req) => {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   } catch (err) {
-    console.error("Error:", err);
+    console.error("Edge function caught error:", err?.message || err);
     return new Response(JSON.stringify({ error: "Internal server error" }), {
       status: 500,
       headers: corsHeaders,
