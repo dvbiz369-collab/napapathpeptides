@@ -68,13 +68,23 @@ const AuthGate = ({ onSuccess }: AuthGateProps) => {
             </p>
           </div>
           <form onSubmit={handleSubmit} className="w-full space-y-3">
+            {!isLogin && (
+              <Input
+                type="text"
+                placeholder="Full Name"
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+                required
+                autoFocus
+              />
+            )}
             <Input
               type="email"
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              autoFocus
+              autoFocus={isLogin}
             />
             <Input
               type="password"
