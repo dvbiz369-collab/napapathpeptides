@@ -3,7 +3,6 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Shield } from "lucide-react";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface WaiverModalProps {
   onAccepted: () => void;
@@ -69,9 +68,9 @@ const WaiverModal = ({ onAccepted }: WaiverModalProps) => {
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-background">
-      <div className="w-full max-w-2xl px-4">
-        <div className="flex flex-col gap-5 rounded-lg border border-border bg-card p-6 sm:p-8">
+    <div className="fixed inset-0 z-[100] overflow-y-auto bg-background">
+      <div className="flex min-h-full items-center justify-center px-4 py-8">
+        <div className="w-full max-w-2xl flex flex-col gap-5 rounded-lg border border-border bg-card p-6 sm:p-8">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border bg-background">
               <Shield className="h-5 w-5 text-primary" />
@@ -86,34 +85,32 @@ const WaiverModal = ({ onAccepted }: WaiverModalProps) => {
             the following terms and conditions:
           </p>
 
-          <ScrollArea className="max-h-[50vh] pr-3">
-            <div className="space-y-4">
-              {disclaimerItems.map((item, idx) => (
-                <label
-                  key={item.id}
-                  className={`flex cursor-pointer gap-3 rounded-md border p-4 transition-colors ${
-                    checked[item.id]
-                      ? "border-primary/40 bg-primary/5"
-                      : "border-border bg-background hover:border-muted-foreground/30"
-                  }`}
-                >
-                  <Checkbox
-                    checked={!!checked[item.id]}
-                    onCheckedChange={() => toggleItem(item.id)}
-                    className="mt-0.5 shrink-0"
-                  />
-                  <div className="space-y-1">
-                    <span className="text-sm font-medium text-foreground">
-                      {idx + 1}. {item.title}
-                    </span>
-                    <p className="text-xs leading-relaxed text-muted-foreground">
-                      {item.text}
-                    </p>
-                  </div>
-                </label>
-              ))}
-            </div>
-          </ScrollArea>
+          <div className="space-y-4">
+            {disclaimerItems.map((item, idx) => (
+              <label
+                key={item.id}
+                className={`flex cursor-pointer gap-3 rounded-md border p-4 transition-colors ${
+                  checked[item.id]
+                    ? "border-primary/40 bg-primary/5"
+                    : "border-border bg-background hover:border-muted-foreground/30"
+                }`}
+              >
+                <Checkbox
+                  checked={!!checked[item.id]}
+                  onCheckedChange={() => toggleItem(item.id)}
+                  className="mt-0.5 shrink-0"
+                />
+                <div className="space-y-1">
+                  <span className="text-sm font-medium text-foreground">
+                    {idx + 1}. {item.title}
+                  </span>
+                  <p className="text-xs leading-relaxed text-muted-foreground">
+                    {item.text}
+                  </p>
+                </div>
+              </label>
+            ))}
+          </div>
 
           <div className="space-y-3 pt-1">
             <p className="text-xs text-muted-foreground">
