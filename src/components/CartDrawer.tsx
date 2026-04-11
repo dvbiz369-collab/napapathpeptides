@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, Plus, Minus, Trash2, CheckCircle, Mail, MessageSquare } from "lucide-react";
+import { ShoppingCart, Plus, Minus, Trash2, CheckCircle, Mail } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -38,17 +38,8 @@ const CartDrawer = () => {
     }
   };
 
-  const handleInquiry = async (type: "email" | "sms") => {
-    const summary = buildOrderSummary();
-
+  const handleInquiry = async () => {
     await sendConfirmationEmail();
-
-    if (type === "email") {
-      window.location.href = `mailto:napapathpeps@icloud.com?subject=${encodeURIComponent("Order Inquiry")}&body=${encodeURIComponent(summary)}`;
-    } else {
-      window.location.href = `sms:+17078047057&body=${encodeURIComponent(summary)}`;
-    }
-
     setConfirmed(true);
   };
 
@@ -142,21 +133,12 @@ const CartDrawer = () => {
                   <div>
                     <p className="text-xs text-muted-foreground text-center mb-3 uppercase tracking-widest">Request Your Order</p>
                     <Button
-                      onClick={() => handleInquiry("email")}
+                      onClick={() => handleInquiry()}
                       disabled={sending}
-                      className="w-full glow-red-sm mb-2"
+                      className="w-full glow-red-sm"
                     >
                       <Mail className="h-4 w-4 mr-2" />
-                      Send Inquiry via Email
-                    </Button>
-                    <Button
-                      onClick={() => handleInquiry("sms")}
-                      disabled={sending}
-                      variant="outline"
-                      className="w-full border-primary/30 text-foreground hover:bg-primary/10"
-                    >
-                      <MessageSquare className="h-4 w-4 mr-2" />
-                      Send via Text
+                      Send Inquiry
                     </Button>
                   </div>
                 </div>
