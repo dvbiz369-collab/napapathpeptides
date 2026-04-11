@@ -48,6 +48,21 @@ const CartDrawer = () => {
     setConfirmed(true);
   };
 
+  const buildSmsBody = () => {
+    const itemList = items.map((i) => `${i.name} x${i.quantity}`).join(", ");
+    const name = customerName || "a customer";
+    return `Hi Sam, I just submitted an inquiry for: ${itemList}. Total: $${totalPrice}. Please confirm availability for ${name}.`;
+  };
+
+  const [customerName, setCustomerName] = useState<string | null>(null);
+
+  const handleInquiryWithName = async () => {
+    const { data: { user } } = await supabase.auth.getUser();
+    setCustomerName(user?.user_metadata?.full_name || user?.user_metadata?.name || null);
+    await sendConfirmationEmail();
+    setConfirmed(true);
+  };
+
   const handleClose = (isOpen: boolean) => {
     setOpen(isOpen);
     if (!isOpen && confirmed) {
