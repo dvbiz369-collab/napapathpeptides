@@ -3,7 +3,6 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Shield } from "lucide-react";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface WaiverModalProps {
   onAccepted: () => void;
@@ -87,31 +86,30 @@ const WaiverModal = ({ onAccepted }: WaiverModalProps) => {
           </p>
 
           <div className="space-y-4">
-              {disclaimerItems.map((item, idx) => (
-                <label
-                  key={item.id}
-                  className={`flex cursor-pointer gap-3 rounded-md border p-4 transition-colors ${
-                    checked[item.id]
-                      ? "border-primary/40 bg-primary/5"
-                      : "border-border bg-background hover:border-muted-foreground/30"
-                  }`}
-                >
-                  <Checkbox
-                    checked={!!checked[item.id]}
-                    onCheckedChange={() => toggleItem(item.id)}
-                    className="mt-0.5 shrink-0"
-                  />
-                  <div className="space-y-1">
-                    <span className="text-sm font-medium text-foreground">
-                      {idx + 1}. {item.title}
-                    </span>
-                    <p className="text-xs leading-relaxed text-muted-foreground">
-                      {item.text}
-                    </p>
-                  </div>
-                </label>
-              ))}
-            </div>
+            {disclaimerItems.map((item, idx) => (
+              <label
+                key={item.id}
+                className={`flex cursor-pointer gap-3 rounded-md border p-4 transition-colors ${
+                  checked[item.id]
+                    ? "border-primary/40 bg-primary/5"
+                    : "border-border bg-background hover:border-muted-foreground/30"
+                }`}
+              >
+                <Checkbox
+                  checked={!!checked[item.id]}
+                  onCheckedChange={() => toggleItem(item.id)}
+                  className="mt-0.5 shrink-0"
+                />
+                <div className="space-y-1">
+                  <span className="text-sm font-medium text-foreground">
+                    {idx + 1}. {item.title}
+                  </span>
+                  <p className="text-xs leading-relaxed text-muted-foreground">
+                    {item.text}
+                  </p>
+                </div>
+              </label>
+            ))}
           </div>
 
           <div className="space-y-3 pt-1">
