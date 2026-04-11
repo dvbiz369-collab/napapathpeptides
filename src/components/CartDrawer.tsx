@@ -85,18 +85,24 @@ const CartDrawer = () => {
       </SheetTrigger>
       <SheetContent className="w-full sm:max-w-md bg-card border-border flex flex-col">
         {confirmed ? (
-          <div className="flex flex-col items-center justify-center flex-1 text-center px-4 gap-4">
+          <div className="flex flex-col items-center justify-center flex-1 text-center px-4 gap-5">
             <div className="rounded-full bg-primary/10 p-4">
               <CheckCircle className="h-10 w-10 text-primary" />
             </div>
             <h3 className="font-heading text-xl font-bold text-foreground">Inquiry Sent!</h3>
             <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">
-              Your inquiry has been received. You'll hear back from us shortly with availability, payment details, and next steps.
+              Your email confirmation is on its way. Want an instant response? Text Sam directly.
             </p>
-            <p className="text-xs text-muted-foreground">
-              Check your email or texts — we typically respond within a few hours.
-            </p>
-            <Button onClick={() => handleClose(false)} className="mt-4 w-full glow-red-sm">
+            <a
+              href={`sms:7073079901&body=${encodeURIComponent(buildSmsBody())}`}
+              className="w-full"
+            >
+              <Button className="w-full glow-red-sm text-base py-6" size="lg">
+                <MessageSquare className="h-5 w-5 mr-2" />
+                Text Sam for Instant Confirmation
+              </Button>
+            </a>
+            <Button variant="ghost" onClick={() => handleClose(false)} className="w-full text-muted-foreground">
               Continue Browsing
             </Button>
           </div>
