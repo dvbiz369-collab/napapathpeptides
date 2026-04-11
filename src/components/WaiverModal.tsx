@@ -112,7 +112,7 @@ const WaiverModal = ({ onAccepted }: WaiverModalProps) => {
                 </label>
               ))}
             </div>
-          </ScrollArea>
+          </div>
 
           <div className="space-y-3 pt-1">
             <p className="text-xs text-muted-foreground">
