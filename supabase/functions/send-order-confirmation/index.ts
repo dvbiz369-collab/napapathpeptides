@@ -98,6 +98,7 @@ Deno.serve(async (req) => {
           <p>Napapath Peptides</p>
         </div>
         <div class="body-content">
+          ${languageNote ? `<p class="greeting" style="font-weight:600;color:#dc2626;margin-bottom:12px;">${languageNote}</p>` : ""}
           <p class="greeting">Dear ${displayName},</p>
           <p class="greeting">Thank you for your inquiry. We have received the following request and will be in touch shortly to confirm availability, pricing, and payment details.</p>
 
