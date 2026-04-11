@@ -22,12 +22,17 @@ const CartDrawer = () => {
       const { data: { user } } = await supabase.auth.getUser();
       if (!user?.email) return;
 
-      const orderLines = items.map((i) => `${i.name} x${i.quantity} — $${i.price * i.quantity}`);
+      const cartItems = items.map((i) => ({
+        name: i.name,
+        quantity: i.quantity,
+        price: i.price,
+      }));
 
       await supabase.functions.invoke("send-order-confirmation", {
         body: {
           recipientEmail: user.email,
-          orderSummary: orderLines,
+          customerName: user.user_metadata?.full_name || user.user_metadata?.name || null,
+          cartItems,
           totalPrice,
         },
       });
