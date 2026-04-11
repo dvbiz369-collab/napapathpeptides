@@ -159,7 +159,7 @@ const CartDrawer = () => {
                   <div>
                     <p className="text-xs text-muted-foreground text-center mb-3 uppercase tracking-widest">Request Your Order</p>
                     <Button
-                      onClick={() => handleInquiry()}
+                      onClick={() => handleInquiryWithName()}
                       disabled={sending}
                       className="w-full glow-red-sm"
                     >
