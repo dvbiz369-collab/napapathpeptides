@@ -25,8 +25,8 @@ const Footer = () => (
             returns, or exchanges. By completing your purchase, you acknowledge and agree to this policy.
           </p>
         </div>
-        <a href="mailto:napapathpeps@icloud.com" className="text-sm text-primary hover:underline">
-          napapathpeps@icloud.com
+        <a href="mailto:orders@napapathpeptides.com" className="text-sm text-primary hover:underline">
+          orders@napapathpeptides.com
         </a>
       </div>
       <div className="mt-8 text-center text-xs text-muted-foreground">
