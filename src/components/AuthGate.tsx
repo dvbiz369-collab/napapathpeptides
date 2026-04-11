@@ -3,6 +3,8 @@ import { supabase } from "@/integrations/supabase/client";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
+import LanguageToggle from "@/components/LanguageToggle";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface AuthGateProps {
   onSuccess: () => void;
@@ -15,6 +17,7 @@ const AuthGate = ({ onSuccess }: AuthGateProps) => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const { t } = useLanguage();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,10 +40,9 @@ const AuthGate = ({ onSuccess }: AuthGateProps) => {
       if (error) {
         setError(error.message);
       } else {
-        // Auto sign-in after signup
         const { error: loginError } = await supabase.auth.signInWithPassword({ email, password });
         if (loginError) {
-          setError("Account created. Please log in.");
+          setError(t("auth.accountCreated"));
           setIsLogin(true);
         } else {
           onSuccess();
@@ -52,6 +54,9 @@ const AuthGate = ({ onSuccess }: AuthGateProps) => {
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-background">
+      <div className="absolute top-4 right-4">
+        <LanguageToggle />
+      </div>
       <div className="w-full max-w-sm px-6">
         <div className="flex flex-col items-center gap-6">
           <div className="flex h-14 w-14 items-center justify-center rounded-full border border-border bg-card">
@@ -59,19 +64,17 @@ const AuthGate = ({ onSuccess }: AuthGateProps) => {
           </div>
           <div className="text-center">
             <h1 className="font-heading text-xl font-semibold text-foreground">
-              {isLogin ? "Welcome Back" : "Create Account"}
+              {isLogin ? t("auth.welcomeBack") : t("auth.createAccount")}
             </h1>
             <p className="mt-1 text-sm text-muted-foreground">
-              {isLogin
-                ? "Sign in to continue."
-                : "Create an account to access the site."}
+              {isLogin ? t("auth.signInContinue") : t("auth.createContinue")}
             </p>
           </div>
           <form onSubmit={handleSubmit} className="w-full space-y-3">
             {!isLogin && (
               <Input
                 type="text"
-                placeholder="Full Name"
+                placeholder={t("auth.fullName")}
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
                 required
@@ -80,7 +83,7 @@ const AuthGate = ({ onSuccess }: AuthGateProps) => {
             )}
             <Input
               type="email"
-              placeholder="Email"
+              placeholder={t("auth.email")}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -88,17 +91,15 @@ const AuthGate = ({ onSuccess }: AuthGateProps) => {
             />
             <Input
               type="password"
-              placeholder="Password"
+              placeholder={t("auth.password")}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
               minLength={6}
             />
-            {error && (
-              <p className="text-xs text-destructive">{error}</p>
-            )}
+            {error && <p className="text-xs text-destructive">{error}</p>}
             <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? "Please wait..." : isLogin ? "Sign In" : "Create Account"}
+              {loading ? t("auth.pleaseWait") : isLogin ? t("auth.signIn") : t("auth.signUp")}
             </Button>
           </form>
           <button
@@ -106,9 +107,7 @@ const AuthGate = ({ onSuccess }: AuthGateProps) => {
             onClick={() => { setIsLogin(!isLogin); setError(""); }}
             className="text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            {isLogin
-              ? "Don't have an account? Sign up"
-              : "Already have an account? Sign in"}
+            {isLogin ? t("auth.noAccount") : t("auth.hasAccount")}
           </button>
         </div>
       </div>

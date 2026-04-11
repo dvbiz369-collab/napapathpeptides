@@ -59,7 +59,7 @@ Deno.serve(async (req) => {
       });
     }
 
-    const { recipientEmail, customerName, cartItems, totalPrice } = await req.json();
+    const { recipientEmail, customerName, cartItems, totalPrice, preferredLanguage, languageNote } = await req.json();
 
     if (!recipientEmail || !cartItems || !Array.isArray(cartItems) || cartItems.length === 0) {
       return new Response(JSON.stringify({ error: "Missing required fields" }), {
@@ -98,6 +98,7 @@ Deno.serve(async (req) => {
           <p>Napapath Peptides</p>
         </div>
         <div class="body-content">
+          ${languageNote ? `<p class="greeting" style="font-weight:600;color:#dc2626;margin-bottom:12px;">${languageNote}</p>` : ""}
           <p class="greeting">Dear ${displayName},</p>
           <p class="greeting">Thank you for your inquiry. We have received the following request and will be in touch shortly to confirm availability, pricing, and payment details.</p>
 

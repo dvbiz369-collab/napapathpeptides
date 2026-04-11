@@ -3,18 +3,20 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, Plus, Minus, Trash2, CheckCircle, Mail, MessageSquare } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { supabase } from "@/integrations/supabase/client";
 
 const CartDrawer = () => {
   const { items, updateQuantity, removeItem, clearCart, totalItems, totalPrice } = useCart();
+  const { lang, t } = useLanguage();
   const [open, setOpen] = useState(false);
   const [confirmed, setConfirmed] = useState(false);
   const [sending, setSending] = useState(false);
+  const [customerName, setCustomerName] = useState<string | null>(null);
 
-  const buildOrderSummary = () => {
-    const lines = items.map((i) => `- ${i.name} x${i.quantity} — $${i.price * i.quantity}`);
-    return `I'd like to inquire about the following order:\n\n${lines.join("\n")}\n\nTotal: $${totalPrice}\n\nPlease confirm availability and next steps.`;
-  };
+  const langNote = lang === "es"
+    ? "[Customer prefers to communicate in Spanish — please respond in Spanish]"
+    : "[Customer prefers to communicate in English — please respond in English]";
 
   const sendConfirmationEmail = async () => {
     try {
@@ -34,6 +36,8 @@ const CartDrawer = () => {
           customerName: user.user_metadata?.full_name || user.user_metadata?.name || null,
           cartItems,
           totalPrice,
+          preferredLanguage: lang,
+          languageNote: langNote,
         },
       });
     } catch (e) {
@@ -43,18 +47,11 @@ const CartDrawer = () => {
     }
   };
 
-  const handleInquiry = async () => {
-    await sendConfirmationEmail();
-    setConfirmed(true);
-  };
-
   const buildSmsBody = () => {
     const itemList = items.map((i) => `${i.name} x${i.quantity}`).join(", ");
     const name = customerName || "a customer";
-    return `Hi, I just submitted an inquiry for: ${itemList}. Total: $${totalPrice}. Please confirm availability for ${name}.`;
+    return `${langNote}\n\nHi, I just submitted an inquiry for: ${itemList}. Total: $${totalPrice}. Please confirm availability for ${name}.`;
   };
-
-  const [customerName, setCustomerName] = useState<string | null>(null);
 
   const handleInquiryWithName = async () => {
     const { data: { user } } = await supabase.auth.getUser();
@@ -89,32 +86,27 @@ const CartDrawer = () => {
             <div className="rounded-full bg-primary/10 p-4">
               <CheckCircle className="h-10 w-10 text-primary" />
             </div>
-            <h3 className="font-heading text-xl font-bold text-foreground">Inquiry Sent!</h3>
-            <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">
-              Your email confirmation is on its way. Want an instant response? Text Sam directly.
-            </p>
-            <a
-              href={`sms:7078047057&body=${encodeURIComponent(buildSmsBody())}`}
-              className="w-full"
-            >
+            <h3 className="font-heading text-xl font-bold text-foreground">{t("cart.inquirySent")}</h3>
+            <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">{t("cart.emailOnWay")}</p>
+            <a href={`sms:7078047057&body=${encodeURIComponent(buildSmsBody())}`} className="w-full">
               <Button className="w-full glow-red-sm text-base py-6" size="lg">
                 <MessageSquare className="h-5 w-5 mr-2" />
-                Text for Instant Confirmation
+                {t("cart.textConfirm")}
               </Button>
             </a>
             <Button variant="ghost" onClick={() => handleClose(false)} className="w-full text-muted-foreground">
-              Continue Browsing
+              {t("cart.continueBrowsing")}
             </Button>
           </div>
         ) : (
           <>
             <SheetHeader>
-              <SheetTitle className="font-heading text-foreground">Your Cart</SheetTitle>
+              <SheetTitle className="font-heading text-foreground">{t("cart.title")}</SheetTitle>
             </SheetHeader>
 
             {items.length === 0 ? (
               <div className="flex-1 flex items-center justify-center">
-                <p className="text-sm text-muted-foreground">Your cart is empty.</p>
+                <p className="text-sm text-muted-foreground">{t("cart.empty")}</p>
               </div>
             ) : (
               <>
@@ -152,19 +144,14 @@ const CartDrawer = () => {
 
                 <div className="border-t border-border pt-4 mt-4 space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium text-muted-foreground">Total</span>
+                    <span className="text-sm font-medium text-muted-foreground">{t("cart.total")}</span>
                     <span className="text-lg font-bold text-foreground">${totalPrice}</span>
                   </div>
-
                   <div>
-                    <p className="text-xs text-muted-foreground text-center mb-3 uppercase tracking-widest">Request Your Order</p>
-                    <Button
-                      onClick={() => handleInquiryWithName()}
-                      disabled={sending}
-                      className="w-full glow-red-sm"
-                    >
+                    <p className="text-xs text-muted-foreground text-center mb-3 uppercase tracking-widest">{t("cart.requestOrder")}</p>
+                    <Button onClick={() => handleInquiryWithName()} disabled={sending} className="w-full glow-red-sm">
                       <Mail className="h-4 w-4 mr-2" />
-                      Send Inquiry
+                      {t("cart.sendInquiry")}
                     </Button>
                   </div>
                 </div>
