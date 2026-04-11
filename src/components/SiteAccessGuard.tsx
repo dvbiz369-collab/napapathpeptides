@@ -1,10 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import AccessCodeGate from "./AccessCodeGate";
 import AuthGate from "./AuthGate";
 import WaiverModal from "./WaiverModal";
+import { Button } from "@/components/ui/button";
+import { Clock } from "lucide-react";
 
-type Step = "loading" | "access_code" | "auth" | "waiver" | "done";
+const SESSION_DURATION_MS = 60 * 60 * 1000; // 1 hour
+
+type Step = "loading" | "access_code" | "auth" | "waiver" | "expired" | "done";
 
 interface SiteAccessGuardProps {
   children: React.ReactNode;
@@ -12,6 +16,16 @@ interface SiteAccessGuardProps {
 
 const SiteAccessGuard = ({ children }: SiteAccessGuardProps) => {
   const [step, setStep] = useState<Step>("loading");
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const startSessionTimer = useCallback(() => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    localStorage.setItem("npp_session_start", Date.now().toString());
+    timerRef.current = setTimeout(() => {
+      supabase.auth.signOut();
+      setStep("expired");
+    }, SESSION_DURATION_MS);
+  }, []);
 
   useEffect(() => {
     checkState();
@@ -20,7 +34,10 @@ const SiteAccessGuard = ({ children }: SiteAccessGuardProps) => {
       // Re-check when auth state changes
     });
 
-    return () => subscription.unsubscribe();
+    return () => {
+      subscription.unsubscribe();
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
   }, []);
 
   const checkState = async () => {
@@ -38,6 +55,25 @@ const SiteAccessGuard = ({ children }: SiteAccessGuardProps) => {
       return;
     }
 
+    // Check if existing session has expired (1 hour from start)
+    const sessionStart = localStorage.getItem("npp_session_start");
+    if (sessionStart) {
+      const elapsed = Date.now() - parseInt(sessionStart, 10);
+      if (elapsed >= SESSION_DURATION_MS) {
+        await supabase.auth.signOut();
+        setStep("expired");
+        return;
+      }
+      // Set timer for remaining time
+      if (timerRef.current) clearTimeout(timerRef.current);
+      timerRef.current = setTimeout(() => {
+        supabase.auth.signOut();
+        setStep("expired");
+      }, SESSION_DURATION_MS - elapsed);
+    } else {
+      startSessionTimer();
+    }
+
     // Step 3: Waiver
     const { data: profile } = await supabase
       .from("profiles")
@@ -53,6 +89,11 @@ const SiteAccessGuard = ({ children }: SiteAccessGuardProps) => {
     setStep("done");
   };
 
+  const handleSignInAgain = () => {
+    localStorage.removeItem("npp_session_start");
+    setStep("auth");
+  };
+
   if (step === "loading") {
     return (
       <div className="fixed inset-0 z-[100] flex items-center justify-center bg-background">
@@ -66,11 +107,43 @@ const SiteAccessGuard = ({ children }: SiteAccessGuardProps) => {
   }
 
   if (step === "auth") {
-    return <AuthGate onSuccess={checkState} />;
+    return (
+      <AuthGate
+        onSuccess={() => {
+          startSessionTimer();
+          checkState();
+        }}
+      />
+    );
   }
 
   if (step === "waiver") {
     return <WaiverModal onAccepted={() => setStep("done")} />;
+  }
+
+  if (step === "expired") {
+    return (
+      <div className="fixed inset-0 z-[100] flex items-center justify-center bg-background">
+        <div className="w-full max-w-sm px-6">
+          <div className="flex flex-col items-center gap-6 text-center">
+            <div className="flex h-14 w-14 items-center justify-center rounded-full border border-border bg-card">
+              <Clock className="h-6 w-6 text-primary" />
+            </div>
+            <div>
+              <h1 className="font-heading text-xl font-semibold text-foreground">
+                Session Expired
+              </h1>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Your session has expired after 1 hour of activity. Please sign in again to continue browsing.
+              </p>
+            </div>
+            <Button onClick={handleSignInAgain} className="w-full">
+              Sign In Again
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return <>{children}</>;
