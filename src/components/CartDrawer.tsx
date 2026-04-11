@@ -51,7 +51,7 @@ const CartDrawer = () => {
   const buildSmsBody = () => {
     const itemList = items.map((i) => `${i.name} x${i.quantity}`).join(", ");
     const name = customerName || "a customer";
-    return `Hi Sam, I just submitted an inquiry for: ${itemList}. Total: $${totalPrice}. Please confirm availability for ${name}.`;
+    return `Hi, I just submitted an inquiry for: ${itemList}. Total: $${totalPrice}. Please confirm availability for ${name}.`;
   };
 
   const [customerName, setCustomerName] = useState<string | null>(null);
