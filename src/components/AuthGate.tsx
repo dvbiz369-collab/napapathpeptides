@@ -29,7 +29,11 @@ const AuthGate = ({ onSuccess }: AuthGateProps) => {
         onSuccess();
       }
     } else {
-      const { error } = await supabase.auth.signUp({ email, password });
+      const { error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: { data: { full_name: fullName } },
+      });
       if (error) {
         setError(error.message);
       } else {
