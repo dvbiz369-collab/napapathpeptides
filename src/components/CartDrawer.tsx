@@ -133,21 +133,12 @@ const CartDrawer = () => {
                   <div>
                     <p className="text-xs text-muted-foreground text-center mb-3 uppercase tracking-widest">Request Your Order</p>
                     <Button
-                      onClick={() => handleInquiry("email")}
+                      onClick={() => handleInquiry()}
                       disabled={sending}
-                      className="w-full glow-red-sm mb-2"
+                      className="w-full glow-red-sm"
                     >
                       <Mail className="h-4 w-4 mr-2" />
-                      Send Inquiry via Email
-                    </Button>
-                    <Button
-                      onClick={() => handleInquiry("sms")}
-                      disabled={sending}
-                      variant="outline"
-                      className="w-full border-primary/30 text-foreground hover:bg-primary/10"
-                    >
-                      <MessageSquare className="h-4 w-4 mr-2" />
-                      Send via Text
+                      Send Inquiry
                     </Button>
                   </div>
                 </div>
