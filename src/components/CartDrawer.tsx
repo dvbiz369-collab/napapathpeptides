@@ -99,7 +99,7 @@ const CartDrawer = () => {
             >
               <Button className="w-full glow-red-sm text-base py-6" size="lg">
                 <MessageSquare className="h-5 w-5 mr-2" />
-                Text Sam for Instant Confirmation
+                Text for Instant Confirmation
               </Button>
             </a>
             <Button variant="ghost" onClick={() => handleClose(false)} className="w-full text-muted-foreground">
