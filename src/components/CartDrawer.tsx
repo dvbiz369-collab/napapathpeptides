@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, Plus, Minus, Trash2, CheckCircle, Mail } from "lucide-react";
+import { ShoppingCart, Plus, Minus, Trash2, CheckCircle, Mail, MessageSquare } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -48,6 +48,21 @@ const CartDrawer = () => {
     setConfirmed(true);
   };
 
+  const buildSmsBody = () => {
+    const itemList = items.map((i) => `${i.name} x${i.quantity}`).join(", ");
+    const name = customerName || "a customer";
+    return `Hi Sam, I just submitted an inquiry for: ${itemList}. Total: $${totalPrice}. Please confirm availability for ${name}.`;
+  };
+
+  const [customerName, setCustomerName] = useState<string | null>(null);
+
+  const handleInquiryWithName = async () => {
+    const { data: { user } } = await supabase.auth.getUser();
+    setCustomerName(user?.user_metadata?.full_name || user?.user_metadata?.name || null);
+    await sendConfirmationEmail();
+    setConfirmed(true);
+  };
+
   const handleClose = (isOpen: boolean) => {
     setOpen(isOpen);
     if (!isOpen && confirmed) {
@@ -70,18 +85,24 @@ const CartDrawer = () => {
       </SheetTrigger>
       <SheetContent className="w-full sm:max-w-md bg-card border-border flex flex-col">
         {confirmed ? (
-          <div className="flex flex-col items-center justify-center flex-1 text-center px-4 gap-4">
+          <div className="flex flex-col items-center justify-center flex-1 text-center px-4 gap-5">
             <div className="rounded-full bg-primary/10 p-4">
               <CheckCircle className="h-10 w-10 text-primary" />
             </div>
             <h3 className="font-heading text-xl font-bold text-foreground">Inquiry Sent!</h3>
             <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">
-              Your inquiry has been received. You'll hear back from us shortly with availability, payment details, and next steps.
+              Your email confirmation is on its way. Want an instant response? Text Sam directly.
             </p>
-            <p className="text-xs text-muted-foreground">
-              Check your email or texts — we typically respond within a few hours.
-            </p>
-            <Button onClick={() => handleClose(false)} className="mt-4 w-full glow-red-sm">
+            <a
+              href={`sms:7073079901&body=${encodeURIComponent(buildSmsBody())}`}
+              className="w-full"
+            >
+              <Button className="w-full glow-red-sm text-base py-6" size="lg">
+                <MessageSquare className="h-5 w-5 mr-2" />
+                Text Sam for Instant Confirmation
+              </Button>
+            </a>
+            <Button variant="ghost" onClick={() => handleClose(false)} className="w-full text-muted-foreground">
               Continue Browsing
             </Button>
           </div>
@@ -138,7 +159,7 @@ const CartDrawer = () => {
                   <div>
                     <p className="text-xs text-muted-foreground text-center mb-3 uppercase tracking-widest">Request Your Order</p>
                     <Button
-                      onClick={() => handleInquiry()}
+                      onClick={() => handleInquiryWithName()}
                       disabled={sending}
                       className="w-full glow-red-sm"
                     >
