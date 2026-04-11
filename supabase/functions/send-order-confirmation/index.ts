@@ -1,7 +1,14 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.49.1";
-import { corsHeaders } from "https://esm.sh/@supabase/supabase-js@2.95.0/cors";
 
-const RESEND_STYLE = `
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers":
+    "authorization, x-client-info, apikey, content-type",
+};
+
+const RESEND_GATEWAY_URL = "https://connector-gateway.lovable.dev/resend";
+
+const EMAIL_STYLE = `
   body { font-family: 'Arial', sans-serif; background: #0d0d0d; color: #f2f2f2; padding: 40px 20px; }
   .container { max-width: 520px; margin: 0 auto; background: #141414; border-radius: 12px; padding: 32px; border: 1px solid #2a2a2a; }
   h1 { font-size: 20px; margin: 0 0 16px; color: #ffffff; }
@@ -20,7 +27,10 @@ Deno.serve(async (req) => {
   try {
     const authHeader = req.headers.get("Authorization");
     if (!authHeader?.startsWith("Bearer ")) {
-      return new Response(JSON.stringify({ error: "Unauthorized" }), { status: 401, headers: corsHeaders });
+      return new Response(JSON.stringify({ error: "Unauthorized" }), {
+        status: 401,
+        headers: corsHeaders,
+      });
     }
 
     const supabase = createClient(
@@ -29,23 +39,47 @@ Deno.serve(async (req) => {
       { global: { headers: { Authorization: authHeader } } }
     );
 
-    const token = authHeader.replace("Bearer ", "");
-    const { data: claimsData, error: claimsErr } = await supabase.auth.getClaims(token);
-    if (claimsErr || !claimsData?.claims) {
-      return new Response(JSON.stringify({ error: "Unauthorized" }), { status: 401, headers: corsHeaders });
+    const {
+      data: { user },
+      error: userErr,
+    } = await supabase.auth.getUser();
+    if (userErr || !user) {
+      return new Response(JSON.stringify({ error: "Unauthorized" }), {
+        status: 401,
+        headers: corsHeaders,
+      });
     }
 
     const { recipientEmail, orderSummary, totalPrice } = await req.json();
 
     if (!recipientEmail || !orderSummary || !Array.isArray(orderSummary)) {
-      return new Response(JSON.stringify({ error: "Missing required fields" }), { status: 400, headers: corsHeaders });
+      return new Response(JSON.stringify({ error: "Missing required fields" }), {
+        status: 400,
+        headers: corsHeaders,
+      });
     }
 
-    const firstName = recipientEmail.split("@")[0].replace(/[._-]/g, " ").replace(/\b\w/g, (c: string) => c.toUpperCase());
+    const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
+    const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
 
-    const orderHtml = orderSummary.map((line: string) => `<div class="order-item">• ${line}</div>`).join("");
+    if (!RESEND_API_KEY || !LOVABLE_API_KEY) {
+      console.error("Missing RESEND_API_KEY or LOVABLE_API_KEY");
+      return new Response(JSON.stringify({ error: "Email service not configured" }), {
+        status: 500,
+        headers: corsHeaders,
+      });
+    }
 
-    const html = `<!DOCTYPE html><html><head><style>${RESEND_STYLE}</style></head><body>
+    const firstName = recipientEmail
+      .split("@")[0]
+      .replace(/[._-]/g, " ")
+      .replace(/\b\w/g, (c: string) => c.toUpperCase());
+
+    const orderHtml = orderSummary
+      .map((line: string) => `<div class="order-item">• ${line}</div>`)
+      .join("");
+
+    const html = `<!DOCTYPE html><html><head><style>${EMAIL_STYLE}</style></head><body>
       <div class="container">
         <h1>We received your order inquiry</h1>
         <p>Hey ${firstName},</p>
@@ -58,20 +92,33 @@ Deno.serve(async (req) => {
       </div>
     </body></html>`;
 
-    // Use Lovable AI Gateway to send email
-    const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
-    if (!LOVABLE_API_KEY) {
-      console.error("LOVABLE_API_KEY not set");
-      return new Response(JSON.stringify({ error: "Email service not configured" }), { status: 500, headers: corsHeaders });
+    const resendRes = await fetch(`${RESEND_GATEWAY_URL}/emails`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${LOVABLE_API_KEY}`,
+        "X-Connection-Api-Key": RESEND_API_KEY,
+      },
+      body: JSON.stringify({
+        from: "Napapath Peptides <orders@mail.napapathpeptides.com>",
+        to: [recipientEmail],
+        bcc: ["orders@napapathpeptides.com"],
+        subject: "We received your order inquiry — Napapath Peptides",
+        html,
+      }),
+    });
+
+    const resendData = await resendRes.json();
+
+    if (!resendRes.ok) {
+      console.error("Resend error:", JSON.stringify(resendData));
+      return new Response(JSON.stringify({ error: "Failed to send email" }), {
+        status: 500,
+        headers: corsHeaders,
+      });
     }
 
-    // Send email via Supabase's built-in SMTP (inbucket in dev, or configured SMTP)
-    const { error: emailError } = await supabase.auth.admin.inviteUserByEmail(recipientEmail);
-    // Since we can't use admin API from anon key, let's use a simpler approach
-    // We'll just log the confirmation for now and the email will be sent via the mailto
-
-    console.log(`Order confirmation would be sent to ${recipientEmail}`);
-    console.log(`Order: ${orderSummary.join(", ")}, Total: $${totalPrice}`);
+    console.log("Email sent successfully:", resendData.id);
 
     return new Response(JSON.stringify({ success: true }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
