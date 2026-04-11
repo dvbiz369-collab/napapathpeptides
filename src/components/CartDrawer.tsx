@@ -94,7 +94,7 @@ const CartDrawer = () => {
               Your email confirmation is on its way. Want an instant response? Text Sam directly.
             </p>
             <a
-              href={`sms:7073079901&body=${encodeURIComponent(buildSmsBody())}`}
+              href={`sms:7078047057&body=${encodeURIComponent(buildSmsBody())}`}
               className="w-full"
             >
               <Button className="w-full glow-red-sm text-base py-6" size="lg">
