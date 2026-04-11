@@ -59,7 +59,7 @@ Deno.serve(async (req) => {
       });
     }
 
-    const { recipientEmail, customerName, cartItems, totalPrice } = await req.json();
+    const { recipientEmail, customerName, cartItems, totalPrice, preferredLanguage, languageNote } = await req.json();
 
     if (!recipientEmail || !cartItems || !Array.isArray(cartItems) || cartItems.length === 0) {
       return new Response(JSON.stringify({ error: "Missing required fields" }), {
