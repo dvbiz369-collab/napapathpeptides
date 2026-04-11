@@ -69,9 +69,9 @@ const WaiverModal = ({ onAccepted }: WaiverModalProps) => {
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-background">
-      <div className="w-full max-w-2xl px-4">
-        <div className="flex flex-col gap-5 rounded-lg border border-border bg-card p-6 sm:p-8">
+    <div className="fixed inset-0 z-[100] overflow-y-auto bg-background">
+      <div className="flex min-h-full items-center justify-center px-4 py-8">
+        <div className="w-full max-w-2xl flex flex-col gap-5 rounded-lg border border-border bg-card p-6 sm:p-8">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border bg-background">
               <Shield className="h-5 w-5 text-primary" />
@@ -86,8 +86,7 @@ const WaiverModal = ({ onAccepted }: WaiverModalProps) => {
             the following terms and conditions:
           </p>
 
-          <ScrollArea className="max-h-[50vh] pr-3">
-            <div className="space-y-4">
+          <div className="space-y-4">
               {disclaimerItems.map((item, idx) => (
                 <label
                   key={item.id}
