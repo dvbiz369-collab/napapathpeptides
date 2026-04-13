@@ -11,7 +11,7 @@ interface AuthGateProps {
 }
 
 const AuthGate = ({ onSuccess }: AuthGateProps) => {
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
