@@ -2,6 +2,7 @@ import { CartProvider } from "@/contexts/CartContext";
 import DisclaimerBanner from "@/components/DisclaimerBanner";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import TrustBar from "@/components/TrustBar";
 import ProductSection from "@/components/ProductSection";
 import QualitySection from "@/components/QualitySection";
 import Footer from "@/components/Footer";
@@ -12,6 +13,7 @@ const Index = () => (
       <DisclaimerBanner />
       <Navbar />
       <HeroSection />
+      <TrustBar />
       <ProductSection />
       <QualitySection />
       <Footer />
