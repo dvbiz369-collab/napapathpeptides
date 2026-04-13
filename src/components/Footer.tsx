@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -5,29 +6,115 @@ const Footer = () => {
   const { t } = useLanguage();
 
   return (
-    <footer id="contact" className="border-t border-border bg-card py-12">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-3">
-            <img src={logo} alt="NapaPathPeptides" className="h-8 w-8 rounded-full" />
-            <span className="font-heading text-lg font-bold text-foreground">
-              NapaPath<span className="text-primary">Peptides</span>
-            </span>
-          </div>
-          <div className="text-center max-w-lg space-y-2">
-            <p className="text-xs text-muted-foreground">{t("footer.research")}</p>
-            <div className="inline-flex items-center gap-2 bg-destructive/10 border border-destructive/20 rounded-md px-3 py-1.5">
+    <footer id="contact" className="border-t border-border bg-card">
+      {/* Disclaimer strip */}
+      <div className="border-b border-border py-4">
+        <p className="text-center text-xs text-muted-foreground max-w-2xl mx-auto px-4">
+          {t("footer.research")}
+        </p>
+      </div>
+
+      {/* Main footer grid */}
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          {/* Brand + email */}
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <img src={logo} alt="NapaPathPeptides" className="h-8 w-8 rounded-full" />
+              <span className="font-heading text-lg font-bold text-foreground">
+                NapaPath<span className="text-primary">Peptides</span>
+              </span>
+            </div>
+            <a
+              href="mailto:orders@napapathpeptides.com"
+              className="inline-block text-sm text-primary hover:underline"
+            >
+              orders@napapathpeptides.com
+            </a>
+            <div className="mt-4 inline-flex items-center gap-2 bg-destructive/10 border border-destructive/20 rounded-md px-3 py-1.5">
               <span className="text-[11px] font-semibold uppercase tracking-wider text-destructive">
                 {t("footer.noRefund")}
               </span>
             </div>
-            <p className="text-[11px] text-muted-foreground/70 leading-relaxed">{t("footer.noRefundText")}</p>
           </div>
-          <a href="mailto:orders@napapathpeptides.com" className="text-sm text-primary hover:underline">
-            orders@napapathpeptides.com
-          </a>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="font-heading text-sm font-semibold text-primary uppercase tracking-wider mb-4">
+              {t("footer.quickLinks")}
+            </h3>
+            <ul className="space-y-2.5">
+              <li>
+                <a href="#products" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  {t("footer.shop")}
+                </a>
+              </li>
+              <li>
+                <a href="#quality" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  {t("footer.quality")}
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Support */}
+          <div>
+            <h3 className="font-heading text-sm font-semibold text-primary uppercase tracking-wider mb-4">
+              {t("footer.support")}
+            </h3>
+            <ul className="space-y-2.5">
+              <li>
+                <a href="mailto:orders@napapathpeptides.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  {t("footer.contactUs")}
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Policies */}
+          <div>
+            <h3 className="font-heading text-sm font-semibold text-primary uppercase tracking-wider mb-4">
+              {t("footer.policies")}
+            </h3>
+            <ul className="space-y-2.5">
+              <li>
+                <Link to="/terms" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  {t("footer.tos")}
+                </Link>
+              </li>
+              <li>
+                <Link to="/privacy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  {t("footer.privacy")}
+                </Link>
+              </li>
+              <li>
+                <Link to="/shipping-policy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  {t("footer.shippingPolicy")}
+                </Link>
+              </li>
+              <li>
+                <Link to="/refund-policy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  {t("footer.refundPolicy")}
+                </Link>
+              </li>
+              <li>
+                <Link to="/research-use-policy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  {t("footer.ruoPolicy")}
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div className="mt-8 text-center text-xs text-muted-foreground">
+
+        {/* No refund text */}
+        <div className="mt-8 pt-6 border-t border-border text-center">
+          <p className="text-[11px] text-muted-foreground/70 leading-relaxed max-w-xl mx-auto">
+            {t("footer.noRefundText")}
+          </p>
+        </div>
+
+        {/* Copyright */}
+        <div className="mt-6 text-center text-xs text-muted-foreground">
           © {new Date().getFullYear()} NapaPathPeptides. {t("footer.rights")}
         </div>
       </div>
