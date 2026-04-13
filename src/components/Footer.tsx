@@ -40,7 +40,7 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2.5">
               <li>
-                <a href="#products" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <a href="#product" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   {t("footer.shop")}
                 </a>
               </li>
