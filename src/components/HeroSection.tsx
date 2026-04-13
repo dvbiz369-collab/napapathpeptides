@@ -15,16 +15,16 @@ const HeroSection = () => {
 
       {/* 3D Molecule Structures */}
       <MoleculeStructure
-        className="absolute -right-16 -top-10 w-[200px] h-[200px] md:w-[350px] md:h-[350px] opacity-15 md:opacity-20"
-        style={{ animation: "molecule-drift 15s ease-in-out infinite" }}
+        className="absolute -right-16 -top-10 w-[300px] h-[300px] md:w-[500px] md:h-[500px] opacity-15 md:opacity-20"
+        style={{ animation: "molecule-drift 30s ease-in-out infinite" }}
       />
       <MoleculeStructure
-        className="absolute -left-20 bottom-0 w-[250px] h-[250px] md:w-[400px] md:h-[400px] opacity-10 md:opacity-15"
-        style={{ animation: "molecule-drift-reverse 18s ease-in-out infinite", transform: "rotate(45deg)" }}
+        className="absolute -left-20 bottom-0 w-[350px] h-[350px] md:w-[550px] md:h-[550px] opacity-10 md:opacity-15"
+        style={{ animation: "molecule-drift-reverse 36s ease-in-out infinite", transform: "rotate(45deg)" }}
       />
       <MoleculeStructure
-        className="absolute right-1/4 bottom--10 w-[150px] h-[150px] md:w-[250px] md:h-[250px] opacity-[0.07] md:opacity-10"
-        style={{ animation: "molecule-drift 22s ease-in-out infinite 3s", transform: "rotate(-30deg)" }}
+        className="absolute right-1/4 bottom--10 w-[250px] h-[250px] md:w-[400px] md:h-[400px] opacity-[0.07] md:opacity-10"
+        style={{ animation: "molecule-drift 40s ease-in-out infinite 3s", transform: "rotate(-30deg)" }}
       />
 
       <div className="container mx-auto px-4 relative z-10">
