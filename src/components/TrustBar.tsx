@@ -5,11 +5,9 @@ const TrustBar = () => {
   const { t } = useLanguage();
 
   const items = [
-    { icon: Truck, label: t("trust.shipping") },
     { icon: BadgeCheck, label: t("trust.coa") },
     { icon: FlaskConical, label: t("trust.tested") },
     { icon: Shield, label: t("trust.purity") },
-    { icon: Headset, label: t("trust.support") },
   ];
 
   // Double the items for seamless loop
