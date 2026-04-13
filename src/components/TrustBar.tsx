@@ -12,12 +12,15 @@ const TrustBar = () => {
     { icon: Headset, label: t("trust.support") },
   ];
 
+  // Double the items for seamless loop
+  const scrollItems = [...items, ...items];
+
   return (
-    <section className="border-y border-border bg-card/60 backdrop-blur-sm">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-wrap items-center justify-between gap-4 py-4">
-          {items.map((item, i) => (
-            <div key={i} className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
+    <section className="border-y border-border bg-card/60 backdrop-blur-sm overflow-hidden">
+      <div className="py-4">
+        <div className="flex items-center gap-12 animate-[scroll-left_20s_linear_infinite] w-max">
+          {scrollItems.map((item, i) => (
+            <div key={i} className="flex items-center gap-2 text-sm font-medium text-muted-foreground whitespace-nowrap">
               <item.icon className="h-4 w-4 text-primary" />
               <span>{item.label}</span>
             </div>
