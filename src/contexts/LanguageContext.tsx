@@ -33,6 +33,13 @@ const translations: Record<string, Record<Lang, string>> = {
   "hero.cta.products": { en: "View Products", es: "Ver Productos" },
   "hero.cta.reports": { en: "Lab Reports", es: "Informes de Laboratorio" },
 
+  // Trust bar
+  "trust.shipping": { en: "Same-Day Shipping until 6 PM", es: "Envío el mismo día hasta las 6 PM" },
+  "trust.coa": { en: "Verified COAs", es: "COAs Verificados" },
+  "trust.tested": { en: "Batch Tested", es: "Lote Probado" },
+  "trust.purity": { en: "99%+ Purity", es: "99%+ Pureza" },
+  "trust.support": { en: "Live Support", es: "Soporte en Vivo" },
+
   // Product section
   "products.badge": { en: "Catalog", es: "Catálogo" },
   "products.title": { en: "Our Products", es: "Nuestros Productos" },
