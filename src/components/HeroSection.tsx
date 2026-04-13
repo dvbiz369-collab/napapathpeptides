@@ -1,6 +1,5 @@
 import productImg from "@/assets/product-hero-branded.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
-import DnaHelix from "@/components/DnaHelix";
 import MoleculeStructure from "@/components/MoleculeStructure";
 
 const HeroSection = () => {
@@ -13,11 +12,6 @@ const HeroSection = () => {
         backgroundSize: "60px 60px"
       }} />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
-
-      {/* DNA Helixes */}
-      <DnaHelix className="absolute -left-6 top-0 h-full w-24 opacity-40 hidden md:block" />
-      <DnaHelix className="absolute -right-6 top-0 h-full w-24 opacity-30 hidden md:block" reverse />
-      <DnaHelix className="absolute left-1/4 -top-10 h-[120%] w-16 opacity-15 hidden lg:block" />
 
       {/* 3D Molecule Structures */}
       <MoleculeStructure
