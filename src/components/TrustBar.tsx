@@ -1,0 +1,31 @@
+import { Shield, Truck, FlaskConical, BadgeCheck, Headset } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+
+const TrustBar = () => {
+  const { t } = useLanguage();
+
+  const items = [
+    { icon: Truck, label: t("trust.shipping") },
+    { icon: BadgeCheck, label: t("trust.coa") },
+    { icon: FlaskConical, label: t("trust.tested") },
+    { icon: Shield, label: t("trust.purity") },
+    { icon: Headset, label: t("trust.support") },
+  ];
+
+  return (
+    <section className="border-y border-border bg-card/60 backdrop-blur-sm">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-wrap items-center justify-between gap-4 py-4">
+          {items.map((item, i) => (
+            <div key={i} className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
+              <item.icon className="h-4 w-4 text-primary" />
+              <span>{item.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default TrustBar;
