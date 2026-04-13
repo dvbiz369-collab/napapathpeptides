@@ -10,16 +10,19 @@ const TrustBar = () => {
     { icon: Shield, label: t("trust.purity") },
   ];
 
-  // Double the items for seamless loop
-  const scrollItems = [...items, ...items];
+  // Triple the items for seamless loop
+  const scrollItems = [...items, ...items, ...items];
 
   return (
     <section className="border-y border-border bg-card/60 backdrop-blur-sm overflow-hidden">
       <div className="py-4">
-        <div className="flex items-center gap-12 animate-[scroll-left_20s_linear_infinite] w-max">
+        <div className="flex items-center animate-scroll-left w-max">
           {scrollItems.map((item, i) => (
-            <div key={i} className="flex items-center gap-2 text-sm font-medium text-muted-foreground whitespace-nowrap">
-              <item.icon className="h-4 w-4 text-primary" />
+            <div
+              key={i}
+              className="flex items-center gap-2 text-sm font-medium text-muted-foreground whitespace-nowrap px-8 md:px-12"
+            >
+              <item.icon className="h-4 w-4 text-primary shrink-0" />
               <span>{item.label}</span>
             </div>
           ))}
