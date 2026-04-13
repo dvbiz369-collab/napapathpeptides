@@ -15,15 +15,15 @@ const HeroSection = () => {
 
       {/* 3D Molecule Structures */}
       <MoleculeStructure
-        className="absolute -right-16 -top-10 w-[350px] h-[350px] opacity-20 hidden md:block"
+        className="absolute -right-16 -top-10 w-[200px] h-[200px] md:w-[350px] md:h-[350px] opacity-15 md:opacity-20"
         style={{ animation: "molecule-drift 15s ease-in-out infinite" }}
       />
       <MoleculeStructure
-        className="absolute -left-20 bottom-0 w-[400px] h-[400px] opacity-15 hidden md:block"
+        className="absolute -left-20 bottom-0 w-[250px] h-[250px] md:w-[400px] md:h-[400px] opacity-10 md:opacity-15"
         style={{ animation: "molecule-drift-reverse 18s ease-in-out infinite", transform: "rotate(45deg)" }}
       />
       <MoleculeStructure
-        className="absolute right-1/4 bottom--10 w-[250px] h-[250px] opacity-10 hidden lg:block"
+        className="absolute right-1/4 bottom--10 w-[150px] h-[150px] md:w-[250px] md:h-[250px] opacity-[0.07] md:opacity-10"
         style={{ animation: "molecule-drift 22s ease-in-out infinite 3s", transform: "rotate(-30deg)" }}
       />
 
