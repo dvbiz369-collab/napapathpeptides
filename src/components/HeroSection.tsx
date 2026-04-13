@@ -1,6 +1,7 @@
 import productImg from "@/assets/product-hero-branded.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 import DnaHelix from "@/components/DnaHelix";
+import MoleculeStructure from "@/components/MoleculeStructure";
 
 const HeroSection = () => {
   const { t } = useLanguage();
@@ -17,6 +18,20 @@ const HeroSection = () => {
       <DnaHelix className="absolute -left-6 top-0 h-full w-24 opacity-40 hidden md:block" />
       <DnaHelix className="absolute -right-6 top-0 h-full w-24 opacity-30 hidden md:block" reverse />
       <DnaHelix className="absolute left-1/4 -top-10 h-[120%] w-16 opacity-15 hidden lg:block" />
+
+      {/* 3D Molecule Structures */}
+      <MoleculeStructure
+        className="absolute -right-16 -top-10 w-[350px] h-[350px] opacity-20 hidden md:block"
+        style={{ animation: "molecule-drift 15s ease-in-out infinite" }}
+      />
+      <MoleculeStructure
+        className="absolute -left-20 bottom-0 w-[400px] h-[400px] opacity-15 hidden md:block"
+        style={{ animation: "molecule-drift-reverse 18s ease-in-out infinite", transform: "rotate(45deg)" }}
+      />
+      <MoleculeStructure
+        className="absolute right-1/4 bottom--10 w-[250px] h-[250px] opacity-10 hidden lg:block"
+        style={{ animation: "molecule-drift 22s ease-in-out infinite 3s", transform: "rotate(-30deg)" }}
+      />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
