@@ -1,4 +1,4 @@
-import { Shield, Truck, FlaskConical, BadgeCheck, Headset } from "lucide-react";
+import { Shield, FlaskConical, BadgeCheck } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const TrustBar = () => {
