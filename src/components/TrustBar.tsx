@@ -10,13 +10,18 @@ const TrustBar = () => {
     { icon: Shield, label: t("trust.purity") },
   ];
 
-  // Triple the items for seamless loop
-  const scrollItems = [...items, ...items, ...items];
+  // Repeat enough times to fill the screen and allow continuous scroll
+  const scrollItems = [...items, ...items, ...items, ...items, ...items, ...items];
 
   return (
     <section className="border-y border-border bg-card/60 backdrop-blur-sm overflow-hidden">
       <div className="py-4">
-        <div className="flex items-center animate-scroll-left w-max">
+        <div
+          className="flex items-center w-max"
+          style={{
+            animation: "trust-scroll 20s linear infinite",
+          }}
+        >
           {scrollItems.map((item, i) => (
             <div
               key={i}
