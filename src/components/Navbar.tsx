@@ -1,4 +1,4 @@
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/pathway-logo.png";
 import CartDrawer from "@/components/CartDrawer";
 import LanguageToggle from "@/components/LanguageToggle";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -10,10 +10,15 @@ const Navbar = () => {
     <nav className="border-b border-border bg-card/80 backdrop-blur-md sticky top-0 z-40">
       <div className="container mx-auto flex items-center justify-between py-4 px-4">
         <div className="flex items-center gap-3">
-          <img src={logo} alt="NapaPathPeptides Logo" className="h-10 w-10 rounded-full" />
-          <span className="font-heading text-xl font-bold tracking-tight text-foreground">
-            NapaPath<span className="text-primary">Peptides</span>
-          </span>
+          <img src={logo} alt="Pathway Cellular" className="h-10 w-10 object-contain" />
+          <div className="hidden sm:flex flex-col leading-none">
+            <span className="font-heading text-lg font-bold tracking-[0.18em] text-foreground">
+              PATHWAY
+            </span>
+            <span className="font-heading text-xs font-light tracking-[0.32em] text-muted-foreground">
+              CELLULAR
+            </span>
+          </div>
         </div>
         <div className="flex items-center gap-4">
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
