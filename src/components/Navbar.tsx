@@ -12,10 +12,10 @@ const Navbar = () => {
         <div className="flex items-center gap-3">
           <img src={logo} alt="Pathway Cellular" className="h-10 w-10 object-contain" />
           <div className="hidden sm:flex flex-col leading-none">
-            <span className="font-heading text-lg font-bold tracking-[0.18em] text-foreground">
+            <span className="font-heading text-lg font-semibold tracking-[0.12em] text-foreground">
               PATHWAY
             </span>
-            <span className="font-heading text-xs font-light tracking-[0.32em] text-muted-foreground">
+            <span className="font-heading text-sm font-medium tracking-[0.22em] text-primary">
               CELLULAR
             </span>
           </div>
