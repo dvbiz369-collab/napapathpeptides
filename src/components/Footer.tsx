@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/pathway-logo.png";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
@@ -20,10 +20,15 @@ const Footer = () => {
           {/* Brand + email */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <img src={logo} alt="NapaPathPeptides" className="h-8 w-8 rounded-full" />
-              <span className="font-heading text-lg font-bold text-foreground">
-                NapaPath<span className="text-primary">Peptides</span>
-              </span>
+              <img src={logo} alt="Pathway Cellular" className="h-9 w-9 object-contain" />
+              <div className="flex flex-col leading-none">
+                <span className="font-heading text-base font-bold tracking-[0.18em] text-foreground">
+                  PATHWAY
+                </span>
+                <span className="font-heading text-[10px] font-light tracking-[0.32em] text-muted-foreground">
+                  CELLULAR
+                </span>
+              </div>
             </div>
             <a
               href="mailto:orders@napapathpeptides.com"

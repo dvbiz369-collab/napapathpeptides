@@ -53,7 +53,7 @@ const HeroSection = () => {
               <div className="absolute inset-0 bg-primary/10 blur-[80px] rounded-full animate-pulse-glow" />
               <img
                 src={productImg}
-                alt="NapaPathPeptides Premium Vial"
+                alt="Pathway Cellular Premium Vial"
                 className="relative z-10 w-72 md:w-80 rounded-xl drop-shadow-2xl animate-float"
               />
             </div>
