@@ -10,7 +10,9 @@ const Navbar = () => {
     <nav className="border-b border-border bg-card/80 backdrop-blur-md sticky top-0 z-40">
       <div className="container mx-auto flex items-center justify-between py-4 px-4">
         <div className="flex items-center gap-3">
-          <img src={logo} alt="Pathway Cellular" className="h-10 w-10 object-contain" />
+          <div className="relative h-11 w-11 rounded-full border border-primary/40 bg-background/40 p-1 shadow-[0_0_12px_hsl(var(--primary)/0.5),inset_0_0_8px_hsl(var(--primary)/0.25)] animate-pulse-glow">
+            <img src={logo} alt="Pathway Cellular" className="h-full w-full object-contain" />
+          </div>
           <div className="hidden sm:flex flex-col leading-none">
             <span className="font-heading text-lg font-semibold tracking-[0.12em] text-foreground">
               PATHWAY
