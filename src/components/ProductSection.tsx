@@ -13,6 +13,7 @@ import productGhkcu from "@/assets/product-ghkcu.jpg";
 import productSelank from "@/assets/product-selank.jpg";
 import productGlutathione from "@/assets/product-glutathione.jpg";
 import productEpithalon from "@/assets/product-epithalon.jpg";
+import labBackground from "@/assets/lab-background.jpg";
 
 const products = [
   { name: "Klow", dose: "80mg", volume: "3ml", img: productKlow, price: 225 },
@@ -58,11 +59,19 @@ const ProductSection = () => {
                 </div>
               )}
 
-              <div className="aspect-[3/4] overflow-hidden bg-background">
+              <div
+                className="relative aspect-[3/4] overflow-hidden bg-background"
+                style={{
+                  backgroundImage: `url(${labBackground})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              >
+                <div className="absolute inset-0 bg-background/40" />
                 <img
                   src={img}
                   alt={`${name} peptide vial`}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="relative w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
               </div>
