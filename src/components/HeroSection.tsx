@@ -38,7 +38,6 @@ const HeroSection = () => {
                 {t("hero.title.prefix")}<span className="text-gradient">{t("hero.title.highlight")}</span>
               </h1>
               <p className="text-[10px] md:text-[11px] font-light tracking-[0.25em] uppercase text-muted-foreground/80">
-                <span className="inline-block h-px w-4 align-middle bg-primary/60 mr-2" />
                 {t("hero.title.poweredBy")}
               </p>
             </div>
