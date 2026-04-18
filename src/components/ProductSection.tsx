@@ -70,7 +70,7 @@ const ProductSection = () => {
                 <img
                   src={img}
                   alt={`${name} peptide vial`}
-                  className="relative w-full h-full object-cover scale-110 transition-transform duration-500 group-hover:scale-115 mix-blend-lighten"
+                  className="relative w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
               </div>
