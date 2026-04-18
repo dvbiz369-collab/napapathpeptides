@@ -59,18 +59,11 @@ const ProductSection = () => {
                 </div>
               )}
 
-              <div
-                className="relative aspect-[3/4] overflow-hidden bg-background"
-                style={{
-                  backgroundImage: `url(${labBackground})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              >
+              <div className="relative aspect-[3/4] overflow-hidden bg-background">
                 <img
                   src={img}
                   alt={`${name} peptide vial`}
-                  className="relative w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                  className="relative w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
               </div>
