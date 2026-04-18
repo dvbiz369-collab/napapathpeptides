@@ -23,9 +23,10 @@ const translations: Record<string, Record<Lang, string>> = {
 
   // Hero
   "hero.badge": { en: "Research Grade Peptides", es: "Péptidos de Grado de Investigación" },
-  "hero.title.prefix": { en: "Premium ", es: "Péptidos " },
-  "hero.title.highlight": { en: "Peptides", es: "Premium" },
-  "hero.title.suffix": { en: " for Research", es: " para Investigación" },
+  "hero.title.prefix": { en: "Pathway ", es: "Pathway " },
+  "hero.title.highlight": { en: "Cellular", es: "Cellular" },
+  "hero.title.suffix": { en: "", es: "" },
+  "hero.title.poweredBy": { en: "powered by Napa Path Peptides", es: "presentado por Napa Path Peptides" },
   "hero.subtitle": {
     en: "High-purity lyophilized peptides. Third-party tested. Certificate of Analysis with every order.",
     es: "Péptidos liofilizados de alta pureza. Probados por terceros. Certificado de análisis con cada pedido.",
