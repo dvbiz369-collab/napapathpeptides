@@ -67,11 +67,10 @@ const ProductSection = () => {
                   backgroundPosition: "center",
                 }}
               >
-                <div className="absolute inset-0 bg-background/10" />
                 <img
                   src={img}
                   alt={`${name} peptide vial`}
-                  className="relative w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                  className="relative w-full h-full object-cover scale-110 transition-transform duration-500 group-hover:scale-115 mix-blend-lighten"
                   loading="lazy"
                 />
               </div>
