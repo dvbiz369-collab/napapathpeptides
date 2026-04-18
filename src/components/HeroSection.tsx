@@ -33,8 +33,8 @@ const HeroSection = () => {
             <div className="inline-block rounded-full border border-border bg-secondary px-4 py-1.5 text-xs font-medium text-muted-foreground tracking-widest uppercase">
               {t("hero.badge")}
             </div>
-            <div className="space-y-2">
-              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground">
+            <div className="space-y-2 inline-block">
+              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground whitespace-nowrap">
                 {t("hero.title.prefix")}<span className="text-gradient">{t("hero.title.highlight")}</span>
               </h1>
               <p className="block w-full text-center text-[10px] md:text-[11px] font-light tracking-[0.25em] uppercase text-muted-foreground/80">
