@@ -67,7 +67,7 @@ const ProductSection = () => {
                   backgroundPosition: "center",
                 }}
               >
-                <div className="absolute inset-0 bg-background/40" />
+                <div className="absolute inset-0 bg-background/10" />
                 <img
                   src={img}
                   alt={`${name} peptide vial`}
