@@ -52,54 +52,54 @@ const translations: Record<string, Record<Lang, string>> = {
   "products.info": { en: "Product info", es: "Información del producto" },
   "products.benefits": { en: "Intended Research", es: "Investigación Prevista" },
 
-  // Per-product descriptions (research context)
+  // Per-product descriptions (cosmetic/wellness research context - hedged language)
   "product.klow.desc": {
-    en: "A custom research blend studied for synergistic effects on metabolic regulation, fat oxidation, and lean tissue preservation in preclinical models.",
-    es: "Una mezcla de investigación personalizada estudiada por sus efectos sinérgicos en la regulación metabólica, oxidación de grasa y preservación del tejido magro en modelos preclínicos.",
+    en: "A research blend intended to support metabolic wellness, energy balance, and tissue maintenance. May help promote vitality in preclinical wellness research.",
+    es: "Una mezcla de investigación destinada a apoyar el bienestar metabólico, el equilibrio energético y el mantenimiento de tejidos. Puede ayudar a promover la vitalidad en investigación preclínica de bienestar.",
   },
   "product.motsc.desc": {
-    en: "Mitochondrial-derived peptide investigated for its role in metabolic homeostasis, insulin sensitivity, and cellular energy production.",
-    es: "Péptido derivado de mitocondrias investigado por su papel en la homeostasis metabólica, sensibilidad a la insulina y producción de energía celular.",
+    en: "Mitochondrial peptide. May help support cellular energy production and metabolic balance in research settings. Intended for wellness and vitality research.",
+    es: "Péptido mitocondrial. Puede ayudar a apoyar la producción de energía celular y el equilibrio metabólico en investigación. Destinado a investigación de bienestar y vitalidad.",
   },
   "product.nad.desc": {
-    en: "Coenzyme studied for cellular energy metabolism, DNA repair pathways, and longevity-related sirtuin activation in research settings.",
-    es: "Coenzima estudiada por el metabolismo energético celular, vías de reparación del ADN y activación de sirtuinas relacionadas con la longevidad en investigación.",
+    en: "Coenzyme studied for wellness research. May help support cellular energy pathways and healthy aging markers in laboratory settings.",
+    es: "Coenzima estudiada para investigación de bienestar. Puede ayudar a apoyar las vías de energía celular y marcadores de envejecimiento saludable en entornos de laboratorio.",
   },
   "product.tb500.desc": {
-    en: "Combined research peptides investigated for tissue repair, angiogenesis, gut lining integrity, and recovery in preclinical wound-healing models.",
-    es: "Péptidos de investigación combinados estudiados por reparación de tejidos, angiogénesis, integridad del revestimiento intestinal y recuperación en modelos preclínicos de cicatrización.",
+    en: "Peptide blend intended for tissue wellness research. May help support recovery, mobility, and overall physical comfort in preclinical models.",
+    es: "Mezcla de péptidos destinada a investigación de bienestar tisular. Puede ayudar a apoyar la recuperación, movilidad y comodidad física general en modelos preclínicos.",
   },
   "product.reta.desc": {
-    en: "Triple-receptor agonist (GLP-1/GIP/glucagon) studied for significant effects on body composition, glucose regulation, and metabolic markers.",
-    es: "Agonista de triple receptor (GLP-1/GIP/glucagón) estudiado por efectos significativos en la composición corporal, regulación de la glucosa y marcadores metabólicos.",
+    en: "Triple-receptor peptide studied for body composition and metabolic wellness. May help support healthy weight management goals in research contexts.",
+    es: "Péptido de triple receptor estudiado para composición corporal y bienestar metabólico. Puede ayudar a apoyar objetivos de gestión de peso saludable en contextos de investigación.",
   },
   "product.ss31.desc": {
-    en: "Mitochondria-targeted peptide researched for protecting cardiolipin, reducing oxidative stress, and supporting cellular energy under strain.",
-    es: "Péptido dirigido a mitocondrias investigado por proteger la cardiolipina, reducir el estrés oxidativo y apoyar la energía celular bajo tensión.",
+    en: "Mitochondria-targeted peptide for cellular wellness research. May help support energy production and oxidative balance under metabolic stress.",
+    es: "Péptido dirigido a mitocondrias para investigación de bienestar celular. Puede ayudar a apoyar la producción de energía y el equilibrio oxidativo bajo estrés metabólico.",
   },
   "product.cjc.desc": {
-    en: "Growth hormone secretagogue blend studied for pulsatile GH release, recovery, sleep quality, and lean mass support in research models.",
-    es: "Mezcla secretagoga de hormona del crecimiento estudiada por liberación pulsátil de GH, recuperación, calidad del sueño y apoyo de masa magra en modelos de investigación.",
+    en: "Peptide blend intended for vitality and recovery research. May help support restful sleep, tissue maintenance, and overall wellness markers.",
+    es: "Mezcla de péptidos destinada a investigación de vitalidad y recuperación. Puede ayudar a apoyar el sueño reparador, mantenimiento tisular y marcadores de bienestar general.",
   },
   "product.tesamorelin.desc": {
-    en: "GHRH analog investigated for reducing visceral adipose tissue and supporting healthy lipid profiles in clinical research.",
-    es: "Análogo de GHRH investigado por reducir el tejido adiposo visceral y apoyar perfiles lipídicos saludables en investigación clínica.",
+    en: "Peptide analog studied for body composition wellness. May help support healthy adipose distribution and metabolic balance in research models.",
+    es: "Análogo de péptido estudiado para bienestar de composición corporal. Puede ayudar a apoyar la distribución saludable de tejido adiposo y equilibrio metabólico en modelos de investigación.",
   },
   "product.ghkcu.desc": {
-    en: "Copper peptide researched for skin remodeling, collagen synthesis, anti-inflammatory activity, and hair follicle support.",
-    es: "Péptido de cobre investigado por remodelación cutánea, síntesis de colágeno, actividad antiinflamatoria y apoyo al folículo capilar.",
+    en: "Copper peptide for cosmetic and skin wellness research. May help support collagen appearance, skin texture, and healthy-looking complexion.",
+    es: "Péptido de cobre para investigación cosmética y de bienestar cutáneo. Puede ayudar a apoyar la apariencia de colágeno, textura de piel y tez con aspecto saludable.",
   },
   "product.selank.desc": {
-    en: "Nootropic peptide blend studied for anxiolytic effects, cognitive enhancement, focus, and immune modulation in preclinical research.",
-    es: "Mezcla de péptidos nootrópicos estudiada por efectos ansiolíticos, mejora cognitiva, concentración y modulación inmunitaria en investigación preclínica.",
+    en: "Nootropic peptide blend for cognitive wellness research. May help support mental clarity, focus, and overall cognitive comfort in laboratory studies.",
+    es: "Mezcla de péptidos nootrópicos para investigación de bienestar cognitivo. Puede ayudar a apoyar la claridad mental, enfoque y comodidad cognitiva general en estudios de laboratorio.",
   },
   "product.glutathione.desc": {
-    en: "Master antioxidant studied for detoxification pathways, oxidative stress reduction, immune support, and cellular protection.",
-    es: "Antioxidante maestro estudiado por vías de desintoxicación, reducción del estrés oxidativo, apoyo inmunitario y protección celular.",
+    en: "Antioxidant compound for wellness research. May help support the body's natural detoxification processes and oxidative balance.",
+    es: "Compuesto antioxidante para investigación de bienestar. Puede ayudar a apoyar los procesos naturales de desintoxicación del cuerpo y equilibrio oxidativo.",
   },
   "product.epithalon.desc": {
-    en: "Pineal peptide researched for telomerase activation, circadian rhythm regulation, and longevity markers in preclinical studies.",
-    es: "Péptido pineal investigado por activación de telomerasa, regulación del ritmo circadiano y marcadores de longevidad en estudios preclínicos.",
+    en: "Pineal peptide for longevity and wellness research. May help support healthy aging markers and circadian rhythm balance in preclinical studies.",
+    es: "Péptido pineal para investigación de longevidad y bienestar. Puede ayudar a apoyar marcadores de envejecimiento saludable y equilibrio del ritmo circadiano en estudios preclínicos.",
   },
 
   // Quality section
