@@ -49,6 +49,58 @@ const translations: Record<string, Record<Lang, string>> = {
     es: "Péptidos de grado de investigación. Rigurosamente probados. Verificados por terceros en pureza y potencia.",
   },
   "products.addToCart": { en: "Add to Cart", es: "Agregar al Carrito" },
+  "products.info": { en: "Product info", es: "Información del producto" },
+  "products.benefits": { en: "Researched Benefits", es: "Beneficios Investigados" },
+
+  // Per-product descriptions (research context)
+  "product.klow.desc": {
+    en: "A custom research blend studied for synergistic effects on metabolic regulation, fat oxidation, and lean tissue preservation in preclinical models.",
+    es: "Una mezcla de investigación personalizada estudiada por sus efectos sinérgicos en la regulación metabólica, oxidación de grasa y preservación del tejido magro en modelos preclínicos.",
+  },
+  "product.motsc.desc": {
+    en: "Mitochondrial-derived peptide investigated for its role in metabolic homeostasis, insulin sensitivity, and cellular energy production.",
+    es: "Péptido derivado de mitocondrias investigado por su papel en la homeostasis metabólica, sensibilidad a la insulina y producción de energía celular.",
+  },
+  "product.nad.desc": {
+    en: "Coenzyme studied for cellular energy metabolism, DNA repair pathways, and longevity-related sirtuin activation in research settings.",
+    es: "Coenzima estudiada por el metabolismo energético celular, vías de reparación del ADN y activación de sirtuinas relacionadas con la longevidad en investigación.",
+  },
+  "product.tb500.desc": {
+    en: "Combined research peptides investigated for tissue repair, angiogenesis, gut lining integrity, and recovery in preclinical wound-healing models.",
+    es: "Péptidos de investigación combinados estudiados por reparación de tejidos, angiogénesis, integridad del revestimiento intestinal y recuperación en modelos preclínicos de cicatrización.",
+  },
+  "product.reta.desc": {
+    en: "Triple-receptor agonist (GLP-1/GIP/glucagon) studied for significant effects on body composition, glucose regulation, and metabolic markers.",
+    es: "Agonista de triple receptor (GLP-1/GIP/glucagón) estudiado por efectos significativos en la composición corporal, regulación de la glucosa y marcadores metabólicos.",
+  },
+  "product.ss31.desc": {
+    en: "Mitochondria-targeted peptide researched for protecting cardiolipin, reducing oxidative stress, and supporting cellular energy under strain.",
+    es: "Péptido dirigido a mitocondrias investigado por proteger la cardiolipina, reducir el estrés oxidativo y apoyar la energía celular bajo tensión.",
+  },
+  "product.cjc.desc": {
+    en: "Growth hormone secretagogue blend studied for pulsatile GH release, recovery, sleep quality, and lean mass support in research models.",
+    es: "Mezcla secretagoga de hormona del crecimiento estudiada por liberación pulsátil de GH, recuperación, calidad del sueño y apoyo de masa magra en modelos de investigación.",
+  },
+  "product.tesamorelin.desc": {
+    en: "GHRH analog investigated for reducing visceral adipose tissue and supporting healthy lipid profiles in clinical research.",
+    es: "Análogo de GHRH investigado por reducir el tejido adiposo visceral y apoyar perfiles lipídicos saludables en investigación clínica.",
+  },
+  "product.ghkcu.desc": {
+    en: "Copper peptide researched for skin remodeling, collagen synthesis, anti-inflammatory activity, and hair follicle support.",
+    es: "Péptido de cobre investigado por remodelación cutánea, síntesis de colágeno, actividad antiinflamatoria y apoyo al folículo capilar.",
+  },
+  "product.selank.desc": {
+    en: "Nootropic peptide blend studied for anxiolytic effects, cognitive enhancement, focus, and immune modulation in preclinical research.",
+    es: "Mezcla de péptidos nootrópicos estudiada por efectos ansiolíticos, mejora cognitiva, concentración y modulación inmunitaria en investigación preclínica.",
+  },
+  "product.glutathione.desc": {
+    en: "Master antioxidant studied for detoxification pathways, oxidative stress reduction, immune support, and cellular protection.",
+    es: "Antioxidante maestro estudiado por vías de desintoxicación, reducción del estrés oxidativo, apoyo inmunitario y protección celular.",
+  },
+  "product.epithalon.desc": {
+    en: "Pineal peptide researched for telomerase activation, circadian rhythm regulation, and longevity markers in preclinical studies.",
+    es: "Péptido pineal investigado por activación de telomerasa, regulación del ritmo circadiano y marcadores de longevidad en estudios preclínicos.",
+  },
 
   // Quality section
   "quality.title": { en: "Quality Assurance", es: "Garantía de Calidad" },
