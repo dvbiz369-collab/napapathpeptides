@@ -49,16 +49,40 @@ const ProductSection = () => {
         </div>
 
         <div className="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
-          {products.map(({ name, dose, volume, img, price }) => (
+          {products.map(({ name, dose, volume, img, price, descKey }) => (
             <div
               key={name}
               className="group relative rounded-xl border border-border bg-card overflow-hidden transition-all hover:border-primary/40 hover:shadow-[0_0_24px_hsl(var(--primary)/0.12)]"
             >
-              {price && (
-                <div className="absolute top-2 right-2 sm:top-3 sm:right-3 z-10 rounded-lg bg-primary px-2 py-1 sm:px-3 sm:py-1.5 shadow-lg">
-                  <span className="text-xs sm:text-sm font-bold text-primary-foreground">${price}</span>
-                </div>
-              )}
+              <div className="absolute top-2 right-2 sm:top-3 sm:right-3 z-10 flex items-center gap-1.5">
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <button
+                      type="button"
+                      aria-label={t("products.info")}
+                      className="rounded-full bg-background/80 backdrop-blur border border-border p-1.5 text-foreground/80 hover:text-primary hover:border-primary/40 transition-colors"
+                    >
+                      <Info className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                    </button>
+                  </PopoverTrigger>
+                  <PopoverContent side="top" align="end" className="w-64 sm:w-72 p-4 z-50">
+                    <div className="space-y-2">
+                      <div>
+                        <h4 className="font-heading text-sm font-bold text-foreground">{name}</h4>
+                        <p className="text-[10px] uppercase tracking-widest text-muted-foreground mt-0.5">
+                          {t("products.benefits")}
+                        </p>
+                      </div>
+                      <p className="text-xs leading-relaxed text-muted-foreground">{t(descKey)}</p>
+                    </div>
+                  </PopoverContent>
+                </Popover>
+                {price && (
+                  <div className="rounded-lg bg-primary px-2 py-1 sm:px-3 sm:py-1.5 shadow-lg">
+                    <span className="text-xs sm:text-sm font-bold text-primary-foreground">${price}</span>
+                  </div>
+                )}
+              </div>
 
               <div className="relative aspect-[3/4] overflow-hidden bg-background">
                 <img
