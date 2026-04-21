@@ -54,7 +54,7 @@ const ProductSection = () => {
               key={name}
               className="group relative rounded-xl border border-border bg-card overflow-hidden transition-all hover:border-primary/40 hover:shadow-[0_0_24px_hsl(var(--primary)/0.12)]"
             >
-              <div className="absolute top-2 right-2 sm:top-3 sm:right-3 z-10 flex items-center gap-1.5">
+              <div className="absolute top-2 right-2 sm:top-3 sm:right-3 z-10 flex flex-nowrap items-center gap-1.5 whitespace-nowrap">
                 <Popover>
                   <PopoverTrigger asChild>
                     <button
