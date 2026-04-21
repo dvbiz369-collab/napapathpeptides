@@ -50,7 +50,7 @@ const translations: Record<string, Record<Lang, string>> = {
   },
   "products.addToCart": { en: "Add to Cart", es: "Agregar al Carrito" },
   "products.info": { en: "Product info", es: "Información del producto" },
-  "products.benefits": { en: "Researched Benefits", es: "Beneficios Investigados" },
+  "products.benefits": { en: "Intended Research", es: "Investigación Prevista" },
 
   // Per-product descriptions (research context)
   "product.klow.desc": {
