@@ -46,6 +46,7 @@ const ProductDetail = () => {
   if (!product) return <Navigate to="/" replace />;
 
   const timeline = productTimelines[product.timelineKey];
+  const details = productDetails[product.timelineKey];
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
