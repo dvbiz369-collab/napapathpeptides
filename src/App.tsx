@@ -20,25 +20,27 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <LanguageProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <SiteAccessGuard>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/terms" element={<TermsOfService />} />
-              <Route path="/privacy" element={<PrivacyPolicy />} />
-              <Route path="/shipping-policy" element={<ShippingPolicy />} />
-              <Route path="/refund-policy" element={<RefundPolicy />} />
-              <Route path="/research-use-policy" element={<ResearchUsePolicy />} />
-              <Route path="/product/:slug" element={<ProductDetail />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </SiteAccessGuard>
-        </BrowserRouter>
-      </TooltipProvider>
+      <CartProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <SiteAccessGuard>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/terms" element={<TermsOfService />} />
+                <Route path="/privacy" element={<PrivacyPolicy />} />
+                <Route path="/shipping-policy" element={<ShippingPolicy />} />
+                <Route path="/refund-policy" element={<RefundPolicy />} />
+                <Route path="/research-use-policy" element={<ResearchUsePolicy />} />
+                <Route path="/product/:slug" element={<ProductDetail />} />
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </SiteAccessGuard>
+          </BrowserRouter>
+        </TooltipProvider>
+      </CartProvider>
     </LanguageProvider>
   </QueryClientProvider>
 );
