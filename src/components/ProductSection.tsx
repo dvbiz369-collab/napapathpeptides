@@ -1,8 +1,7 @@
-import { ShoppingCart, Info } from "lucide-react";
+import { ShoppingCart } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useCart } from "@/contexts/CartContext";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { productTimelines } from "@/data/productTimelines";
 import productKlow from "@/assets/product-klow.jpg";
 import productMotsc from "@/assets/product-motsc.jpg";
 import productNad from "@/assets/product-nad.jpg";
@@ -18,18 +17,18 @@ import productEpithalon from "@/assets/product-epithalon.jpg";
 import labBackground from "@/assets/lab-background.jpg";
 
 const products = [
-  { name: "Klow", dose: "80mg", volume: "3ml", img: productKlow, price: 225, timelineKey: "klow" },
-  { name: "Mots-C", dose: "40mg", volume: "5ml", img: productMotsc, price: 200, timelineKey: "motsc" },
-  { name: "NAD+", dose: "4000mg", volume: "20ml", img: productNad, price: 350, timelineKey: "nad" },
-  { name: "TB500 / BPC-157", dose: "20mg (10mg ea)", volume: "3ml", img: productTb500, price: 150, timelineKey: "tb500" },
-  { name: "Reta", dose: "20mg", volume: "2ml", img: productReta, price: 300, timelineKey: "reta" },
-  { name: "SS-31", dose: "50mg", volume: "3ml", img: productSs31, price: 250, timelineKey: "ss31" },
-  { name: "CJC-1295 / Ipamorelin", dose: "20mg (10mg ea)", volume: "3ml", img: productCjc, price: 150, timelineKey: "cjc" },
-  { name: "Tesamorelin", dose: "20mg", volume: "3ml", img: productTesamorelin, price: 150, timelineKey: "tesamorelin" },
-  { name: "GHK-Cu", dose: "100mg", volume: "3ml", img: productGhkcu, price: 150, timelineKey: "ghkcu" },
-  { name: "Selank / Semax", dose: "10mg (5mg ea)", volume: "3ml", img: productSelank, price: 110, timelineKey: "selank" },
-  { name: "Glutathione", dose: "200mg per/ml", volume: "", img: productGlutathione, price: 150, timelineKey: "glutathione" },
-  { name: "Epithalon", dose: "50mg", volume: "3ml", img: productEpithalon, price: 150, timelineKey: "epithalon" },
+  { name: "Klow", dose: "80mg", volume: "3ml", img: productKlow, price: 225, slug: "klow" },
+  { name: "Mots-C", dose: "40mg", volume: "5ml", img: productMotsc, price: 200, slug: "motsc" },
+  { name: "NAD+", dose: "4000mg", volume: "20ml", img: productNad, price: 350, slug: "nad" },
+  { name: "TB500 / BPC-157", dose: "20mg (10mg ea)", volume: "3ml", img: productTb500, price: 150, slug: "tb500" },
+  { name: "Reta", dose: "20mg", volume: "2ml", img: productReta, price: 300, slug: "reta" },
+  { name: "SS-31", dose: "50mg", volume: "3ml", img: productSs31, price: 250, slug: "ss31" },
+  { name: "CJC-1295 / Ipamorelin", dose: "20mg (10mg ea)", volume: "3ml", img: productCjc, price: 150, slug: "cjc" },
+  { name: "Tesamorelin", dose: "20mg", volume: "3ml", img: productTesamorelin, price: 150, slug: "tesamorelin" },
+  { name: "GHK-Cu", dose: "100mg", volume: "3ml", img: productGhkcu, price: 150, slug: "ghkcu" },
+  { name: "Selank / Semax", dose: "10mg (5mg ea)", volume: "3ml", img: productSelank, price: 110, slug: "selank" },
+  { name: "Glutathione", dose: "200mg per/ml", volume: "", img: productGlutathione, price: 150, slug: "glutathione" },
+  { name: "Epithalon", dose: "50mg", volume: "3ml", img: productEpithalon, price: 150, slug: "epithalon" },
 ];
 
 const ProductSection = () => {
@@ -50,65 +49,12 @@ const ProductSection = () => {
         </div>
 
         <div className="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
-          {products.map(({ name, dose, volume, img, price, timelineKey }) => {
-            const timeline = productTimelines[timelineKey];
-            return (
+          {products.map(({ name, dose, volume, img, price, slug }) => (
             <div
               key={name}
               className="group relative rounded-xl border border-border bg-card overflow-hidden transition-all hover:border-primary/40 hover:shadow-[0_0_24px_hsl(var(--primary)/0.12)]"
             >
-              <div className="absolute top-2 right-2 sm:top-3 sm:right-3 z-10 inline-flex flex-row flex-nowrap items-center gap-1.5 whitespace-nowrap">
-                <Popover>
-                  <PopoverTrigger asChild>
-                    <button
-                      type="button"
-                      aria-label={t("products.info")}
-                      className="rounded-full bg-background/80 backdrop-blur border border-border p-1.5 text-foreground/80 hover:text-primary hover:border-primary/40 transition-colors"
-                    >
-                      <Info className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                    </button>
-                  </PopoverTrigger>
-                  <PopoverContent
-                    side="top"
-                    align="end"
-                    className="w-[280px] sm:w-80 p-0 z-50 overflow-hidden border-primary/30 bg-card"
-                  >
-                    <div className="bg-gradient-to-b from-primary/15 to-transparent px-4 pt-4 pb-3 border-b border-border">
-                      <p className="text-[10px] uppercase tracking-widest text-primary/90 font-semibold">
-                        {t("products.benefits")}
-                      </p>
-                      <h4 className="font-heading text-base font-bold text-foreground mt-0.5 leading-tight">
-                        {name}
-                      </h4>
-                      <p className="text-[11px] text-muted-foreground mt-1">
-                        {t("products.timeline.heading")}
-                      </p>
-                    </div>
-                    <ol className="relative px-4 py-3 space-y-3">
-                      {timeline?.phases.map((phase, idx) => (
-                        <li key={idx} className="relative pl-5">
-                          <span className="absolute left-0 top-1.5 h-2 w-2 rounded-full bg-primary shadow-[0_0_8px_hsl(var(--primary)/0.6)]" />
-                          {idx < (timeline.phases.length - 1) && (
-                            <span className="absolute left-[3px] top-4 bottom-[-12px] w-px bg-border" />
-                          )}
-                          <p className="text-[11px] font-bold uppercase tracking-wider text-foreground leading-tight">
-                            {t(phase.labelKey)}
-                          </p>
-                          <p className="text-[11px] leading-relaxed text-muted-foreground mt-0.5">
-                            {t(phase.textKey)}
-                          </p>
-                        </li>
-                      ))}
-                    </ol>
-                    {timeline?.taglineKey && (
-                      <div className="px-4 pb-3 pt-1 border-t border-border">
-                        <p className="text-[10px] uppercase tracking-widest text-primary/90 font-semibold leading-snug">
-                          » {t(timeline.taglineKey)}
-                        </p>
-                      </div>
-                    )}
-                  </PopoverContent>
-                </Popover>
+              <div className="absolute top-2 right-2 sm:top-3 sm:right-3 z-10">
                 {price && (
                   <div className="rounded-lg bg-primary px-2 py-1 sm:px-3 sm:py-1.5 shadow-lg">
                     <span className="text-xs sm:text-sm font-bold text-primary-foreground">${price}</span>
@@ -137,10 +83,15 @@ const ProductSection = () => {
                   <ShoppingCart className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
                   {t("products.addToCart")}
                 </button>
+                <Link
+                  to={`/product/${slug}`}
+                  className="inline-flex w-full items-center justify-center gap-1.5 rounded-lg bg-secondary border border-border px-3 py-2 sm:px-4 sm:py-2.5 text-[10px] sm:text-xs font-semibold text-muted-foreground transition-all hover:text-foreground hover:border-primary/40"
+                >
+                  {t("products.learnMore")}
+                </Link>
               </div>
             </div>
-            );
-          })}
+          ))}
         </div>
       </div>
     </section>
