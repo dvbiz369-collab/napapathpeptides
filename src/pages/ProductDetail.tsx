@@ -128,6 +128,79 @@ const ProductDetail = () => {
                 )}
               </div>
 
+
+              {details && (
+                <div className="mt-6 space-y-4">
+                  {/* Overview */}
+                  <section className="rounded-xl border border-border bg-card p-5">
+                    <div className="flex items-center gap-2 mb-2">
+                      <FlaskConical className="h-3.5 w-3.5 text-primary" />
+                      <h2 className="text-[10px] uppercase tracking-widest text-primary/90 font-semibold">
+                        {t("details.section.overview")}
+                      </h2>
+                    </div>
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      {t(details.overviewKey)}
+                    </p>
+                  </section>
+
+                  {/* Research Focus + Mechanism */}
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <section className="rounded-xl border border-border bg-card p-5">
+                      <h2 className="text-[10px] uppercase tracking-widest text-primary/90 font-semibold mb-2">
+                        {t("details.section.focus")}
+                      </h2>
+                      <p className="text-sm leading-relaxed text-muted-foreground">
+                        {t(details.researchFocusKey)}
+                      </p>
+                    </section>
+                    <section className="rounded-xl border border-border bg-card p-5">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Atom className="h-3.5 w-3.5 text-primary" />
+                        <h2 className="text-[10px] uppercase tracking-widest text-primary/90 font-semibold">
+                          {t("details.section.mechanism")}
+                        </h2>
+                      </div>
+                      <p className="text-sm leading-relaxed text-muted-foreground">
+                        {t(details.mechanismKey)}
+                      </p>
+                    </section>
+                  </div>
+
+                  {/* Areas of Research Interest */}
+                  <section className="rounded-xl border border-border bg-card p-5">
+                    <h2 className="text-[10px] uppercase tracking-widest text-primary/90 font-semibold mb-3">
+                      {t("details.section.benefits")}
+                    </h2>
+                    <ul className="space-y-2">
+                      {details.benefitKeys.map((bk) => (
+                        <li key={bk} className="flex items-start gap-2.5">
+                          <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-primary/15">
+                            <Check className="h-2.5 w-2.5 text-primary" />
+                          </span>
+                          <span className="text-sm leading-relaxed text-muted-foreground">
+                            {t(bk)}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+
+                  {/* Handling & Storage */}
+                  <section className="rounded-xl border border-border bg-card p-5">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Snowflake className="h-3.5 w-3.5 text-primary" />
+                      <h2 className="text-[10px] uppercase tracking-widest text-primary/90 font-semibold">
+                        {t("details.section.handling")}
+                      </h2>
+                    </div>
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      {t(details.handlingKey)}
+                    </p>
+                  </section>
+                </div>
+              )}
+
               <p className="text-[11px] text-muted-foreground mt-6 leading-relaxed">
                 {t("productDetail.disclaimer")}
               </p>
