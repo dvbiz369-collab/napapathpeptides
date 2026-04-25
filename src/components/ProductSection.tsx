@@ -50,7 +50,9 @@ const ProductSection = () => {
         </div>
 
         <div className="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
-          {products.map(({ name, dose, volume, img, price, descKey }) => (
+          {products.map(({ name, dose, volume, img, price, timelineKey }) => {
+            const timeline = productTimelines[timelineKey];
+            return (
             <div
               key={name}
               className="group relative rounded-xl border border-border bg-card overflow-hidden transition-all hover:border-primary/40 hover:shadow-[0_0_24px_hsl(var(--primary)/0.12)]"
@@ -66,16 +68,45 @@ const ProductSection = () => {
                       <Info className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                     </button>
                   </PopoverTrigger>
-                  <PopoverContent side="top" align="end" className="w-64 sm:w-72 p-4 z-50">
-                    <div className="space-y-2">
-                      <div>
-                        <h4 className="font-heading text-sm font-bold text-foreground">{name}</h4>
-                        <p className="text-[10px] uppercase tracking-widest text-muted-foreground mt-0.5">
-                          {t("products.benefits")}
+                  <PopoverContent
+                    side="top"
+                    align="end"
+                    className="w-[280px] sm:w-80 p-0 z-50 overflow-hidden border-primary/30 bg-card"
+                  >
+                    <div className="bg-gradient-to-b from-primary/15 to-transparent px-4 pt-4 pb-3 border-b border-border">
+                      <p className="text-[10px] uppercase tracking-widest text-primary/90 font-semibold">
+                        {t("products.benefits")}
+                      </p>
+                      <h4 className="font-heading text-base font-bold text-foreground mt-0.5 leading-tight">
+                        {name}
+                      </h4>
+                      <p className="text-[11px] text-muted-foreground mt-1">
+                        {t("products.timeline.heading")}
+                      </p>
+                    </div>
+                    <ol className="relative px-4 py-3 space-y-3">
+                      {timeline?.phases.map((phase, idx) => (
+                        <li key={idx} className="relative pl-5">
+                          <span className="absolute left-0 top-1.5 h-2 w-2 rounded-full bg-primary shadow-[0_0_8px_hsl(var(--primary)/0.6)]" />
+                          {idx < (timeline.phases.length - 1) && (
+                            <span className="absolute left-[3px] top-4 bottom-[-12px] w-px bg-border" />
+                          )}
+                          <p className="text-[11px] font-bold uppercase tracking-wider text-foreground leading-tight">
+                            {t(phase.labelKey)}
+                          </p>
+                          <p className="text-[11px] leading-relaxed text-muted-foreground mt-0.5">
+                            {t(phase.textKey)}
+                          </p>
+                        </li>
+                      ))}
+                    </ol>
+                    {timeline?.taglineKey && (
+                      <div className="px-4 pb-3 pt-1 border-t border-border">
+                        <p className="text-[10px] uppercase tracking-widest text-primary/90 font-semibold leading-snug">
+                          » {t(timeline.taglineKey)}
                         </p>
                       </div>
-                      <p className="text-xs leading-relaxed text-muted-foreground">{t(descKey)}</p>
-                    </div>
+                    )}
                   </PopoverContent>
                 </Popover>
                 {price && (
