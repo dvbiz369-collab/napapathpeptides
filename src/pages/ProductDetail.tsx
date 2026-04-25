@@ -94,43 +94,8 @@ const ProductDetail = () => {
                 {t("products.addToCart")}
               </button>
 
-              <div className="mt-8 rounded-xl border border-border bg-card overflow-hidden">
-                <div className="bg-gradient-to-b from-primary/15 to-transparent px-5 pt-4 pb-3 border-b border-border">
-                  <p className="text-[10px] uppercase tracking-widest text-primary/90 font-semibold">
-                    {t("products.benefits")}
-                  </p>
-                  <h2 className="font-heading text-lg font-bold text-foreground mt-0.5">
-                    {t("products.timeline.heading")}
-                  </h2>
-                </div>
-                <ol className="relative px-5 py-4 space-y-4">
-                  {timeline?.phases.map((phase, idx) => (
-                    <li key={idx} className="relative pl-5">
-                      <span className="absolute left-0 top-1.5 h-2 w-2 rounded-full bg-primary shadow-[0_0_8px_hsl(var(--primary)/0.6)]" />
-                      {idx < (timeline.phases.length - 1) && (
-                        <span className="absolute left-[3px] top-4 bottom-[-16px] w-px bg-border" />
-                      )}
-                      <p className="text-xs font-bold uppercase tracking-wider text-foreground">
-                        {t(phase.labelKey)}
-                      </p>
-                      <p className="text-sm leading-relaxed text-muted-foreground mt-1">
-                        {t(phase.textKey)}
-                      </p>
-                    </li>
-                  ))}
-                </ol>
-                {timeline?.taglineKey && (
-                  <div className="px-5 pb-4 pt-2 border-t border-border">
-                    <p className="text-[10px] uppercase tracking-widest text-primary/90 font-semibold leading-snug">
-                      » {t(timeline.taglineKey)}
-                    </p>
-                  </div>
-                )}
-              </div>
-
-
               {details && (
-                <div className="mt-6 space-y-4">
+                <div className="mt-8 space-y-4">
                   {/* Overview */}
                   <section className="rounded-xl border border-border bg-card p-5">
                     <div className="flex items-center gap-2 mb-2">
@@ -200,6 +165,40 @@ const ProductDetail = () => {
                   </section>
                 </div>
               )}
+
+              <div className="mt-6 rounded-xl border border-border bg-card overflow-hidden">
+                <div className="bg-gradient-to-b from-primary/15 to-transparent px-5 pt-4 pb-3 border-b border-border">
+                  <p className="text-[10px] uppercase tracking-widest text-primary/90 font-semibold">
+                    {t("products.benefits")}
+                  </p>
+                  <h2 className="font-heading text-lg font-bold text-foreground mt-0.5">
+                    {t("products.timeline.heading")}
+                  </h2>
+                </div>
+                <ol className="relative px-5 py-4 space-y-4">
+                  {timeline?.phases.map((phase, idx) => (
+                    <li key={idx} className="relative pl-5">
+                      <span className="absolute left-0 top-1.5 h-2 w-2 rounded-full bg-primary shadow-[0_0_8px_hsl(var(--primary)/0.6)]" />
+                      {idx < (timeline.phases.length - 1) && (
+                        <span className="absolute left-[3px] top-4 bottom-[-16px] w-px bg-border" />
+                      )}
+                      <p className="text-xs font-bold uppercase tracking-wider text-foreground">
+                        {t(phase.labelKey)}
+                      </p>
+                      <p className="text-sm leading-relaxed text-muted-foreground mt-1">
+                        {t(phase.textKey)}
+                      </p>
+                    </li>
+                  ))}
+                </ol>
+                {timeline?.taglineKey && (
+                  <div className="px-5 pb-4 pt-2 border-t border-border">
+                    <p className="text-[10px] uppercase tracking-widest text-primary/90 font-semibold leading-snug">
+                      » {t(timeline.taglineKey)}
+                    </p>
+                  </div>
+                )}
+              </div>
 
               <p className="text-[11px] text-muted-foreground mt-6 leading-relaxed">
                 {t("productDetail.disclaimer")}
