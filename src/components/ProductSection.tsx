@@ -2,6 +2,7 @@ import { ShoppingCart, Info } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { productTimelines } from "@/data/productTimelines";
 import productKlow from "@/assets/product-klow.jpg";
 import productMotsc from "@/assets/product-motsc.jpg";
 import productNad from "@/assets/product-nad.jpg";
@@ -17,18 +18,18 @@ import productEpithalon from "@/assets/product-epithalon.jpg";
 import labBackground from "@/assets/lab-background.jpg";
 
 const products = [
-  { name: "Klow", dose: "80mg", volume: "3ml", img: productKlow, price: 225, descKey: "product.klow.desc" },
-  { name: "Mots-C", dose: "40mg", volume: "5ml", img: productMotsc, price: 200, descKey: "product.motsc.desc" },
-  { name: "NAD+", dose: "4000mg", volume: "20ml", img: productNad, price: 350, descKey: "product.nad.desc" },
-  { name: "TB500 / BPC-157", dose: "20mg (10mg ea)", volume: "3ml", img: productTb500, price: 150, descKey: "product.tb500.desc" },
-  { name: "Reta", dose: "20mg", volume: "2ml", img: productReta, price: 300, descKey: "product.reta.desc" },
-  { name: "SS-31", dose: "50mg", volume: "3ml", img: productSs31, price: 250, descKey: "product.ss31.desc" },
-  { name: "CJC-1295 / Ipamorelin", dose: "20mg (10mg ea)", volume: "3ml", img: productCjc, price: 150, descKey: "product.cjc.desc" },
-  { name: "Tesamorelin", dose: "20mg", volume: "3ml", img: productTesamorelin, price: 150, descKey: "product.tesamorelin.desc" },
-  { name: "GHK-Cu", dose: "100mg", volume: "3ml", img: productGhkcu, price: 150, descKey: "product.ghkcu.desc" },
-  { name: "Selank / Semax", dose: "10mg (5mg ea)", volume: "3ml", img: productSelank, price: 110, descKey: "product.selank.desc" },
-  { name: "Glutathione", dose: "200mg per/ml", volume: "", img: productGlutathione, price: 150, descKey: "product.glutathione.desc" },
-  { name: "Epithalon", dose: "50mg", volume: "3ml", img: productEpithalon, price: 150, descKey: "product.epithalon.desc" },
+  { name: "Klow", dose: "80mg", volume: "3ml", img: productKlow, price: 225, timelineKey: "klow" },
+  { name: "Mots-C", dose: "40mg", volume: "5ml", img: productMotsc, price: 200, timelineKey: "motsc" },
+  { name: "NAD+", dose: "4000mg", volume: "20ml", img: productNad, price: 350, timelineKey: "nad" },
+  { name: "TB500 / BPC-157", dose: "20mg (10mg ea)", volume: "3ml", img: productTb500, price: 150, timelineKey: "tb500" },
+  { name: "Reta", dose: "20mg", volume: "2ml", img: productReta, price: 300, timelineKey: "reta" },
+  { name: "SS-31", dose: "50mg", volume: "3ml", img: productSs31, price: 250, timelineKey: "ss31" },
+  { name: "CJC-1295 / Ipamorelin", dose: "20mg (10mg ea)", volume: "3ml", img: productCjc, price: 150, timelineKey: "cjc" },
+  { name: "Tesamorelin", dose: "20mg", volume: "3ml", img: productTesamorelin, price: 150, timelineKey: "tesamorelin" },
+  { name: "GHK-Cu", dose: "100mg", volume: "3ml", img: productGhkcu, price: 150, timelineKey: "ghkcu" },
+  { name: "Selank / Semax", dose: "10mg (5mg ea)", volume: "3ml", img: productSelank, price: 110, timelineKey: "selank" },
+  { name: "Glutathione", dose: "200mg per/ml", volume: "", img: productGlutathione, price: 150, timelineKey: "glutathione" },
+  { name: "Epithalon", dose: "50mg", volume: "3ml", img: productEpithalon, price: 150, timelineKey: "epithalon" },
 ];
 
 const ProductSection = () => {
