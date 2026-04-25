@@ -1,10 +1,11 @@
 import { useParams, Link, Navigate } from "react-router-dom";
-import { ArrowLeft, ShoppingCart } from "lucide-react";
+import { ArrowLeft, ShoppingCart, Check, FlaskConical, Atom, Snowflake } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useCart } from "@/contexts/CartContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { productTimelines } from "@/data/productTimelines";
+import { productDetails } from "@/data/productDetails";
 import productKlow from "@/assets/product-klow.jpg";
 import productMotsc from "@/assets/product-motsc.jpg";
 import productNad from "@/assets/product-nad.jpg";
