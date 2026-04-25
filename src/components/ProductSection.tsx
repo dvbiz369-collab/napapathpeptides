@@ -139,7 +139,8 @@ const ProductSection = () => {
                 </button>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
