@@ -341,6 +341,133 @@ const translations: Record<string, Record<Lang, string>> = {
     en: "[Customer prefers to communicate in English — please respond in English]",
     es: "[Customer prefers to communicate in English — please respond in English]",
   },
+
+  // Product detail section labels
+  "details.section.overview": { en: "Overview", es: "Descripción General" },
+  "details.section.focus": { en: "Research Focus", es: "Enfoque de Investigación" },
+  "details.section.mechanism": { en: "Mechanism Studied", es: "Mecanismo Estudiado" },
+  "details.section.benefits": { en: "Areas of Research Interest", es: "Áreas de Interés en Investigación" },
+  "details.section.handling": { en: "Handling & Storage", es: "Manejo y Almacenamiento" },
+
+  // ===== Klow =====
+  "details.klow.overview": { en: "Klow is a research-grade peptide blend studied for its potential role in supporting metabolic vitality and cellular energy balance pathways in laboratory settings.", es: "Klow es una mezcla de péptidos de grado de investigación estudiada por su posible papel en apoyar la vitalidad metabólica y las vías de equilibrio energético celular en entornos de laboratorio." },
+  "details.klow.focus": { en: "Metabolic wellness, cellular energy balance, and longevity-related research.", es: "Bienestar metabólico, equilibrio energético celular e investigación relacionada con longevidad." },
+  "details.klow.mechanism": { en: "Studied for its interaction with metabolic-signaling pathways that may help support cellular maintenance and energy regulation.", es: "Estudiado por su interacción con vías de señalización metabólica que pueden ayudar a apoyar el mantenimiento celular y la regulación energética." },
+  "details.klow.b1": { en: "May help support metabolic flexibility markers", es: "Puede ayudar a apoyar marcadores de flexibilidad metabólica" },
+  "details.klow.b2": { en: "Intended to study cellular energy balance", es: "Destinado a estudiar el equilibrio energético celular" },
+  "details.klow.b3": { en: "Helps support vitality-related research models", es: "Ayuda a apoyar modelos de investigación de vitalidad" },
+  "details.klow.b4": { en: "May contribute to longevity pathway studies", es: "Puede contribuir a estudios de vías de longevidad" },
+  "details.klow.handling": { en: "Store lyophilized vials at -20°C. After reconstitution, refrigerate at 2–8°C and use within 30 days. Protect from light.", es: "Almacenar viales liofilizados a -20°C. Tras la reconstitución, refrigerar a 2–8°C y usar dentro de 30 días. Proteger de la luz." },
+
+  // ===== Mots-C =====
+  "details.motsc.overview": { en: "Mots-C is a mitochondrial-derived peptide studied in research settings for its potential role in supporting mitochondrial regulation and metabolic efficiency.", es: "Mots-C es un péptido derivado mitocondrial estudiado en entornos de investigación por su posible papel en apoyar la regulación mitocondrial y la eficiencia metabólica." },
+  "details.motsc.focus": { en: "Mitochondrial wellness, metabolic efficiency, and exercise-physiology research.", es: "Bienestar mitocondrial, eficiencia metabólica e investigación de fisiología del ejercicio." },
+  "details.motsc.mechanism": { en: "Investigated for engagement with mitochondrial signaling pathways that may help support cellular energy regulation.", es: "Investigado por su interacción con vías de señalización mitocondrial que pueden ayudar a apoyar la regulación de energía celular." },
+  "details.motsc.b1": { en: "May help support mitochondrial efficiency markers", es: "Puede ayudar a apoyar marcadores de eficiencia mitocondrial" },
+  "details.motsc.b2": { en: "Intended to study metabolic flexibility", es: "Destinado a estudiar la flexibilidad metabólica" },
+  "details.motsc.b3": { en: "Helps support cellular energy balance research", es: "Ayuda a apoyar la investigación de equilibrio energético celular" },
+  "details.motsc.b4": { en: "May contribute to healthy-aging pathway models", es: "Puede contribuir a modelos de vías de envejecimiento saludable" },
+  "details.motsc.handling": { en: "Store lyophilized vials at -20°C. Reconstitute with bacteriostatic water; refrigerate and use within 30 days.", es: "Almacenar viales liofilizados a -20°C. Reconstituir con agua bacteriostática; refrigerar y usar dentro de 30 días." },
+
+  // ===== NAD+ =====
+  "details.nad.overview": { en: "NAD+ is a coenzyme studied for its central role in cellular energy production and a wide range of healthy-aging research models.", es: "NAD+ es una coenzima estudiada por su papel central en la producción de energía celular y una amplia gama de modelos de investigación de envejecimiento saludable." },
+  "details.nad.focus": { en: "Cellular energy, healthy-aging, and metabolic-resilience research.", es: "Energía celular, envejecimiento saludable e investigación de resiliencia metabólica." },
+  "details.nad.mechanism": { en: "Studied as a substrate in pathways that may help support cellular energy production and DNA-maintenance models.", es: "Estudiado como sustrato en vías que pueden ayudar a apoyar la producción de energía celular y modelos de mantenimiento del ADN." },
+  "details.nad.b1": { en: "May help support cellular energy markers", es: "Puede ayudar a apoyar marcadores de energía celular" },
+  "details.nad.b2": { en: "Intended to study healthy-aging pathways", es: "Destinado a estudiar vías de envejecimiento saludable" },
+  "details.nad.b3": { en: "Helps support vitality and resilience models", es: "Ayuda a apoyar modelos de vitalidad y resiliencia" },
+  "details.nad.b4": { en: "May contribute to mitochondrial-function research", es: "Puede contribuir a la investigación de función mitocondrial" },
+  "details.nad.handling": { en: "Refrigerate at 2–8°C. Protect from light. Use promptly after opening.", es: "Refrigerar a 2–8°C. Proteger de la luz. Usar prontamente tras abrir." },
+
+  // ===== TB500 / BPC-157 =====
+  "details.tb500.overview": { en: "A research blend of TB-500 and BPC-157 studied for its potential role in supporting tissue wellness and recovery-related research models.", es: "Una mezcla de investigación de TB-500 y BPC-157 estudiada por su posible papel en apoyar el bienestar tisular y modelos de investigación relacionados con la recuperación." },
+  "details.tb500.focus": { en: "Tissue wellness, mobility comfort, and recovery-pathway research.", es: "Bienestar tisular, comodidad de movilidad e investigación de vías de recuperación." },
+  "details.tb500.mechanism": { en: "Investigated for engagement with tissue-maintenance and circulation-support pathways in research models.", es: "Investigado por su interacción con vías de mantenimiento tisular y apoyo circulatorio en modelos de investigación." },
+  "details.tb500.b1": { en: "May help support tissue maintenance markers", es: "Puede ayudar a apoyar marcadores de mantenimiento tisular" },
+  "details.tb500.b2": { en: "Intended to study recovery comfort pathways", es: "Destinado a estudiar vías de comodidad de recuperación" },
+  "details.tb500.b3": { en: "Helps support mobility-related research", es: "Ayuda a apoyar la investigación relacionada con la movilidad" },
+  "details.tb500.b4": { en: "May contribute to circulation-support models", es: "Puede contribuir a modelos de apoyo circulatorio" },
+  "details.tb500.handling": { en: "Store lyophilized vials at -20°C. After reconstitution, refrigerate and use within 30 days.", es: "Almacenar viales liofilizados a -20°C. Tras la reconstitución, refrigerar y usar dentro de 30 días." },
+
+  // ===== Reta =====
+  "details.reta.overview": { en: "Reta is a research peptide studied for its potential role in supporting metabolic balance and body-composition research models.", es: "Reta es un péptido de investigación estudiado por su posible papel en apoyar el equilibrio metabólico y modelos de investigación de composición corporal." },
+  "details.reta.focus": { en: "Metabolic balance, satiety signaling, and body-composition research.", es: "Equilibrio metabólico, señalización de saciedad e investigación de composición corporal." },
+  "details.reta.mechanism": { en: "Studied for engagement with multi-receptor metabolic-signaling pathways that may help support appetite-regulation models.", es: "Estudiado por su interacción con vías de señalización metabólica multi-receptor que pueden ayudar a apoyar modelos de regulación del apetito." },
+  "details.reta.b1": { en: "May help support satiety-pathway markers", es: "Puede ayudar a apoyar marcadores de la vía de saciedad" },
+  "details.reta.b2": { en: "Intended to study body-composition trends", es: "Destinado a estudiar tendencias de composición corporal" },
+  "details.reta.b3": { en: "Helps support metabolic-balance research", es: "Ayuda a apoyar la investigación de equilibrio metabólico" },
+  "details.reta.b4": { en: "May contribute to glycemic-wellness models", es: "Puede contribuir a modelos de bienestar glicémico" },
+  "details.reta.handling": { en: "Store lyophilized vials at -20°C. After reconstitution, refrigerate at 2–8°C and use within 30 days.", es: "Almacenar viales liofilizados a -20°C. Tras la reconstitución, refrigerar a 2–8°C y usar dentro de 30 días." },
+
+  // ===== SS-31 =====
+  "details.ss31.overview": { en: "SS-31 is a mitochondria-targeted research peptide studied for its potential role in supporting mitochondrial wellness and oxidative-balance models.", es: "SS-31 es un péptido de investigación dirigido a mitocondrias estudiado por su posible papel en apoyar el bienestar mitocondrial y modelos de equilibrio oxidativo." },
+  "details.ss31.focus": { en: "Mitochondrial wellness, oxidative balance, and cellular-resilience research.", es: "Bienestar mitocondrial, equilibrio oxidativo e investigación de resiliencia celular." },
+  "details.ss31.mechanism": { en: "Investigated for localization to mitochondrial inner membranes and engagement with cardiolipin-related pathways.", es: "Investigado por su localización en las membranas internas mitocondriales y su interacción con vías relacionadas con cardiolipina." },
+  "details.ss31.b1": { en: "May help support mitochondrial-membrane markers", es: "Puede ayudar a apoyar marcadores de membrana mitocondrial" },
+  "details.ss31.b2": { en: "Intended to study oxidative-balance pathways", es: "Destinado a estudiar vías de equilibrio oxidativo" },
+  "details.ss31.b3": { en: "Helps support cellular-resilience research", es: "Ayuda a apoyar la investigación de resiliencia celular" },
+  "details.ss31.b4": { en: "May contribute to energy-efficiency models", es: "Puede contribuir a modelos de eficiencia energética" },
+  "details.ss31.handling": { en: "Store lyophilized vials at -20°C. Reconstitute and refrigerate; use within 30 days.", es: "Almacenar viales liofilizados a -20°C. Reconstituir y refrigerar; usar dentro de 30 días." },
+
+  // ===== CJC-1295 / Ipamorelin =====
+  "details.cjc.overview": { en: "A research blend of CJC-1295 and Ipamorelin studied for its potential role in supporting recovery and overnight vitality pathways.", es: "Una mezcla de investigación de CJC-1295 e Ipamorelin estudiada por su posible papel en apoyar las vías de recuperación y vitalidad nocturna." },
+  "details.cjc.focus": { en: "Recovery, restful-sleep pathways, and vitality research.", es: "Recuperación, vías de sueño reparador e investigación de vitalidad." },
+  "details.cjc.mechanism": { en: "Studied for pulsatile engagement with growth-hormone-releasing pathways in research models.", es: "Estudiado por su activación pulsátil con vías de liberación de hormona de crecimiento en modelos de investigación." },
+  "details.cjc.b1": { en: "May help support overnight recovery markers", es: "Puede ayudar a apoyar marcadores de recuperación nocturna" },
+  "details.cjc.b2": { en: "Intended to study restful-sleep pathways", es: "Destinado a estudiar vías de sueño reparador" },
+  "details.cjc.b3": { en: "Helps support tissue maintenance research", es: "Ayuda a apoyar la investigación de mantenimiento tisular" },
+  "details.cjc.b4": { en: "May contribute to vitality-pathway models", es: "Puede contribuir a modelos de vías de vitalidad" },
+  "details.cjc.handling": { en: "Store lyophilized vials at -20°C. After reconstitution, refrigerate and use within 30 days.", es: "Almacenar viales liofilizados a -20°C. Tras la reconstitución, refrigerar y usar dentro de 30 días." },
+
+  // ===== Tesamorelin =====
+  "details.tesamorelin.overview": { en: "Tesamorelin is a research peptide studied for its potential role in supporting body-composition and metabolic-signaling research.", es: "Tesamorelin es un péptido de investigación estudiado por su posible papel en apoyar la investigación de composición corporal y señalización metabólica." },
+  "details.tesamorelin.focus": { en: "Body composition, adipose distribution, and metabolic-signaling research.", es: "Composición corporal, distribución adiposa e investigación de señalización metabólica." },
+  "details.tesamorelin.mechanism": { en: "Investigated as a stabilized GHRH analog engaging metabolic-signaling pathways in research models.", es: "Investigado como un análogo estabilizado de GHRH que activa vías de señalización metabólica en modelos de investigación." },
+  "details.tesamorelin.b1": { en: "May help support adipose-distribution markers", es: "Puede ayudar a apoyar marcadores de distribución adiposa" },
+  "details.tesamorelin.b2": { en: "Intended to study lean-mass research models", es: "Destinado a estudiar modelos de investigación de masa magra" },
+  "details.tesamorelin.b3": { en: "Helps support metabolic-signaling research", es: "Ayuda a apoyar la investigación de señalización metabólica" },
+  "details.tesamorelin.b4": { en: "May contribute to vitality-pathway studies", es: "Puede contribuir a estudios de vías de vitalidad" },
+  "details.tesamorelin.handling": { en: "Store lyophilized vials at -20°C. After reconstitution, refrigerate and use within 30 days.", es: "Almacenar viales liofilizados a -20°C. Tras la reconstitución, refrigerar y usar dentro de 30 días." },
+
+  // ===== GHK-Cu =====
+  "details.ghkcu.overview": { en: "GHK-Cu is a copper-tripeptide studied in cosmetic and skin-wellness research for its potential role in supporting complexion-related pathways.", es: "GHK-Cu es un tripéptido de cobre estudiado en investigación cosmética y de bienestar cutáneo por su posible papel en apoyar vías relacionadas con la tez." },
+  "details.ghkcu.focus": { en: "Cosmetic skin wellness, complexion appearance, and collagen-appearance research.", es: "Bienestar cutáneo cosmético, apariencia de la tez e investigación de apariencia de colágeno." },
+  "details.ghkcu.mechanism": { en: "Studied for copper-binding activity that may help support skin-matrix research models.", es: "Estudiado por su actividad de unión al cobre que puede ayudar a apoyar modelos de investigación de matriz cutánea." },
+  "details.ghkcu.b1": { en: "May help support skin-texture markers", es: "Puede ayudar a apoyar marcadores de textura cutánea" },
+  "details.ghkcu.b2": { en: "Intended to study collagen-appearance pathways", es: "Destinado a estudiar vías de apariencia de colágeno" },
+  "details.ghkcu.b3": { en: "Helps support cosmetic complexion research", es: "Ayuda a apoyar la investigación cosmética de la tez" },
+  "details.ghkcu.b4": { en: "May contribute to scalp-wellness models", es: "Puede contribuir a modelos de bienestar del cuero cabelludo" },
+  "details.ghkcu.handling": { en: "Store lyophilized vials at -20°C. After reconstitution, refrigerate and protect from light.", es: "Almacenar viales liofilizados a -20°C. Tras la reconstitución, refrigerar y proteger de la luz." },
+
+  // ===== Selank / Semax =====
+  "details.selank.overview": { en: "A research blend of Selank and Semax studied for its potential role in supporting cognitive comfort and focus-related research models.", es: "Una mezcla de investigación de Selank y Semax estudiada por su posible papel en apoyar la comodidad cognitiva y modelos de investigación relacionados con el enfoque." },
+  "details.selank.focus": { en: "Cognitive wellness, mental clarity, and focus-pathway research.", es: "Bienestar cognitivo, claridad mental e investigación de vías de enfoque." },
+  "details.selank.mechanism": { en: "Investigated for engagement with neuro-signaling pathways that may help support cognitive-comfort models.", es: "Investigado por su interacción con vías de señalización neuronal que pueden ayudar a apoyar modelos de comodidad cognitiva." },
+  "details.selank.b1": { en: "May help support mental-clarity markers", es: "Puede ayudar a apoyar marcadores de claridad mental" },
+  "details.selank.b2": { en: "Intended to study focus-pathway research", es: "Destinado a estudiar la investigación de vías de enfoque" },
+  "details.selank.b3": { en: "Helps support cognitive-comfort models", es: "Ayuda a apoyar modelos de comodidad cognitiva" },
+  "details.selank.b4": { en: "May contribute to neuro-wellness research", es: "Puede contribuir a la investigación de bienestar neuronal" },
+  "details.selank.handling": { en: "Store lyophilized vials at -20°C. After reconstitution, refrigerate and use within 30 days.", es: "Almacenar viales liofilizados a -20°C. Tras la reconstitución, refrigerar y usar dentro de 30 días." },
+
+  // ===== Glutathione =====
+  "details.glutathione.overview": { en: "Glutathione is a tripeptide antioxidant studied in research models for its potential role in supporting oxidative-balance pathways.", es: "El glutatión es un tripéptido antioxidante estudiado en modelos de investigación por su posible papel en apoyar las vías de equilibrio oxidativo." },
+  "details.glutathione.focus": { en: "Oxidative balance, detoxification-pathway research, and skin-wellness studies.", es: "Equilibrio oxidativo, investigación de vías de desintoxicación y estudios de bienestar cutáneo." },
+  "details.glutathione.mechanism": { en: "Studied as a thiol-based antioxidant that may help support oxidative-balance research models.", es: "Estudiado como antioxidante basado en tiol que puede ayudar a apoyar modelos de investigación de equilibrio oxidativo." },
+  "details.glutathione.b1": { en: "May help support oxidative-balance markers", es: "Puede ayudar a apoyar marcadores de equilibrio oxidativo" },
+  "details.glutathione.b2": { en: "Intended to study detoxification pathways", es: "Destinado a estudiar las vías de desintoxicación" },
+  "details.glutathione.b3": { en: "Helps support cosmetic skin-wellness research", es: "Ayuda a apoyar la investigación cosmética de bienestar cutáneo" },
+  "details.glutathione.b4": { en: "May contribute to cellular-resilience models", es: "Puede contribuir a modelos de resiliencia celular" },
+  "details.glutathione.handling": { en: "Refrigerate at 2–8°C. Protect from light and use promptly after opening.", es: "Refrigerar a 2–8°C. Proteger de la luz y usar prontamente tras abrir." },
+
+  // ===== Epithalon =====
+  "details.epithalon.overview": { en: "Epithalon is a research tetrapeptide studied for its potential role in supporting telomere-related and healthy-aging research models.", es: "Epithalon es un tetrapéptido de investigación estudiado por su posible papel en apoyar modelos de investigación relacionados con telómeros y envejecimiento saludable." },
+  "details.epithalon.focus": { en: "Healthy-aging, circadian-pathway, and longevity research.", es: "Envejecimiento saludable, vías circadianas e investigación de longevidad." },
+  "details.epithalon.mechanism": { en: "Investigated for engagement with telomerase-related and pineal-signaling pathways in research models.", es: "Investigado por su interacción con vías relacionadas con telomerasa y señalización pineal en modelos de investigación." },
+  "details.epithalon.b1": { en: "May help support longevity-pathway markers", es: "Puede ayudar a apoyar marcadores de vías de longevidad" },
+  "details.epithalon.b2": { en: "Intended to study circadian-rhythm research", es: "Destinado a estudiar la investigación del ritmo circadiano" },
+  "details.epithalon.b3": { en: "Helps support healthy-aging models", es: "Ayuda a apoyar modelos de envejecimiento saludable" },
+  "details.epithalon.b4": { en: "May contribute to cellular-resilience studies", es: "Puede contribuir a estudios de resiliencia celular" },
+  "details.epithalon.handling": { en: "Store lyophilized vials at -20°C. After reconstitution, refrigerate and use within 30 days.", es: "Almacenar viales liofilizados a -20°C. Tras la reconstitución, refrigerar y usar dentro de 30 días." },
 };
 
 const LanguageContext = createContext<LanguageContextType>({
