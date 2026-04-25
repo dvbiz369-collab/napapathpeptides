@@ -49,7 +49,13 @@ const translations: Record<string, Record<Lang, string>> = {
     es: "Péptidos de grado de investigación. Rigurosamente probados. Verificados por terceros en pureza y potencia.",
   },
   "products.addToCart": { en: "Add to Cart", es: "Agregar al Carrito" },
+  "products.learnMore": { en: "Learn More", es: "Saber Más" },
   "products.info": { en: "Product info", es: "Información del producto" },
+  "productDetail.back": { en: "Back to products", es: "Volver a productos" },
+  "productDetail.disclaimer": {
+    en: "For research use only. Not intended for human or animal consumption, diagnosis, or treatment.",
+    es: "Solo para uso en investigación. No destinado al consumo humano o animal, diagnóstico o tratamiento.",
+  },
   "products.benefits": { en: "Intended Research", es: "Investigación Prevista" },
   "products.timeline.heading": {
     en: "What may happen in research settings",
