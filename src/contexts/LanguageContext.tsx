@@ -51,6 +51,100 @@ const translations: Record<string, Record<Lang, string>> = {
   "products.addToCart": { en: "Add to Cart", es: "Agregar al Carrito" },
   "products.info": { en: "Product info", es: "Información del producto" },
   "products.benefits": { en: "Intended Research", es: "Investigación Prevista" },
+  "products.timeline.heading": {
+    en: "What may happen in research settings",
+    es: "Lo que puede ocurrir en entornos de investigación",
+  },
+
+  // Timeline phase labels (shared)
+  "timeline.phase.minutes": { en: "Minutes 0–60", es: "Minutos 0–60" },
+  "timeline.phase.hours":   { en: "Hours 1–4",    es: "Horas 1–4" },
+  "timeline.phase.days":    { en: "Days 1–7",     es: "Días 1–7" },
+  "timeline.phase.weeks":   { en: "Weeks 2–8",    es: "Semanas 2–8" },
+
+  // Klow
+  "timeline.klow.tagline": { en: "Intended to support metabolic vitality research.", es: "Destinado a apoyar la investigación de vitalidad metabólica." },
+  "timeline.klow.p1": { en: "Compound enters circulation. Initial signaling activity may begin.", es: "El compuesto entra en circulación. Puede iniciarse la actividad de señalización inicial." },
+  "timeline.klow.p2": { en: "May help support early metabolic and energy-balance pathways.", es: "Puede ayudar a apoyar las vías metabólicas y de equilibrio energético tempranas." },
+  "timeline.klow.p3": { en: "Cellular maintenance markers may begin trending in research models.", es: "Los marcadores de mantenimiento celular pueden comenzar a moverse en modelos de investigación." },
+  "timeline.klow.p4": { en: "Sustained wellness and vitality markers may become more apparent.", es: "Los marcadores sostenidos de bienestar y vitalidad pueden volverse más evidentes." },
+
+  // Mots-C
+  "timeline.motsc.tagline": { en: "Helps support mitochondrial regulation research.", es: "Ayuda a apoyar la investigación de regulación mitocondrial." },
+  "timeline.motsc.p1": { en: "Enters circulation. May begin engaging mitochondrial signaling pathways.", es: "Entra en circulación. Puede comenzar a activar vías de señalización mitocondrial." },
+  "timeline.motsc.p2": { en: "Cellular energy regulation pathways may shift toward improved efficiency.", es: "Las vías de regulación de energía celular pueden orientarse hacia una mayor eficiencia." },
+  "timeline.motsc.p3": { en: "Metabolic flexibility markers may improve in research settings.", es: "Los marcadores de flexibilidad metabólica pueden mejorar en entornos de investigación." },
+  "timeline.motsc.p4": { en: "Mitochondrial function markers may become more optimized over time.", es: "Los marcadores de función mitocondrial pueden optimizarse con el tiempo." },
+
+  // NAD+
+  "timeline.nad.tagline": { en: "Intended to support cellular energy research.", es: "Destinado a apoyar la investigación de energía celular." },
+  "timeline.nad.p1": { en: "Coenzyme enters circulation. May begin supporting NAD+ pools.", es: "La coenzima entra en circulación. Puede comenzar a apoyar los niveles de NAD+." },
+  "timeline.nad.p2": { en: "Cellular energy pathways may show early support markers.", es: "Las vías de energía celular pueden mostrar marcadores tempranos de apoyo." },
+  "timeline.nad.p3": { en: "Healthy aging and vitality markers may begin trending positively.", es: "Los marcadores de envejecimiento saludable y vitalidad pueden mejorar." },
+  "timeline.nad.p4": { en: "Sustained cellular resilience markers may become more apparent.", es: "Los marcadores de resiliencia celular sostenida pueden volverse más evidentes." },
+
+  // TB-500 / BPC-157
+  "timeline.tb500.tagline": { en: "Intended to support tissue wellness research.", es: "Destinado a apoyar la investigación de bienestar tisular." },
+  "timeline.tb500.p1": { en: "Peptides enter circulation and may localize to areas of interest.", es: "Los péptidos entran en circulación y pueden localizarse en áreas de interés." },
+  "timeline.tb500.p2": { en: "Early support of tissue maintenance pathways may begin.", es: "Puede comenzar el apoyo temprano a las vías de mantenimiento tisular." },
+  "timeline.tb500.p3": { en: "Mobility and recovery comfort markers may improve in research models.", es: "Los marcadores de movilidad y comodidad de recuperación pueden mejorar." },
+  "timeline.tb500.p4": { en: "Sustained tissue wellness markers may become more noticeable.", es: "Los marcadores sostenidos de bienestar tisular pueden volverse más notables." },
+
+  // Reta
+  "timeline.reta.tagline": { en: "Intended to support metabolic balance research.", es: "Destinado a apoyar la investigación de equilibrio metabólico." },
+  "timeline.reta.p1": { en: "Compound enters circulation and engages relevant receptors.", es: "El compuesto entra en circulación y se acopla a los receptores relevantes." },
+  "timeline.reta.p2": { en: "Appetite-signaling and satiety pathways may begin to shift.", es: "Las vías de señalización del apetito y la saciedad pueden comenzar a cambiar." },
+  "timeline.reta.p3": { en: "Body composition markers may begin trending in research settings.", es: "Los marcadores de composición corporal pueden comenzar a moverse." },
+  "timeline.reta.p4": { en: "Sustained metabolic wellness markers may become more apparent.", es: "Los marcadores sostenidos de bienestar metabólico pueden volverse más evidentes." },
+
+  // SS-31
+  "timeline.ss31.tagline": { en: "Intended to support mitochondrial wellness research.", es: "Destinado a apoyar la investigación de bienestar mitocondrial." },
+  "timeline.ss31.p1": { en: "Peptide enters circulation and may localize to mitochondrial membranes.", es: "El péptido entra en circulación y puede localizarse en las membranas mitocondriales." },
+  "timeline.ss31.p2": { en: "Oxidative balance pathways may begin to show early support.", es: "Las vías de equilibrio oxidativo pueden mostrar apoyo temprano." },
+  "timeline.ss31.p3": { en: "Cellular energy markers may improve under metabolic stress models.", es: "Los marcadores de energía celular pueden mejorar bajo modelos de estrés metabólico." },
+  "timeline.ss31.p4": { en: "Sustained mitochondrial wellness markers may become more noticeable.", es: "Los marcadores sostenidos de bienestar mitocondrial pueden volverse más notables." },
+
+  // CJC-1295 / Ipamorelin
+  "timeline.cjc.tagline": { en: "Intended to support recovery and vitality research.", es: "Destinado a apoyar la investigación de recuperación y vitalidad." },
+  "timeline.cjc.p1": { en: "Peptides enter circulation. Pulsatile signaling activity may begin.", es: "Los péptidos entran en circulación. Puede iniciarse la actividad de señalización pulsátil." },
+  "timeline.cjc.p2": { en: "Restful sleep and overnight recovery pathways may receive early support.", es: "Las vías de sueño reparador y recuperación nocturna pueden recibir apoyo temprano." },
+  "timeline.cjc.p3": { en: "Tissue maintenance and vitality markers may begin trending.", es: "Los marcadores de mantenimiento tisular y vitalidad pueden comenzar a moverse." },
+  "timeline.cjc.p4": { en: "Sustained wellness and recovery markers may become more apparent.", es: "Los marcadores sostenidos de bienestar y recuperación pueden volverse más evidentes." },
+
+  // Tesamorelin
+  "timeline.tesamorelin.tagline": { en: "Intended to support body composition research.", es: "Destinado a apoyar la investigación de composición corporal." },
+  "timeline.tesamorelin.p1": { en: "Compound enters circulation and engages relevant receptors.", es: "El compuesto entra en circulación y se acopla a los receptores relevantes." },
+  "timeline.tesamorelin.p2": { en: "Early metabolic-signaling pathways may begin showing activity.", es: "Las vías tempranas de señalización metabólica pueden comenzar a mostrar actividad." },
+  "timeline.tesamorelin.p3": { en: "Adipose distribution markers may begin trending in research models.", es: "Los marcadores de distribución adiposa pueden comenzar a moverse." },
+  "timeline.tesamorelin.p4": { en: "Sustained body composition markers may become more apparent.", es: "Los marcadores sostenidos de composición corporal pueden volverse más evidentes." },
+
+  // GHK-Cu
+  "timeline.ghkcu.tagline": { en: "Intended to support skin wellness research.", es: "Destinado a apoyar la investigación de bienestar cutáneo." },
+  "timeline.ghkcu.p1": { en: "Copper peptide enters circulation and may localize to skin tissue.", es: "El péptido de cobre entra en circulación y puede localizarse en el tejido cutáneo." },
+  "timeline.ghkcu.p2": { en: "Skin texture and complexion-support pathways may begin engaging.", es: "Las vías de textura cutánea y apoyo a la tez pueden comenzar a activarse." },
+  "timeline.ghkcu.p3": { en: "Collagen-appearance markers may begin trending in cosmetic research.", es: "Los marcadores de apariencia de colágeno pueden comenzar a moverse." },
+  "timeline.ghkcu.p4": { en: "Healthy-looking complexion markers may become more apparent.", es: "Los marcadores de tez con aspecto saludable pueden volverse más evidentes." },
+
+  // Selank / Semax
+  "timeline.selank.tagline": { en: "Intended to support cognitive wellness research.", es: "Destinado a apoyar la investigación de bienestar cognitivo." },
+  "timeline.selank.p1": { en: "Peptides enter circulation and may begin engaging neuro-signaling pathways.", es: "Los péptidos entran en circulación y pueden activar vías de señalización neuronal." },
+  "timeline.selank.p2": { en: "Mental clarity and focus markers may show early support.", es: "Los marcadores de claridad mental y enfoque pueden mostrar apoyo temprano." },
+  "timeline.selank.p3": { en: "Cognitive comfort markers may begin trending in research settings.", es: "Los marcadores de comodidad cognitiva pueden comenzar a moverse." },
+  "timeline.selank.p4": { en: "Sustained cognitive wellness markers may become more apparent.", es: "Los marcadores sostenidos de bienestar cognitivo pueden volverse más evidentes." },
+
+  // Glutathione
+  "timeline.glutathione.tagline": { en: "Intended to support oxidative-balance research.", es: "Destinado a apoyar la investigación de equilibrio oxidativo." },
+  "timeline.glutathione.p1": { en: "Antioxidant compound enters circulation and may begin distributing.", es: "El compuesto antioxidante entra en circulación y puede comenzar a distribuirse." },
+  "timeline.glutathione.p2": { en: "Natural detoxification pathways may receive early support.", es: "Las vías naturales de desintoxicación pueden recibir apoyo temprano." },
+  "timeline.glutathione.p3": { en: "Oxidative-balance markers may begin trending in research models.", es: "Los marcadores de equilibrio oxidativo pueden comenzar a moverse." },
+  "timeline.glutathione.p4": { en: "Sustained cellular-balance markers may become more apparent.", es: "Los marcadores sostenidos de equilibrio celular pueden volverse más evidentes." },
+
+  // Epithalon
+  "timeline.epithalon.tagline": { en: "Intended to support longevity-marker research.", es: "Destinado a apoyar la investigación de marcadores de longevidad." },
+  "timeline.epithalon.p1": { en: "Peptide enters circulation and may begin engaging pineal-related pathways.", es: "El péptido entra en circulación y puede activar vías relacionadas con la pineal." },
+  "timeline.epithalon.p2": { en: "Circadian-rhythm support pathways may show early activity.", es: "Las vías de apoyo al ritmo circadiano pueden mostrar actividad temprana." },
+  "timeline.epithalon.p3": { en: "Healthy-aging markers may begin trending in preclinical models.", es: "Los marcadores de envejecimiento saludable pueden comenzar a moverse." },
+  "timeline.epithalon.p4": { en: "Sustained longevity-related markers may become more apparent.", es: "Los marcadores sostenidos relacionados con la longevidad pueden volverse más evidentes." },
 
   // Per-product descriptions (cosmetic/wellness research context - hedged language)
   "product.klow.desc": {
