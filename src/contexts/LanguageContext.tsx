@@ -318,11 +318,17 @@ const translations: Record<string, Record<Lang, string>> = {
   "cart.sendInquiry": { en: "Send Inquiry", es: "Enviar Consulta" },
   "cart.inquirySent": { en: "Inquiry Sent!", es: "¡Consulta Enviada!" },
   "cart.emailOnWay": {
-    en: "Your email confirmation is on its way. Want an instant response? Text us directly.",
-    es: "Su confirmación por correo electrónico está en camino. ¿Quiere una respuesta instantánea? Envíenos un mensaje de texto.",
+    en: "Your inquiry has been sent! We'll review your request and reach out shortly via email or text.",
+    es: "¡Su consulta ha sido enviada! Revisaremos su solicitud y nos comunicaremos pronto por correo o mensaje.",
   },
-  "cart.textConfirm": { en: "Text for Instant Confirmation", es: "Mensaje para Confirmación Instantánea" },
   "cart.continueBrowsing": { en: "Continue Browsing", es: "Seguir Navegando" },
+  "cart.name": { en: "Full Name", es: "Nombre Completo" },
+  "cart.email": { en: "Email", es: "Correo Electrónico" },
+  "cart.phone": { en: "Phone Number", es: "Número de Teléfono" },
+  "cart.namePlaceholder": { en: "John Doe", es: "Juan Pérez" },
+  "cart.emailPlaceholder": { en: "you@example.com", es: "tu@ejemplo.com" },
+  "cart.phonePlaceholder": { en: "(555) 123-4567", es: "(555) 123-4567" },
+  "cart.fieldRequired": { en: "Please fill in all fields", es: "Por favor complete todos los campos" },
 
   // Session expired
   "session.expired": { en: "Session Expired", es: "Sesión Expirada" },
