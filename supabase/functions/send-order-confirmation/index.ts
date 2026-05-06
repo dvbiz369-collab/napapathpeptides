@@ -103,6 +103,7 @@ Deno.serve(async (req) => {
           <p class="greeting">Thank you for your inquiry. We have received the following request and will be in touch shortly to confirm availability, pricing, and payment details.</p>
 
           <div class="section-label">Inquiry Summary</div>
+          ${customerPhone ? `<p style="font-size:13px;color:#333;margin:0 0 12px;"><strong>Phone:</strong> ${customerPhone}</p>` : ""}
           <table class="items-table">
             <tbody>
               ${itemsHtml}
