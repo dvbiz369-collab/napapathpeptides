@@ -90,6 +90,17 @@ const CartDrawer = () => {
             </div>
             <h3 className="font-heading text-xl font-bold text-foreground">{t("cart.inquirySent")}</h3>
             <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">{t("cart.emailOnWay")}</p>
+            <a
+              href={`sms:7078047057&body=${encodeURIComponent(
+                `${lang === "es" ? "[Prefiero comunicarme en español]" : ""}\n\nHi, I just submitted an inquiry for: ${items.map((i) => `${i.name} x${i.quantity}`).join(", ")}. Total: $${totalPrice}. My name is ${customerName}. Please confirm availability.`
+              )}`}
+              className="w-full"
+            >
+              <Button className="w-full glow-red-sm text-base py-6" size="lg">
+                <MessageSquare className="h-5 w-5 mr-2" />
+                {t("cart.textConfirm")}
+              </Button>
+            </a>
             <Button variant="ghost" onClick={() => handleClose(false)} className="w-full text-muted-foreground">
               {t("cart.continueBrowsing")}
             </Button>
