@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import AccessCodeGate from "./AccessCodeGate";
 import AuthGate from "./AuthGate";
 import WaiverModal from "./WaiverModal";
 import { Button } from "@/components/ui/button";
@@ -9,7 +8,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const SESSION_DURATION_MS = 60 * 60 * 1000; // 1 hour
 
-type Step = "loading" | "access_code" | "auth" | "waiver" | "expired" | "done";
+type Step = "loading" | "auth" | "waiver" | "expired" | "done";
 
 interface SiteAccessGuardProps {
   children: React.ReactNode;
@@ -41,9 +40,6 @@ const SiteAccessGuard = ({ children }: SiteAccessGuardProps) => {
   }, []);
 
   const checkState = async () => {
-    const accessGranted = localStorage.getItem("npp_access_granted") === "true";
-    if (!accessGranted) { setStep("access_code"); return; }
-
     const { data: { session } } = await supabase.auth.getSession();
     if (!session) { setStep("auth"); return; }
 
@@ -86,8 +82,6 @@ const SiteAccessGuard = ({ children }: SiteAccessGuardProps) => {
       </div>
     );
   }
-
-  if (step === "access_code") return <AccessCodeGate onSuccess={() => setStep("auth")} />;
 
   if (step === "auth") {
     return <AuthGate onSuccess={() => { startSessionTimer(); checkState(); }} />;
