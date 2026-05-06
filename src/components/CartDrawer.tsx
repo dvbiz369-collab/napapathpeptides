@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, Plus, Minus, Trash2, CheckCircle, Mail, MessageSquare } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { ShoppingCart, Plus, Minus, Trash2, CheckCircle, Mail } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { supabase } from "@/integrations/supabase/client";
@@ -12,17 +13,25 @@ const CartDrawer = () => {
   const [open, setOpen] = useState(false);
   const [confirmed, setConfirmed] = useState(false);
   const [sending, setSending] = useState(false);
-  const [customerName, setCustomerName] = useState<string | null>(null);
+  const [formError, setFormError] = useState(false);
+
+  const [customerName, setCustomerName] = useState("");
+  const [customerEmail, setCustomerEmail] = useState("");
+  const [customerPhone, setCustomerPhone] = useState("");
 
   const langNote = lang === "es"
     ? "[Customer prefers to communicate in Spanish — please respond in Spanish]"
     : "[Customer prefers to communicate in English — please respond in English]";
 
-  const sendConfirmationEmail = async () => {
+  const sendInquiry = async () => {
+    if (!customerName.trim() || !customerEmail.trim() || !customerPhone.trim()) {
+      setFormError(true);
+      return;
+    }
+    setFormError(false);
+
     try {
       setSending(true);
-      const { data: { user } } = await supabase.auth.getUser();
-      if (!user?.email) return;
 
       const cartItems = items.map((i) => ({
         name: i.name,
@@ -32,32 +41,22 @@ const CartDrawer = () => {
 
       await supabase.functions.invoke("send-order-confirmation", {
         body: {
-          recipientEmail: user.email,
-          customerName: user.user_metadata?.full_name || user.user_metadata?.name || null,
+          recipientEmail: customerEmail.trim(),
+          customerName: customerName.trim(),
+          customerPhone: customerPhone.trim(),
           cartItems,
           totalPrice,
           preferredLanguage: lang,
           languageNote: langNote,
         },
       });
+
+      setConfirmed(true);
     } catch (e) {
-      console.error("Failed to send confirmation email:", e);
+      console.error("Failed to send inquiry:", e);
     } finally {
       setSending(false);
     }
-  };
-
-  const buildSmsBody = () => {
-    const itemList = items.map((i) => `${i.name} x${i.quantity}`).join(", ");
-    const name = customerName || "a customer";
-    return `${langNote}\n\nHi, I just submitted an inquiry for: ${itemList}. Total: $${totalPrice}. Please confirm availability for ${name}.`;
-  };
-
-  const handleInquiryWithName = async () => {
-    const { data: { user } } = await supabase.auth.getUser();
-    setCustomerName(user?.user_metadata?.full_name || user?.user_metadata?.name || null);
-    await sendConfirmationEmail();
-    setConfirmed(true);
   };
 
   const handleClose = (isOpen: boolean) => {
@@ -65,6 +64,9 @@ const CartDrawer = () => {
     if (!isOpen && confirmed) {
       clearCart();
       setConfirmed(false);
+      setCustomerName("");
+      setCustomerEmail("");
+      setCustomerPhone("");
     }
   };
 
@@ -88,12 +90,6 @@ const CartDrawer = () => {
             </div>
             <h3 className="font-heading text-xl font-bold text-foreground">{t("cart.inquirySent")}</h3>
             <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">{t("cart.emailOnWay")}</p>
-            <a href={`sms:7078047057&body=${encodeURIComponent(buildSmsBody())}`} className="w-full">
-              <Button className="w-full glow-red-sm text-base py-6" size="lg">
-                <MessageSquare className="h-5 w-5 mr-2" />
-                {t("cart.textConfirm")}
-              </Button>
-            </a>
             <Button variant="ghost" onClick={() => handleClose(false)} className="w-full text-muted-foreground">
               {t("cart.continueBrowsing")}
             </Button>
@@ -147,9 +143,41 @@ const CartDrawer = () => {
                     <span className="text-sm font-medium text-muted-foreground">{t("cart.total")}</span>
                     <span className="text-lg font-bold text-foreground">${totalPrice}</span>
                   </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground text-center mb-3 uppercase tracking-widest">{t("cart.requestOrder")}</p>
-                    <Button onClick={() => handleInquiryWithName()} disabled={sending} className="w-full glow-red-sm">
+
+                  <div className="space-y-3">
+                    <p className="text-xs text-muted-foreground text-center uppercase tracking-widest">{t("cart.requestOrder")}</p>
+                    
+                    <div className="space-y-2">
+                      <Input
+                        placeholder={t("cart.namePlaceholder")}
+                        value={customerName}
+                        onChange={(e) => setCustomerName(e.target.value)}
+                        className="h-9 text-sm"
+                        aria-label={t("cart.name")}
+                      />
+                      <Input
+                        type="email"
+                        placeholder={t("cart.emailPlaceholder")}
+                        value={customerEmail}
+                        onChange={(e) => setCustomerEmail(e.target.value)}
+                        className="h-9 text-sm"
+                        aria-label={t("cart.email")}
+                      />
+                      <Input
+                        type="tel"
+                        placeholder={t("cart.phonePlaceholder")}
+                        value={customerPhone}
+                        onChange={(e) => setCustomerPhone(e.target.value)}
+                        className="h-9 text-sm"
+                        aria-label={t("cart.phone")}
+                      />
+                    </div>
+
+                    {formError && (
+                      <p className="text-xs text-destructive text-center">{t("cart.fieldRequired")}</p>
+                    )}
+
+                    <Button onClick={sendInquiry} disabled={sending} className="w-full glow-red-sm">
                       <Mail className="h-4 w-4 mr-2" />
                       {t("cart.sendInquiry")}
                     </Button>
