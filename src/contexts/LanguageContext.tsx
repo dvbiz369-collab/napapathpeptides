@@ -321,6 +321,7 @@ const translations: Record<string, Record<Lang, string>> = {
     en: "Your inquiry has been sent! We'll review your request and reach out shortly via email or text.",
     es: "¡Su consulta ha sido enviada! Revisaremos su solicitud y nos comunicaremos pronto por correo o mensaje.",
   },
+  "cart.textConfirm": { en: "Text for Instant Confirmation", es: "Mensaje para Confirmación Instantánea" },
   "cart.continueBrowsing": { en: "Continue Browsing", es: "Seguir Navegando" },
   "cart.name": { en: "Full Name", es: "Nombre Completo" },
   "cart.email": { en: "Email", es: "Correo Electrónico" },
