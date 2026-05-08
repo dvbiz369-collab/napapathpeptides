@@ -151,6 +151,11 @@ const translations: Record<string, Record<Lang, string>> = {
   "timeline.epithalon.p2": { en: "Circadian-rhythm support pathways may show early activity.", es: "Las vías de apoyo al ritmo circadiano pueden mostrar actividad temprana." },
   "timeline.epithalon.p3": { en: "Healthy-aging markers may begin trending in preclinical models.", es: "Los marcadores de envejecimiento saludable pueden comenzar a moverse." },
   "timeline.epithalon.p4": { en: "Sustained longevity-related markers may become more apparent.", es: "Los marcadores sostenidos relacionados con la longevidad pueden volverse más evidentes." },
+  "timeline.aod9604.tagline": { en: "Intended to support metabolic and body-composition research.", es: "Destinado a apoyar la investigación metabólica y de composición corporal." },
+  "timeline.aod9604.p1": { en: "Peptide enters circulation and may begin engaging lipolytic-related pathways.", es: "El péptido entra en circulación y puede comenzar a activar vías lipolíticas." },
+  "timeline.aod9604.p2": { en: "Metabolic-signaling pathways may show early modulation in research models.", es: "Las vías de señalización metabólica pueden mostrar modulación temprana en modelos de investigación." },
+  "timeline.aod9604.p3": { en: "Body-composition markers may begin trending in preclinical models.", es: "Los marcadores de composición corporal pueden comenzar a mostrar tendencias en modelos preclínicos." },
+  "timeline.aod9604.p4": { en: "Sustained fat-metabolism markers may become more apparent over continued study.", es: "Los marcadores sostenidos del metabolismo de grasas pueden volverse más evidentes con estudio continuo." },
 
   // Per-product descriptions (cosmetic/wellness research context - hedged language)
   "product.klow.desc": {
@@ -475,6 +480,14 @@ const translations: Record<string, Record<Lang, string>> = {
   "details.epithalon.b3": { en: "Helps support healthy-aging models", es: "Ayuda a apoyar modelos de envejecimiento saludable" },
   "details.epithalon.b4": { en: "May contribute to cellular-resilience studies", es: "Puede contribuir a estudios de resiliencia celular" },
   "details.epithalon.handling": { en: "Store lyophilized vials at -20°C. After reconstitution, refrigerate and use within 30 days.", es: "Almacenar viales liofilizados a -20°C. Tras la reconstitución, refrigerar y usar dentro de 30 días." },
+  "details.aod9604.overview": { en: "AOD-9604 is a modified fragment of growth hormone studied for its potential role in fat-metabolism and body-composition research.", es: "AOD-9604 es un fragmento modificado de la hormona de crecimiento estudiado por su posible papel en la investigación del metabolismo de grasas y la composición corporal." },
+  "details.aod9604.focus": { en: "Fat-metabolism, body-composition, and metabolic-pathway research.", es: "Metabolismo de grasas, composición corporal e investigación de vías metabólicas." },
+  "details.aod9604.mechanism": { en: "Investigated for engagement with lipolytic signaling and fat-oxidation pathways in research models.", es: "Investigado por su interacción con señalización lipolítica y vías de oxidación de grasas en modelos de investigación." },
+  "details.aod9604.b1": { en: "May help support fat-metabolism pathway markers", es: "Puede ayudar a apoyar marcadores de vías del metabolismo de grasas" },
+  "details.aod9604.b2": { en: "Intended to study body-composition research models", es: "Destinado a estudiar modelos de investigación de composición corporal" },
+  "details.aod9604.b3": { en: "Helps support metabolic-signaling studies", es: "Ayuda a apoyar estudios de señalización metabólica" },
+  "details.aod9604.b4": { en: "May contribute to weight-management pathway research", es: "Puede contribuir a la investigación de vías de control de peso" },
+  "details.aod9604.handling": { en: "Store lyophilized vials at -20°C. After reconstitution, refrigerate and use within 30 days.", es: "Almacenar viales liofilizados a -20°C. Tras la reconstitución, refrigerar y usar dentro de 30 días." },
 };
 
 const LanguageContext = createContext<LanguageContextType>({
