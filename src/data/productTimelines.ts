@@ -122,4 +122,13 @@ export const productTimelines: Record<string, ProductTimeline> = {
       { labelKey: "timeline.phase.weeks",   textKey: "timeline.epithalon.p4" },
     ],
   },
+  aod9604: {
+    taglineKey: "timeline.aod9604.tagline",
+    phases: [
+      { labelKey: "timeline.phase.minutes", textKey: "timeline.aod9604.p1" },
+      { labelKey: "timeline.phase.hours",   textKey: "timeline.aod9604.p2" },
+      { labelKey: "timeline.phase.days",    textKey: "timeline.aod9604.p3" },
+      { labelKey: "timeline.phase.weeks",   textKey: "timeline.aod9604.p4" },
+    ],
+  },
 };

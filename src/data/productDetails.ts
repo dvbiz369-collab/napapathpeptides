@@ -95,4 +95,11 @@ export const productDetails: Record<string, ProductDetail> = {
     benefitKeys: ["details.epithalon.b1", "details.epithalon.b2", "details.epithalon.b3", "details.epithalon.b4"],
     handlingKey: "details.epithalon.handling",
   },
+  aod9604: {
+    overviewKey: "details.aod9604.overview",
+    researchFocusKey: "details.aod9604.focus",
+    mechanismKey: "details.aod9604.mechanism",
+    benefitKeys: ["details.aod9604.b1", "details.aod9604.b2", "details.aod9604.b3", "details.aod9604.b4"],
+    handlingKey: "details.aod9604.handling",
+  },
 };
