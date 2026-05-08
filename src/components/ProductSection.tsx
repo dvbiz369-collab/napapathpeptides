@@ -14,6 +14,7 @@ import productGhkcu from "@/assets/product-ghkcu.jpg";
 import productSelank from "@/assets/product-selank.jpg";
 import productGlutathione from "@/assets/product-glutathione.jpg";
 import productEpithalon from "@/assets/product-epithalon.jpg";
+import productAod9604 from "@/assets/product-aod9604.jpg";
 import labBackground from "@/assets/lab-background.jpg";
 
 const products = [
@@ -29,6 +30,7 @@ const products = [
   { name: "Selank / Semax", dose: "10mg (5mg ea)", volume: "3ml", img: productSelank, price: 110, slug: "selank" },
   { name: "Glutathione", dose: "200mg per/ml", volume: "", img: productGlutathione, price: 150, slug: "glutathione" },
   { name: "Epithalon", dose: "50mg", volume: "3ml", img: productEpithalon, price: 150, slug: "epithalon" },
+  { name: "AOD-9604", dose: "5mg", volume: "3ml", img: productAod9604, price: 135, slug: "aod9604" },
 ];
 
 const ProductSection = () => {
