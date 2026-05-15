@@ -34,7 +34,7 @@ const productCatalog: Record<
   tesamorelin: { name: "Tesamorelin", dose: "20mg", volume: "3ml", img: productTesamorelin, price: 150, timelineKey: "tesamorelin" },
   ghkcu: { name: "GHK-Cu", dose: "100mg", volume: "3ml", img: productGhkcu, price: 150, timelineKey: "ghkcu" },
   selank: { name: "Selank / Semax", dose: "10mg (5mg ea)", volume: "3ml", img: productSelank, price: 110, timelineKey: "selank" },
-  glutathione: { name: "Glutathione", dose: "200mg per/ml", volume: "", img: productGlutathione, price: 150, timelineKey: "glutathione" },
+  glutathione: { name: "Glutathione", dose: "4000mg", volume: "20ml", img: productGlutathione, price: 150, timelineKey: "glutathione" },
   epithalon: { name: "Epithalon", dose: "50mg", volume: "3ml", img: productEpithalon, price: 150, timelineKey: "epithalon" },
   aod9604: { name: "AOD-9604", dose: "5mg", volume: "3ml", img: productAod9604, price: 135, timelineKey: "aod9604" },
 };
