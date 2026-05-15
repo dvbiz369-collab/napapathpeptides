@@ -28,7 +28,7 @@ const products = [
   { name: "Tesamorelin", dose: "20mg", volume: "3ml", img: productTesamorelin, price: 150, slug: "tesamorelin" },
   { name: "GHK-Cu", dose: "100mg", volume: "3ml", img: productGhkcu, price: 150, slug: "ghkcu" },
   { name: "Selank / Semax", dose: "10mg (5mg ea)", volume: "3ml", img: productSelank, price: 110, slug: "selank" },
-  { name: "Glutathione", dose: "200mg per/ml", volume: "", img: productGlutathione, price: 150, slug: "glutathione" },
+  { name: "Glutathione", dose: "4000mg", volume: "20ml", img: productGlutathione, price: 150, slug: "glutathione" },
   { name: "Epithalon", dose: "50mg", volume: "3ml", img: productEpithalon, price: 150, slug: "epithalon" },
   { name: "AOD-9604", dose: "5mg", volume: "3ml", img: productAod9604, price: 135, slug: "aod9604" },
 ];
