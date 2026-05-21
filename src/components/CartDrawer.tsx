@@ -91,7 +91,7 @@ const CartDrawer = () => {
             <h3 className="font-heading text-xl font-bold text-foreground">{t("cart.inquirySent")}</h3>
             <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">{t("cart.emailOnWay")}</p>
             <a
-              href={`sms:7078047057&body=${encodeURIComponent(
+              href={`sms:7073079901&body=${encodeURIComponent(
                 `${lang === "es" ? "[Prefiero comunicarme en español]" : ""}\n\nHi, I just submitted an inquiry for: ${items.map((i) => `${i.name} x${i.quantity}`).join(", ")}. Total: $${totalPrice}. My name is ${customerName}. Please confirm availability.`
               )}`}
               className="w-full"
