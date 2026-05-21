@@ -149,4 +149,94 @@ export const productTimelines: Record<string, ProductTimeline> = {
       { labelKey: "timeline.phase.weeks",   textKey: "timeline.slupp332.p4" },
     ],
   },
+  sma: {
+    taglineKey: "timeline.sma.tagline",
+    phases: [
+      { labelKey: "timeline.phase.minutes", textKey: "timeline.sma.p1" },
+      { labelKey: "timeline.phase.hours",   textKey: "timeline.sma.p2" },
+      { labelKey: "timeline.phase.days",    textKey: "timeline.sma.p3" },
+      { labelKey: "timeline.phase.weeks",   textKey: "timeline.sma.p4" },
+    ],
+  },
+  snap8: {
+    taglineKey: "timeline.snap8.tagline",
+    phases: [
+      { labelKey: "timeline.phase.minutes", textKey: "timeline.snap8.p1" },
+      { labelKey: "timeline.phase.hours",   textKey: "timeline.snap8.p2" },
+      { labelKey: "timeline.phase.days",    textKey: "timeline.snap8.p3" },
+      { labelKey: "timeline.phase.weeks",   textKey: "timeline.snap8.p4" },
+    ],
+  },
+  thymalin: {
+    taglineKey: "timeline.thymalin.tagline",
+    phases: [
+      { labelKey: "timeline.phase.minutes", textKey: "timeline.thymalin.p1" },
+      { labelKey: "timeline.phase.hours",   textKey: "timeline.thymalin.p2" },
+      { labelKey: "timeline.phase.days",    textKey: "timeline.thymalin.p3" },
+      { labelKey: "timeline.phase.weeks",   textKey: "timeline.thymalin.p4" },
+    ],
+  },
+  tha1: {
+    taglineKey: "timeline.tha1.tagline",
+    phases: [
+      { labelKey: "timeline.phase.minutes", textKey: "timeline.tha1.p1" },
+      { labelKey: "timeline.phase.hours",   textKey: "timeline.tha1.p2" },
+      { labelKey: "timeline.phase.days",    textKey: "timeline.tha1.p3" },
+      { labelKey: "timeline.phase.weeks",   textKey: "timeline.tha1.p4" },
+    ],
+  },
+  teamo: {
+    taglineKey: "timeline.teamo.tagline",
+    phases: [
+      { labelKey: "timeline.phase.minutes", textKey: "timeline.teamo.p1" },
+      { labelKey: "timeline.phase.hours",   textKey: "timeline.teamo.p2" },
+      { labelKey: "timeline.phase.days",    textKey: "timeline.teamo.p3" },
+      { labelKey: "timeline.phase.weeks",   textKey: "timeline.teamo.p4" },
+    ],
+  },
+  "tesa-ipa": {
+    taglineKey: "timeline.tesa-ipa.tagline",
+    phases: [
+      { labelKey: "timeline.phase.minutes", textKey: "timeline.tesa-ipa.p1" },
+      { labelKey: "timeline.phase.hours",   textKey: "timeline.tesa-ipa.p2" },
+      { labelKey: "timeline.phase.days",    textKey: "timeline.tesa-ipa.p3" },
+      { labelKey: "timeline.phase.weeks",   textKey: "timeline.tesa-ipa.p4" },
+    ],
+  },
+  "tha1-thymulin": {
+    taglineKey: "timeline.tha1-thymulin.tagline",
+    phases: [
+      { labelKey: "timeline.phase.minutes", textKey: "timeline.tha1-thymulin.p1" },
+      { labelKey: "timeline.phase.hours",   textKey: "timeline.tha1-thymulin.p2" },
+      { labelKey: "timeline.phase.days",    textKey: "timeline.tha1-thymulin.p3" },
+      { labelKey: "timeline.phase.weeks",   textKey: "timeline.tha1-thymulin.p4" },
+    ],
+  },
+  "tha1-thymulin-kpv": {
+    taglineKey: "timeline.tha1-thymulin-kpv.tagline",
+    phases: [
+      { labelKey: "timeline.phase.minutes", textKey: "timeline.tha1-thymulin-kpv.p1" },
+      { labelKey: "timeline.phase.hours",   textKey: "timeline.tha1-thymulin-kpv.p2" },
+      { labelKey: "timeline.phase.days",    textKey: "timeline.tha1-thymulin-kpv.p3" },
+      { labelKey: "timeline.phase.weeks",   textKey: "timeline.tha1-thymulin-kpv.p4" },
+    ],
+  },
+  trz: {
+    taglineKey: "timeline.trz.tagline",
+    phases: [
+      { labelKey: "timeline.phase.minutes", textKey: "timeline.trz.p1" },
+      { labelKey: "timeline.phase.hours",   textKey: "timeline.trz.p2" },
+      { labelKey: "timeline.phase.days",    textKey: "timeline.trz.p3" },
+      { labelKey: "timeline.phase.weeks",   textKey: "timeline.trz.p4" },
+    ],
+  },
+  vip: {
+    taglineKey: "timeline.vip.tagline",
+    phases: [
+      { labelKey: "timeline.phase.minutes", textKey: "timeline.vip.p1" },
+      { labelKey: "timeline.phase.hours",   textKey: "timeline.vip.p2" },
+      { labelKey: "timeline.phase.days",    textKey: "timeline.vip.p3" },
+      { labelKey: "timeline.phase.weeks",   textKey: "timeline.vip.p4" },
+    ],
+  },
 };
