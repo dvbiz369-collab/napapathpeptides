@@ -82,7 +82,7 @@ const products = [
   { name: "Ipamorelin", dose: "5mg", volume: "3ml", img: productIpamorelin, price: 96, slug: "ipamorelin" },
   { name: "Ipamorelin / Sermorelin", dose: "10mg (5mg ea)", volume: "3ml", img: productIpaSermo, price: 64, slug: "ipa-sermo" },
   { name: "Kisspeptin", dose: "10mg", volume: "3ml", img: productKisspeptin, price: 124, slug: "kisspeptin" },
-  { name: "KLOW / KPV", dose: "80mg (BPC-157 10 / GHK-CU 50 / TB-500 10 / KPV 10)", volume: "3ml", img: productKlowPlus, price: 294, slug: "klow-plus" },
+  
   { name: "KPV", dose: "5mg", volume: "3ml", img: productKpv, price: 96, slug: "kpv" },
   { name: "LL-37", dose: "5mg", volume: "3ml", img: productLl37, price: 126, slug: "ll37" },
   { name: "Mazdutide", dose: "10mg", volume: "3ml", img: productMazdutide, price: 210, slug: "mazdutide" },
