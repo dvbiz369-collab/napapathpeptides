@@ -27,6 +27,27 @@ import productTha1Thymulin from "@/assets/product-tha1-thymulin.jpg";
 import productTha1ThymulinKpv from "@/assets/product-tha1-thymulin-kpv.jpg";
 import productTrz from "@/assets/product-trz.jpg";
 import productVip from "@/assets/product-vip.jpg";
+import productHexarelin from "@/assets/product-hexarelin.jpg";
+import productHumanin from "@/assets/product-humanin.jpg";
+import productIgf1lr3 from "@/assets/product-igf1lr3.jpg";
+import productIpamorelin from "@/assets/product-ipamorelin.jpg";
+import productIpaSermo from "@/assets/product-ipa-sermo.jpg";
+import productKisspeptin from "@/assets/product-kisspeptin.jpg";
+import productKlowPlus from "@/assets/product-klow-plus.jpg";
+import productKpv from "@/assets/product-kpv.jpg";
+import productLl37 from "@/assets/product-ll37.jpg";
+import productMazdutide from "@/assets/product-mazdutide.jpg";
+import productMelanotan1 from "@/assets/product-melanotan1.jpg";
+import productMt2 from "@/assets/product-mt2.jpg";
+import productOxytocin from "@/assets/product-oxytocin.jpg";
+import productPegMgf from "@/assets/product-pegmgf.jpg";
+import productPinealon from "@/assets/product-pinealon.jpg";
+import productProstamax from "@/assets/product-prostamax.jpg";
+import productPt141 from "@/assets/product-pt141.jpg";
+import productPt141Blend from "@/assets/product-pt141-blend.jpg";
+import productRta from "@/assets/product-rta.jpg";
+import productSelankSolo from "@/assets/product-selank-solo.jpg";
+import productSemaxSolo from "@/assets/product-semax-solo.jpg";
 import labBackground from "@/assets/lab-background.jpg";
 
 const products = [
@@ -55,6 +76,27 @@ const products = [
   { name: "Thymosin A-1 / Thymulin / KPV", dose: "21mg (10mg / 6mg / 5mg)", volume: "5ml", img: productTha1ThymulinKpv, price: 190, slug: "tha1-thymulin-kpv" },
   { name: "TRZ", dose: "5mg", volume: "3ml", img: productTrz, price: 164, slug: "trz" },
   { name: "VIP", dose: "5mg", volume: "3ml", img: productVip, price: 104, slug: "vip" },
+  { name: "Hexarelin", dose: "2mg", volume: "3ml", img: productHexarelin, price: 54, slug: "hexarelin" },
+  { name: "Humanin", dose: "10mg", volume: "3ml", img: productHumanin, price: 280, slug: "humanin" },
+  { name: "IGF-1 LR3", dose: "0.1mg", volume: "3ml", img: productIgf1lr3, price: 86, slug: "igf1lr3" },
+  { name: "Ipamorelin", dose: "5mg", volume: "3ml", img: productIpamorelin, price: 96, slug: "ipamorelin" },
+  { name: "Ipamorelin / Sermorelin", dose: "10mg (5mg ea)", volume: "3ml", img: productIpaSermo, price: 64, slug: "ipa-sermo" },
+  { name: "Kisspeptin", dose: "10mg", volume: "3ml", img: productKisspeptin, price: 124, slug: "kisspeptin" },
+  { name: "KLOW / KPV", dose: "80mg (BPC-157 10 / GHK-CU 50 / TB-500 10 / KPV 10)", volume: "3ml", img: productKlowPlus, price: 294, slug: "klow-plus" },
+  { name: "KPV", dose: "5mg", volume: "3ml", img: productKpv, price: 96, slug: "kpv" },
+  { name: "LL-37", dose: "5mg", volume: "3ml", img: productLl37, price: 126, slug: "ll37" },
+  { name: "Mazdutide", dose: "10mg", volume: "3ml", img: productMazdutide, price: 210, slug: "mazdutide" },
+  { name: "Melanotan 1", dose: "10mg", volume: "3ml", img: productMelanotan1, price: 84, slug: "melanotan1" },
+  { name: "MT-2", dose: "10mg", volume: "3ml", img: productMt2, price: 108, slug: "mt2" },
+  { name: "Oxytocin", dose: "2mg", volume: "3ml", img: productOxytocin, price: 86, slug: "oxytocin" },
+  { name: "PEG MGF", dose: "5mg", volume: "3ml", img: productPegMgf, price: 74, slug: "pegmgf" },
+  { name: "Pinealon", dose: "5mg", volume: "3ml", img: productPinealon, price: 74, slug: "pinealon" },
+  { name: "Prostamax", dose: "20mg", volume: "3ml", img: productProstamax, price: 120, slug: "prostamax" },
+  { name: "PT-141", dose: "10mg", volume: "3ml", img: productPt141, price: 94, slug: "pt141" },
+  { name: "PT-141 / Kisspeptin / Pinealon", dose: "10mg (5mg / 2mg / 3mg)", volume: "3ml", img: productPt141Blend, price: 172, slug: "pt141-blend" },
+  { name: "RTA", dose: "10mg", volume: "3ml", img: productRta, price: 264, slug: "rta" },
+  { name: "Selank", dose: "5mg", volume: "3ml", img: productSelankSolo, price: 64, slug: "selank-solo" },
+  { name: "Semax", dose: "5mg", volume: "3ml", img: productSemaxSolo, price: 54, slug: "semax-solo" },
 ];
 
 const ProductSection = () => {
