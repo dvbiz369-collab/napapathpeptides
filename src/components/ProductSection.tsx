@@ -15,6 +15,8 @@ import productSelank from "@/assets/product-selank.jpg";
 import productGlutathione from "@/assets/product-glutathione.jpg";
 import productEpithalon from "@/assets/product-epithalon.jpg";
 import productAod9604 from "@/assets/product-aod9604.jpg";
+import productSermorelin from "@/assets/product-sermorelin.jpg";
+import productSlupp332 from "@/assets/product-slupp332.jpg";
 import labBackground from "@/assets/lab-background.jpg";
 
 const products = [
@@ -31,6 +33,8 @@ const products = [
   { name: "Glutathione", dose: "4000mg", volume: "20ml", img: productGlutathione, price: 150, slug: "glutathione" },
   { name: "Epithalon", dose: "50mg", volume: "3ml", img: productEpithalon, price: 150, slug: "epithalon" },
   { name: "AOD-9604", dose: "5mg", volume: "3ml", img: productAod9604, price: 135, slug: "aod9604" },
+  { name: "Sermorelin", dose: "10mg", volume: "3ml", img: productSermorelin, price: 124, slug: "sermorelin" },
+  { name: "SLU-PP-332", dose: "5mg", volume: "3ml", img: productSlupp332, price: 180, slug: "slupp332" },
 ];
 
 const ProductSection = () => {

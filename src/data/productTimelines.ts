@@ -131,4 +131,22 @@ export const productTimelines: Record<string, ProductTimeline> = {
       { labelKey: "timeline.phase.weeks",   textKey: "timeline.aod9604.p4" },
     ],
   },
+  sermorelin: {
+    taglineKey: "timeline.sermorelin.tagline",
+    phases: [
+      { labelKey: "timeline.phase.minutes", textKey: "timeline.sermorelin.p1" },
+      { labelKey: "timeline.phase.hours",   textKey: "timeline.sermorelin.p2" },
+      { labelKey: "timeline.phase.days",    textKey: "timeline.sermorelin.p3" },
+      { labelKey: "timeline.phase.weeks",   textKey: "timeline.sermorelin.p4" },
+    ],
+  },
+  slupp332: {
+    taglineKey: "timeline.slupp332.tagline",
+    phases: [
+      { labelKey: "timeline.phase.minutes", textKey: "timeline.slupp332.p1" },
+      { labelKey: "timeline.phase.hours",   textKey: "timeline.slupp332.p2" },
+      { labelKey: "timeline.phase.days",    textKey: "timeline.slupp332.p3" },
+      { labelKey: "timeline.phase.weeks",   textKey: "timeline.slupp332.p4" },
+    ],
+  },
 };

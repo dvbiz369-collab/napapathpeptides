@@ -156,6 +156,16 @@ const translations: Record<string, Record<Lang, string>> = {
   "timeline.aod9604.p2": { en: "Metabolic-signaling pathways may show early modulation in research models.", es: "Las vías de señalización metabólica pueden mostrar modulación temprana en modelos de investigación." },
   "timeline.aod9604.p3": { en: "Body-composition markers may begin trending in preclinical models.", es: "Los marcadores de composición corporal pueden comenzar a mostrar tendencias en modelos preclínicos." },
   "timeline.aod9604.p4": { en: "Sustained fat-metabolism markers may become more apparent over continued study.", es: "Los marcadores sostenidos del metabolismo de grasas pueden volverse más evidentes con estudio continuo." },
+  "timeline.sermorelin.tagline": { en: "Intended to support growth-hormone-axis and recovery research.", es: "Destinado a apoyar la investigación del eje de hormona de crecimiento y recuperación." },
+  "timeline.sermorelin.p1": { en: "Peptide enters circulation and may begin engaging GHRH-receptor pathways.", es: "El péptido entra en circulación y puede comenzar a activar las vías del receptor GHRH." },
+  "timeline.sermorelin.p2": { en: "Pulsatile growth-hormone signaling may show early modulation in research models.", es: "La señalización pulsátil de hormona de crecimiento puede mostrar modulación temprana en modelos de investigación." },
+  "timeline.sermorelin.p3": { en: "Sleep-quality and recovery markers may begin trending in preclinical studies.", es: "Los marcadores de calidad del sueño y recuperación pueden comenzar a mostrar tendencias en estudios preclínicos." },
+  "timeline.sermorelin.p4": { en: "Sustained vitality, lean-mass, and recovery markers may become more apparent.", es: "Los marcadores sostenidos de vitalidad, masa magra y recuperación pueden volverse más evidentes." },
+  "timeline.slupp332.tagline": { en: "Intended to support mitochondrial-endurance and metabolic research.", es: "Destinado a apoyar la investigación de resistencia mitocondrial y metabólica." },
+  "timeline.slupp332.p1": { en: "Compound enters circulation and may begin engaging ERR-receptor pathways.", es: "El compuesto entra en circulación y puede comenzar a activar las vías del receptor ERR." },
+  "timeline.slupp332.p2": { en: "Mitochondrial-biogenesis signaling may show early activity in research models.", es: "La señalización de biogénesis mitocondrial puede mostrar actividad temprana en modelos de investigación." },
+  "timeline.slupp332.p3": { en: "Endurance and fat-oxidation markers may begin trending in preclinical studies.", es: "Los marcadores de resistencia y oxidación de grasas pueden comenzar a mostrar tendencias en estudios preclínicos." },
+  "timeline.slupp332.p4": { en: "Sustained mitochondrial and metabolic-performance markers may become more apparent.", es: "Los marcadores sostenidos de rendimiento mitocondrial y metabólico pueden volverse más evidentes." },
 
   // Per-product descriptions (cosmetic/wellness research context - hedged language)
   "product.klow.desc": {
@@ -205,6 +215,14 @@ const translations: Record<string, Record<Lang, string>> = {
   "product.epithalon.desc": {
     en: "Pineal peptide for longevity and wellness research. May help support healthy aging markers and circadian rhythm balance in preclinical studies.",
     es: "Péptido pineal para investigación de longevidad y bienestar. Puede ayudar a apoyar marcadores de envejecimiento saludable y equilibrio del ritmo circadiano en estudios preclínicos.",
+  },
+  "product.sermorelin.desc": {
+    en: "GHRH-analog peptide for vitality and recovery research. May help support natural growth-hormone pulses, restful sleep, and lean-tissue maintenance in preclinical models.",
+    es: "Péptido análogo de GHRH para investigación de vitalidad y recuperación. Puede ayudar a apoyar los pulsos naturales de hormona de crecimiento, el sueño reparador y el mantenimiento de tejido magro en modelos preclínicos.",
+  },
+  "product.slupp332.desc": {
+    en: "ERR-agonist compound for mitochondrial-endurance research. May help support exercise-mimetic pathways, fat oxidation, and metabolic performance markers in research models.",
+    es: "Compuesto agonista de ERR para investigación de resistencia mitocondrial. Puede ayudar a apoyar vías miméticas del ejercicio, oxidación de grasas y marcadores de rendimiento metabólico en modelos de investigación.",
   },
 
   // Quality section
@@ -488,6 +506,22 @@ const translations: Record<string, Record<Lang, string>> = {
   "details.aod9604.b3": { en: "Helps support metabolic-signaling studies", es: "Ayuda a apoyar estudios de señalización metabólica" },
   "details.aod9604.b4": { en: "May contribute to weight-management pathway research", es: "Puede contribuir a la investigación de vías de control de peso" },
   "details.aod9604.handling": { en: "Store lyophilized vials at -20°C. After reconstitution, refrigerate and use within 30 days.", es: "Almacenar viales liofilizados a -20°C. Tras la reconstitución, refrigerar y usar dentro de 30 días." },
+  "details.sermorelin.overview": { en: "Sermorelin is a research peptide analog of GHRH studied for its potential role in supporting endogenous growth-hormone-axis and recovery research models.", es: "Sermorelin es un péptido de investigación análogo de GHRH estudiado por su posible papel en el apoyo a modelos de investigación del eje endógeno de hormona de crecimiento y recuperación." },
+  "details.sermorelin.focus": { en: "Growth-hormone-axis, recovery, sleep-quality, and vitality research.", es: "Eje de hormona de crecimiento, recuperación, calidad del sueño e investigación de vitalidad." },
+  "details.sermorelin.mechanism": { en: "Investigated for engagement with GHRH-receptor signaling and pulsatile growth-hormone release in research models.", es: "Investigado por su interacción con la señalización del receptor GHRH y la liberación pulsátil de hormona de crecimiento en modelos de investigación." },
+  "details.sermorelin.b1": { en: "May help support growth-hormone-axis markers", es: "Puede ayudar a apoyar marcadores del eje de hormona de crecimiento" },
+  "details.sermorelin.b2": { en: "Intended to study sleep-quality and recovery research", es: "Destinado a estudiar investigación de calidad del sueño y recuperación" },
+  "details.sermorelin.b3": { en: "Helps support lean-tissue maintenance studies", es: "Ayuda a apoyar estudios de mantenimiento de tejido magro" },
+  "details.sermorelin.b4": { en: "May contribute to vitality and wellness pathway research", es: "Puede contribuir a la investigación de vías de vitalidad y bienestar" },
+  "details.sermorelin.handling": { en: "Store lyophilized vials at -20°C. After reconstitution, refrigerate and use within 30 days.", es: "Almacenar viales liofilizados a -20°C. Tras la reconstitución, refrigerar y usar dentro de 30 días." },
+  "details.slupp332.overview": { en: "SLU-PP-332 is a research compound studied as an ERR (estrogen-related receptor) agonist for its potential role in mitochondrial-endurance and exercise-mimetic research.", es: "SLU-PP-332 es un compuesto de investigación estudiado como agonista de ERR (receptor relacionado con estrógeno) por su posible papel en investigación de resistencia mitocondrial y mimética del ejercicio." },
+  "details.slupp332.focus": { en: "Mitochondrial-biogenesis, endurance, fat-oxidation, and exercise-mimetic research.", es: "Biogénesis mitocondrial, resistencia, oxidación de grasas e investigación mimética del ejercicio." },
+  "details.slupp332.mechanism": { en: "Investigated for engagement with ERR-alpha signaling and mitochondrial-biogenesis pathways in research models.", es: "Investigado por su interacción con la señalización de ERR-alfa y las vías de biogénesis mitocondrial en modelos de investigación." },
+  "details.slupp332.b1": { en: "May help support mitochondrial-biogenesis markers", es: "Puede ayudar a apoyar marcadores de biogénesis mitocondrial" },
+  "details.slupp332.b2": { en: "Intended to study endurance and exercise-mimetic research", es: "Destinado a estudiar investigación de resistencia y mimética del ejercicio" },
+  "details.slupp332.b3": { en: "Helps support fat-oxidation pathway studies", es: "Ayuda a apoyar estudios de vías de oxidación de grasas" },
+  "details.slupp332.b4": { en: "May contribute to metabolic-performance research", es: "Puede contribuir a la investigación de rendimiento metabólico" },
+  "details.slupp332.handling": { en: "Store lyophilized vials at -20°C. After reconstitution, refrigerate and use within 30 days.", es: "Almacenar viales liofilizados a -20°C. Tras la reconstitución, refrigerar y usar dentro de 30 días." },
 };
 
 const LanguageContext = createContext<LanguageContextType>({

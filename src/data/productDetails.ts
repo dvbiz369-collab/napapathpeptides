@@ -102,4 +102,18 @@ export const productDetails: Record<string, ProductDetail> = {
     benefitKeys: ["details.aod9604.b1", "details.aod9604.b2", "details.aod9604.b3", "details.aod9604.b4"],
     handlingKey: "details.aod9604.handling",
   },
+  sermorelin: {
+    overviewKey: "details.sermorelin.overview",
+    researchFocusKey: "details.sermorelin.focus",
+    mechanismKey: "details.sermorelin.mechanism",
+    benefitKeys: ["details.sermorelin.b1", "details.sermorelin.b2", "details.sermorelin.b3", "details.sermorelin.b4"],
+    handlingKey: "details.sermorelin.handling",
+  },
+  slupp332: {
+    overviewKey: "details.slupp332.overview",
+    researchFocusKey: "details.slupp332.focus",
+    mechanismKey: "details.slupp332.mechanism",
+    benefitKeys: ["details.slupp332.b1", "details.slupp332.b2", "details.slupp332.b3", "details.slupp332.b4"],
+    handlingKey: "details.slupp332.handling",
+  },
 };
