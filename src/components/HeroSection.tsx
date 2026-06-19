@@ -1,4 +1,4 @@
-import productImg from "@/assets/product-hero-branded.jpg";
+import productImg from "@/assets/product-hero-branded.png";
 import { useLanguage } from "@/contexts/LanguageContext";
 import MoleculeStructure from "@/components/MoleculeStructure";
 
