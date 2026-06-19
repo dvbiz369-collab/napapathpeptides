@@ -36,7 +36,7 @@ const productCatalog: Record<
   string,
   { name: string; dose: string; volume: string; img: string; price: number; timelineKey: string }
 > = {
-  klow: { name: "Klow", dose: "80mg", volume: "3ml", img: productKlow, price: 225, timelineKey: "klow" },
+  klow: { name: "Klow", dose: "80mg", volume: "3ml", img: productKlow, price: 230, timelineKey: "klow" },
   motsc: { name: "Mots-C", dose: "40mg", volume: "5ml", img: productMotsc, price: 200, timelineKey: "motsc" },
   nad: { name: "NAD+", dose: "4000mg", volume: "20ml", img: productNad, price: 350, timelineKey: "nad" },
   tb500: { name: "TB500 / BPC-157", dose: "20mg (10mg ea)", volume: "3ml", img: productTb500, price: 150, timelineKey: "tb500" },
@@ -48,19 +48,19 @@ const productCatalog: Record<
   selank: { name: "Selank / Semax", dose: "10mg (5mg ea)", volume: "3ml", img: productSelank, price: 110, timelineKey: "selank" },
   glutathione: { name: "Glutathione", dose: "4000mg", volume: "20ml", img: productGlutathione, price: 150, timelineKey: "glutathione" },
   epithalon: { name: "Epithalon", dose: "50mg", volume: "3ml", img: productEpithalon, price: 150, timelineKey: "epithalon" },
-  aod9604: { name: "AOD-9604", dose: "5mg", volume: "3ml", img: productAod9604, price: 135, timelineKey: "aod9604" },
-  sermorelin: { name: "Sermorelin", dose: "10mg", volume: "3ml", img: productSermorelin, price: 124, timelineKey: "sermorelin" },
+  aod9604: { name: "AOD-9604", dose: "5mg", volume: "3ml", img: productAod9604, price: 140, timelineKey: "aod9604" },
+  sermorelin: { name: "Sermorelin", dose: "10mg", volume: "3ml", img: productSermorelin, price: 130, timelineKey: "sermorelin" },
   slupp332: { name: "SLU-PP-332", dose: "5mg", volume: "3ml", img: productSlupp332, price: 180, timelineKey: "slupp332" },
-  sma: { name: "SMA", dose: "5mg", volume: "3ml", img: productSma, price: 164, timelineKey: "sma" },
+  sma: { name: "SMA", dose: "5mg", volume: "3ml", img: productSma, price: 170, timelineKey: "sma" },
   snap8: { name: "SNAP-8", dose: "20mg", volume: "3ml", img: productSnap8, price: 160, timelineKey: "snap8" },
-  thymalin: { name: "Thymalin", dose: "10mg", volume: "3ml", img: productThymalin, price: 66, timelineKey: "thymalin" },
-  tha1: { name: "Thymosin Alpha-1", dose: "5mg", volume: "3ml", img: productTha1, price: 124, timelineKey: "tha1" },
+  thymalin: { name: "Thymalin", dose: "10mg", volume: "3ml", img: productThymalin, price: 70, timelineKey: "thymalin" },
+  tha1: { name: "Thymosin Alpha-1", dose: "5mg", volume: "3ml", img: productTha1, price: 130, timelineKey: "tha1" },
   teamo: { name: "TEAMO", dose: "31mg (Tesa 15 / MOTS-C 10 / AOD 6)", volume: "5ml", img: productTeamo, price: 220, timelineKey: "teamo" },
-  "tesa-ipa": { name: "Tesamorelin / Ipamorelin", dose: "20mg (10mg ea)", volume: "3ml", img: productTesaIpa, price: 152, timelineKey: "tesa-ipa" },
-  "tha1-thymulin": { name: "Thymosin A-1 / Thymulin", dose: "16mg (10mg / 6mg)", volume: "5ml", img: productTha1Thymulin, price: 162, timelineKey: "tha1-thymulin" },
+  "tesa-ipa": { name: "Tesamorelin / Ipamorelin", dose: "20mg (10mg ea)", volume: "3ml", img: productTesaIpa, price: 160, timelineKey: "tesa-ipa" },
+  "tha1-thymulin": { name: "Thymosin A-1 / Thymulin", dose: "16mg (10mg / 6mg)", volume: "5ml", img: productTha1Thymulin, price: 170, timelineKey: "tha1-thymulin" },
   "tha1-thymulin-kpv": { name: "Thymosin A-1 / Thymulin / KPV", dose: "21mg (10mg / 6mg / 5mg)", volume: "5ml", img: productTha1ThymulinKpv, price: 190, timelineKey: "tha1-thymulin-kpv" },
-  trz: { name: "TRZ", dose: "5mg", volume: "3ml", img: productTrz, price: 164, timelineKey: "trz" },
-  vip: { name: "VIP", dose: "5mg", volume: "3ml", img: productVip, price: 104, timelineKey: "vip" },
+  trz: { name: "TRZ", dose: "5mg", volume: "3ml", img: productTrz, price: 170, timelineKey: "trz" },
+  vip: { name: "VIP", dose: "5mg", volume: "3ml", img: productVip, price: 110, timelineKey: "vip" },
 };
 
 const ProductDetail = () => {
