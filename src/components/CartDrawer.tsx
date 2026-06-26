@@ -52,6 +52,12 @@ const CartDrawer = () => {
       });
 
       setConfirmed(true);
+
+      // Auto-open SMS app to (707) 307-9901 with the inquiry details
+      const smsBody = `${lang === "es" ? "[Prefiero comunicarme en español]\n\n" : ""}New inquiry from ${customerName.trim()} (${customerEmail.trim()}, ${customerPhone.trim()}): ${items.map((i) => `${i.name} x${i.quantity}`).join(", ")}. Total: $${totalPrice}.`;
+      setTimeout(() => {
+        window.location.href = `sms:7073079901?body=${encodeURIComponent(smsBody)}`;
+      }, 400);
     } catch (e) {
       console.error("Failed to send inquiry:", e);
     } finally {
